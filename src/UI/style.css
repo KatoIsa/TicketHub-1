@@ -1,0 +1,114 @@
+*{
+	margin: 0;
+}
+@font-face{
+	font-family: "poppins";
+	src:  url("fonts/Poppins-Bold.ttf");
+}
+@font-face{
+	font-family: "poppins-light";
+	src: url('fonts/Poppins-Light.ttf');
+}
+body{
+	background: url('img/background.jpg');
+	background-size: fill;
+	background-repeat: no-repeat;
+}
+/*
+	TOP BAR, STYLES.
+*/
+.cover{
+	background: #00000080;
+	position: absolute;
+	width: 100vw;
+	height: 100%;
+	z-index: -1 ;
+}
+.header{
+	background: #01a4ff91;
+	color:  #fff;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.header h2{
+	font-size: 40px;
+	font-family: poppins;
+	letter-spacing: 5px;
+	margin-left: 40px;
+}
+@media (max-width: 403px){
+	.header{
+		height: 55px;
+	}
+	.header h2{
+		font-size: 20px;
+	}
+	.userAccount{
+		margin-top: -2px!important;
+		width: 30px!important;
+		height: 30px!important;
+	}
+}
+
+/*
+	USER ACCOUNT ICON AND MENU: STYLES.
+*/
+.userAccount{
+	width: 40px;
+	height: 40px;
+	margin-right: 40px;
+	margin-top: 7px;
+	border-radius: 100%;
+	background: #fff;
+}
+.userAccount:hover{
+	cursor: pointer;
+}
+.userAccount:hover  ol{
+	visibility: visible!important;
+	margin-top: 30px!important;
+}
+.header .menu, .header .name{
+	margin-top: 13px;
+}
+.header .menu ol{
+	visibility: hidden;
+	position: absolute;
+	background: #fff;
+	margin-top: 50px;
+	margin-left: -116px;
+	border-radius: 6px;
+	color: #000;
+	width: 80px;
+	height: 80px;
+	transition: cubic-bezier(0.88, 0.57, 0.02, 0.49) 0.3s;
+}
+
+.header .menu ol li{
+	color: #333;
+	list-style: none;
+	margin-left: -39px;
+	padding: 3px;
+	font-weight: 550;
+	text-align: center;
+	font-family: poppins-light;
+	transition: 0.3s;
+}
+.header .menu ol li:hover{
+	cursor: pointer;
+	background: #333;
+	color: #fff;
+}
+.header .menu ol li:nth-child(1){
+	border-bottom: 1px solid #33333359;
+	margin-top: 9px;
+	letter-spacing: 2px;
+}
+.header .menu ol li:nth-child(2){
+	letter-spacing: 3px;
+}
+
+/*
+	MAIN BODY, STYLES(center).
+*/
