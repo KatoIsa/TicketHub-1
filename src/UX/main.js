@@ -61,12 +61,34 @@ let App = {
 	// user acount and database configuron for user login
 	UserAccountAndDbsConfiguration: function () {
 		// chek user inputs: sign up section.
-		let submitButton = _.Select('.submit')
-		let inputs  = _.Select('.Sign-Up div input', true);
-		
+		let submitButton  = _.Select('.submit')
+		let SignInInputs  = _.Select('.Sign-In div input', true);
+		let SignUpInputs  = _.Select('.Sign-Up div input', true);
 		_.Event(submitButton, 'click', function(){
-			alert('clicked');
+			// check inputs: Sign Up
+			// name
+			if(SignUpInputs[0].value.trim() == ''){
+				alert('error')
+			}else{
+				alert('passed')
+			}
+			// numbere
+			if(SignUpInputs[1].value.trim() == ''){
+				alert('error')
+			}else{
+				alert('passed')
+			}
+			// password
+			if(SignUpInputs[2].value.trim() == ''){
+				alert('error')
+			}else{
+				alert('passed')
+			}
+			// check inputs: Sign In
 		}, true);
+	},
+	VarifiedUserArea: function(){
+
 	}
 }
 
