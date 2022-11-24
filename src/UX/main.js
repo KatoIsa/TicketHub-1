@@ -3,6 +3,7 @@
 let App = {
 	// button response.
 	buttonRresponse: function (){
+		let userAccount = _.Select('.userAccount');
 		let signInHome = _.Select('.SignInHome ');
 		let signUpHome = _.Select('.SignUpHome');
 		let shadow = _.Select('.cover');
@@ -11,6 +12,10 @@ let App = {
 		let formData = _.Select('.AccountPortal .center .Sign-In')
 		let signUpButtons = _.Select('.AccountPortal .top div', true)
 		let signIn = signUpButtons[0], signUp = signUpButtons[1];
+		_.Event(userAccount, 'click', function (){
+			_.Select('.userAccount ol').classList.add('appendMenu')
+			shadow.classList.add('extend');
+		}, true)
 
 		_.Event(signInHome, 'click', function (){
 			shadow.classList.add('extend');
@@ -19,6 +24,7 @@ let App = {
 			_.Select('.AccountPortal .Title2 h2').classList.add('Active')
 			_.Select('.AccountPortal .Title h2').classList.remove('Active')
 			formData.classList.add('displaySignIn')
+
 		}, true)
 		
 		_.Event(signUpHome, 'click', function (){
@@ -28,12 +34,14 @@ let App = {
 			_.Select('.AccountPortal .Title h2').classList.add('Active')
 			_.Select('.AccountPortal .Title2 h2').classList.remove('Active')
 			formData.classList.remove('displaySignIn')
+
 		}, true)
 
 		_.Event(shadow, 'click', function(){
 			popup.classList.remove('showPortal');
 			popup.classList.add('hidePortal');
 			shadow.classList.remove('extend');
+			_.Select('.userAccount ol').classList.remove('appendMenu')
 		}, true)
 
 		// sign in and sign up pop up functionality

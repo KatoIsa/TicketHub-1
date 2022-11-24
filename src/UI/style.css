@@ -60,6 +60,9 @@ body{
 	USER ACCOUNT ICON AND MENU: STYLES.
 */
 .userAccount{
+	background-image: url(img/user.png)!important;
+	background-repeat: no-repeat;
+	background-size: cover!important;
 	width: 40px;
 	height: 40px;
 	margin-right: 40px;
@@ -70,14 +73,21 @@ body{
 .userAccount:hover{
 	cursor: pointer;
 }
-.userAccount:hover  ol{
+/*.userAccount:hover ol{
+	visibility: visible!important;
+	margin-top: 30px!important;
+}*/
+
+.appendMenu{
 	visibility: visible!important;
 	margin-top: 30px!important;
 }
+
 .header .menu, .header .name{
 	margin-top: 13px;
 }
 .header .menu ol{
+	z-index:150 ;
 	visibility: hidden;
 	position: absolute;
 	background: #fff;
