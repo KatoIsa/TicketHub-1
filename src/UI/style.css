@@ -261,6 +261,10 @@ body{
 	cursor: pointer;
 	border-bottom: 2px solid #19f;
 }
+.Active{
+	border-bottom: 2px solid #19f;
+}
+
 .AccountPortal .center{
  	position: relative;
  	height: 300px;
@@ -270,6 +274,10 @@ body{
  	height: 100%;
  	display: flex;
  	align-items: center;
+ }
+ .AccountPortal .center .Sign-In div, .AccountPortal .center .Sign-Up div{
+	margin-left: 22px;
+	margin-top: 15px;
  }
  .AccountPortal .center .Sign-Up div{
  	height: fit-content;
@@ -287,7 +295,14 @@ body{
 .AccountPortal .center .Sign-In div{
 	height: fit-content;
 	width: 100%;
-	text-align: center;
+}
+.AccountPortal .center p{
+	font-family: poppins;
+	color: #19f;
+	outline: none;
+	text-align: left;
+	margin-bottom: 5px;
+	width: fit-content;
 }
 .AccountPortal .submit{
 	background: #19f;
@@ -347,9 +362,10 @@ body{
 	margin-bottom: 30px;
 	color: #19f;
 	outline: none;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: 300;
 	width: 200px;
+	text-align: left!important;
 }
 .AccountPortal .center .Sign-Up div input:nth-child(1){
 	letter-spacing: 10px;
