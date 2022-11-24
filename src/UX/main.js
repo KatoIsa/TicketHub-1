@@ -58,7 +58,7 @@ let App = {
 		
 		_.Event(submitButton, 'click', function(){
 			alert('clicked');
-		})
+		}, true);
 	}
 }
 

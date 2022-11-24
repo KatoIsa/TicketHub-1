@@ -29,7 +29,7 @@ let _ = {
     * @param {*} MultiElements must be sate to true to enable iteration 
     * through multi HTML elements.
     */
-    Select: (element, MultiElements = false) => {
+    Select: function (element, MultiElements = false){
         /* single Elements */
         if(MultiElements){
         return document.querySelectorAll(element);
@@ -52,7 +52,7 @@ let _ = {
      ** and check to see if the the last paremeter is sate to true.
      
      */
-    Each: (element,AssignedName, Type = false)=>{
+    Each: function (element,AssignedName, Type = false){
         if(Type){
             element.forEach(AssignedName);
         }else{
@@ -68,7 +68,7 @@ let _ = {
     **Code Example:
     *
     * ```js
-    * _.Event('.button', 'click', ()=>{
+    * _.Event('.button', 'click', function (){
     *    alert('hello wolrd');
     * }, true);
     * ```
@@ -76,7 +76,7 @@ let _ = {
     * 
 
     */
-    Event: (element, EventType, Task, Type = false) => {
+    Event: function (element, EventType, Task, Type = false){
         
         if(Type){
           return  element.addEventListener(EventType, Task);
@@ -89,7 +89,7 @@ let _ = {
     ** Thie last parameter should be sate to true if ur using a varable
     ** instead of a string eg('.htmleleemnts') istead of (Type);
     */
-    EventAll: (element, EventType, Task, Type = false) => { 
+    EventAll: function (element, EventType, Task, Type = false){ 
         if(Type){
          return element.forEach(f =>{
                 f.addEventListener(EventType, Task);
@@ -103,7 +103,7 @@ let _ = {
     /** 
     *Helps create html elements[tags... etc]: by KatoIsa
     */
-    HTMLcreate: (type)=>{ 
+    HTMLcreate: function (type){ 
         return document.createElement(type);
     },
     /**
@@ -113,7 +113,7 @@ let _ = {
      * _.Print('hello world');
      * ```
      */
-    Print: (value)=>{
+    Print: function (value){
         console.log(value);
     },
     /** 
@@ -123,7 +123,7 @@ let _ = {
         /**
          # Write to data base 
         */
-        Create: (primaryKey, data) => {
+        Create: function (primaryKey, data) {
             return localStorage.setItem(primaryKey, data);
         },
         /**
@@ -138,7 +138,7 @@ let _ = {
          * _.DB.Get('databasename',true);//contents will be printed in console.
          * ```
         */
-        Get: (primaryKey, Print = false) => {
+        Get: function (primaryKey, Print = false)  {
             if (Print) {
                 return console.log(localStorage.getItem(primaryKey));
             } else {
@@ -149,7 +149,7 @@ let _ = {
          * Edit ur data from thie dataBase 
          ** change content the dataBase holds or update it.
         */
-        Edit: (primaryKey, newData) => {
+        Edit: function (primaryKey, newData)  {
             return localStorage.setItem(primaryKey, newData);
         }
     },
