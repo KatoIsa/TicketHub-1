@@ -11,8 +11,15 @@
 }
 body{
 	background: url('img/background.jpg');
-	background-size: fill;
+	background-size: cover;
 	background-repeat: no-repeat;
+}
+/*
+  Error handling.
+*/
+.error{
+	border: 2px dotted red!important;
+	color: red!important;
 }
 /*
 	TOP BAR, STYLES.
@@ -314,7 +321,22 @@ body{
 	margin-bottom: 5px;
 	width: fit-content;
 }
-.AccountPortal .submit{
+.AccountPortal .submit-1{
+	background: #00ffab;
+	width: 55px;
+	height: 0px;
+	border-radius: 100%;
+	margin-left: 50%;
+	transform: translate(-50%);
+}
+.displaySubmitSignIn{
+	height: 55px!important;
+}
+.removeSubmitSignUp{
+	height: 0px!important;
+}
+.AccountPortal .submit-2{
+	overflow: hidden;
 	background: #19f;
 	width: 55px;
 	height: 55px;
@@ -322,6 +344,7 @@ body{
 	margin-left: 50%;
 	transform: translate(-50%);
 }
+
 .icon {
   position: absolute;
   top: 50%;
