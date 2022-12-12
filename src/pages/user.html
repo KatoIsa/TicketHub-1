@@ -3,14 +3,71 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>tickethub</title>
-	<link rel="stylesheet" type="text/css" href="UI/style.css">
+	<title>User-tickethub</title>
+	<link rel="stylesheet" type="text/css" href="../UI/style.css">
+	<link rel="stylesheet" type="text/css" href="../UI/user.css">
 </head>
 <body>
-	
+	<div class="cover"></div>
+	<div class="header">
+		<div class="name">
+			<h2>TICKET HUB</h2>
+		</div>
+		<div class="menu">
+		   <div class="closeMenue"></div>
+		   <div class="userAccount">
+			<ol>
+				<li class="SignUpHome">SIGN OUT</li>
+			</ol>
+		   </div>
+		</div>
+	</div>
+	<main>
+		<div class="introCover">
+			<div class="intro">
+				HELLO <span>KATO</span> 
+			</div>
+
+			<div class="contain">
+				<div class="containFlex">
+					<div class="statusMenueButtons">
+					<div class="ConcertsMenuButton Active">CONCERTS</div>
+					<div class="TicketsMenuButton">TICKETS</div>
+				</div>
+				<div class="ContetsContainer">
+					<div class="ConcertContentsBody ">
+						<div class='404' style="display:none; font-size: 25px;margin-top: 20px;" >!OOPS NOTHING HERE.</div>
+						<div class="concertBody">
+							<div class="wrapper">
+								<div class="imageHolder">
+								</div>
+								<div class="Concertdetails">
+									<div class="name">Concert Name</div>
+									<div class="Date">Date: <tt class="color">17/12/2022</tt></div>
+									<div class="more"><div>get it</div> <div class="arrowBody"><div class="arrow1"></div></div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="TicketContentsBody">
+						<div class='404' style="display:none; font-size: 25px;margin-top: 20px;" >!BUY A TICKET.</div>
+						<p>This is what you will show at the gate</p>
+						<p>You can take a screenshot or keep the ticket number here.</p>
+						<div class="ConcertTicket">
+							<div class="ticketnumber">
+							   <tt><span>#C</span>35667</tt>	
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+		    </div>
+		</div>
+	</main>
 	<!-- simplified.js library -->
-	<script type="text/javascript" src="UX/simplify(js)/Simplified.js"></script>
+	<script type="text/javascript" src="../UX/simplify(js)/Simplified.js"></script>
 	<!-- site scripts -->
-    <script type="text/javascript" src="UX/main.js"></script>
+    <script type="text/javascript" src="../UX/user.js"></script>
 </body>
 </html>

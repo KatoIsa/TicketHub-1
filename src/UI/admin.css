@@ -1,0 +1,77 @@
+@font-face{
+	font-family: "poppins";
+	src:  url("fonts/Poppins-Bold.ttf");
+}
+@font-face{
+	font-family: "poppins-light";
+	src: url('fonts/Poppins-Light.ttf');
+}
+.cover{
+	background: #000000ba!important;
+}
+.introCover{
+	font-family: poppins-light;
+	font-size: 30px;
+	color: #fff;
+	margin-top: 30px;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+.intro{
+	font-size: 40px;
+}
+.contain{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 30px;
+	text-align: center;
+}
+.wrapSearchArea{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.searchArea input{
+	background: #fff;
+	border: none;
+	font-size: 18px;
+	width: 250px;
+	height: 31px;
+} 
+.searchArea button{
+	font-size: 18px;
+	height: 32px;
+	margin-top: 1px;
+}
+.SearchResults{
+	margin-top: 20px;
+}
+.SearchResults .person{
+	background: #0000007a;
+	width: 400px;
+	margin-left: 50%;
+	margin-top: 10px;
+	font-size: 20px;
+	transform: translateX(-50%);
+	text-align: left;
+	box-shadow: 2px 2px 3px 4px rgb(0 0 0);
+}
+.SearchResults .person .row{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 0px 5px;
+}
+.SearchResults .person .row:nth-child(2){
+	background: #1199774d;
+}
+.SearchResults .person .row:nth-child(2) .number{
+	font-size: 19px;
+}
+.SearchResults .person .row:nth-child(3) .ticketNo{
+	color: orange;
+}
+.SearchResults .person .row span{
+	color: #19f;
+}

@@ -12,7 +12,7 @@
 body{
 	background: url('img/background.jpg');
 	background-size: cover;
-	background-repeat: no-repeat;
+/*	background-repeat: no-repeat;*/
 }
 /*
   Error handling.
@@ -20,6 +20,24 @@ body{
 .error{
 	border: 2px dotted red!important;
 	color: red!important;
+}
+.sucessMassage{
+	display: none;
+	position: absolute;
+	background: #fff;
+	color: #11ff70;
+	font-family: poppins;
+	top: 50%;	
+	margin-left: 50%;
+	transform: translateX(-50%);
+	box-shadow: 2px 2px 12px 0px rgb(0 0 0);
+	width: 250px;
+	padding:10px 0px;
+	text-align: center;
+	z-index: 300;
+}
+.showsucesspopup{
+	display: block!important;
 }
 /*
 	TOP BAR, STYLES.

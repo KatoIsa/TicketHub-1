@@ -1,22 +1,28 @@
 // main application functionality.
+let userAccount = _.Select('.userAccount');
+let signInHome = _.Select('.SignInHome ');
+let signUpHome = _.Select('.SignUpHome');
+let shadow = _.Select('.cover');
+let popup = _.Select('.PortalCover');
+let submitButtonSignIn  = _.Select('.submit-1');
+let submitButtonSignUp  = _.Select('.submit-2');
+
+// sign up portal(pop up elements)
+let formData = _.Select('.AccountPortal .center .Sign-In');
+let signUpButtons = _.Select('.AccountPortal .top div', true);
+let signIn = signUpButtons[0], signUp = signUpButtons[1];
+const NewUser = {Name: '',Number:'' ,Password: '',data: {tickets: [],}}
+
+// chek user inputs: sign up section.
+let SignInInputs  = _.Select('.Sign-In div input', true);
+let SignUpInputs  = _.Select('.Sign-Up div input', true);
 
 let App = {
 	DataBaseConfiguration:function (){ // fire base.
 
 	},
 	buttonRresponse: function (){
-		let userAccount = _.Select('.userAccount');
-		let signInHome = _.Select('.SignInHome ');
-		let signUpHome = _.Select('.SignUpHome');
-		let shadow = _.Select('.cover');
-		let popup = _.Select('.PortalCover');
-		let submitButtonSignIn  = _.Select('.submit-1');
-		let submitButtonSignUp  = _.Select('.submit-2');
-
-		// sign up portal(pop up elements)
-		let formData = _.Select('.AccountPortal .center .Sign-In');
-		let signUpButtons = _.Select('.AccountPortal .top div', true);
-		let signIn = signUpButtons[0], signUp = signUpButtons[1];
+		
 
 		_.Event(userAccount, 'click', function (){
 			_.Select('.userAccount ol').classList.add('appendMenu');
@@ -46,9 +52,11 @@ let App = {
 		}, true);
 
 		_.Event(shadow, 'click', function(){
+			_.Select('.sucessMassage').classList.remove('showsucesspopup');
 			popup.classList.remove('showPortal');
 			popup.classList.add('hidePortal');
 			shadow.classList.remove('extend');
+
 			_.Select('.userAccount ol').classList.remove('appendMenu');
 		}, true)
 
@@ -72,27 +80,8 @@ let App = {
 
 	// user acount and database configuron for user login
 	UserAccountAndDbsConfiguration: function () {
-		// chek user inputs: sign up section.
-		let submitButtonSignIn  = _.Select('.submit-1');
-		let submitButtonSignUp  = _.Select('.submit-2');
-		let SignInInputs  = _.Select('.Sign-In div input', true);
-		let SignUpInputs  = _.Select('.Sign-Up div input', true);
 
 		function ErrorHandling(){
-			// sign in button.
-			_.Event(submitButtonSignIn, 'click', function(){
-				// check inputs: Sign In
-				for(var i = 0; i < SignInInputs.length; i++){
-					if(SignInInputs[i].value.slice() == '256 705207***' || SignInInputs[i].value.slice() == ''){
-						SignInInputs[i].classList.add('error');
-						SignInInputs[i].value = '';
-					}else{
-						SignInInputs[i].classList.remove('error');
-					}
-				}
-			}, true);
-
-
 			// sign up button configuration...
 			_.Event(submitButtonSignUp, 'click', function(){
 				// check inputs: Sign Up name: number: password
@@ -103,14 +92,10 @@ let App = {
 					}else{
 						SignUpInputs[i].classList.remove('error');
 					}
-				}
-				// store user data.
-				const NewUser = {
-					Name: '',
-					Number:'' ,
-					Password: ''
-				}
-				// store name 
+				} 
+				// store user data. for future data base storage.
+
+				// store name.
 				if (SignUpInputs[0].value.split() !== '' | SignUpInputs[0].value.split() !== 'Kato Isa'){
 					NewUser.Name = SignUpInputs[0].value;
 				}
@@ -124,27 +109,58 @@ let App = {
 				}
 				// store data to data base.
 				if(NewUser.Name !== '' && NewUser.Number !== '' && NewUser.Password !== ''){
-					_.Print(NewUser);
+					_.Print(NewUser)
+					_.Select('.sucessMassage').classList.add('showsucesspopup');
+					popup.classList.remove('showPortal');
+					popup.classList.add('hidePortal');
+					shadow.classList.add('extend');
 				}else{
-					_.Print('Data Pending...');
+					_.Print('No data stored');
+				}
+			}, true);
+		}
+
+		// sign in button.
+			_.Event(submitButtonSignIn, 'click', function(){
+				// check inputs: Sign In
+				for(var i = 0; i < SignInInputs.length; i++){
+					if(SignInInputs[i].value.slice() == '256 705207***' || SignInInputs[i].value.slice() == ''){
+						SignInInputs[i].classList.add('error');
+						SignInInputs[i].value = '';
+					}else{
+						SignInInputs[i].classList.remove('error');
+					}
 				}
 			}, true);
 
-
-		}
 		ErrorHandling();
-		// client area varification::  sign in varification
-		const varified = {
-			Number: '',
-			password: ''
-		}
 		
 	},
 	ClientArea: function(){
-		// user sign in: varification process.
+		// user sign In: pull data from dataBase:
+		// check number and password
+		
+		_.Event(submitButtonSignIn, 'click', function(){
+			// fill uservlaidator: fill number.
+			if(SignInInputs[0].value.slice() == NewUser.Number && SignInInputs[1].value.slice() == NewUser.Password){
+				_.Print('passed..');
+				window.location.assign('./pages/user.html');
+			}else{
+				_.Print('error..');
+			}
 
+			//connect to ADMIN dashboard.
+			if(SignInInputs[0].value.slice() == '0704465049' && SignInInputs[1].value.slice() == '1234'){
+				window.location.assign('./pages/admin.html');
+			}else{
+				_.Print('error..');
+			}
+
+		}, true);
+		// check password.
 	}
 }
 
 App.buttonRresponse();
 App.UserAccountAndDbsConfiguration();
+App.ClientArea();

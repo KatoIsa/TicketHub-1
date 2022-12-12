@@ -1,0 +1,174 @@
+@font-face{
+	font-family: "poppins";
+	src:  url("fonts/Poppins-Bold.ttf");
+}
+@font-face{
+	font-family: "poppins-light";
+	src: url('fonts/Poppins-Light.ttf');
+}
+
+body{
+	font-family: poppins-light;
+}
+.cover{
+	background: #000000ba!important;
+}
+.introCover{
+	color: #fff;
+	font-size: 70px;
+	margin-top: 30px;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+.intro span:nth-child(1){
+	font-family: poppins!important;
+}
+.intro .details{
+	font-size: 30px;
+}
+.contain{
+	display: flex;
+	justify-content: center;
+}
+.containFlex{
+	position: relative;
+	width: 80%;
+}
+.statusMenueButtons{
+	width: fit-content;
+	display: inline-flex;
+	font-size: 17px;
+	color: #333;
+	margin-top: 30px;
+}
+.statusMenueButtons div{
+	background: #fff;
+	padding: 5px 10px;
+	width: 100px;
+	margin-right:5px;
+	text-align: center;
+	font-weight: bolder;
+	border-radius: 10px;
+	cursor: pointer;
+}
+.statusMenueButtons .ConcertsMenubutton{
+	border-radius: 2px solid red;
+}
+.Active{
+	background: none!important;
+	border: 1px solid #19f;
+	color: #fff;
+}
+.TicketContentsBody{
+	position: absolute;
+}
+.showTickets{
+	top: 0px;
+	z-index: 1;
+}
+.hideConcerts{
+	display: none!important;
+}
+
+/*
+	contets bodies for tickets and concerts
+*/
+.ContetsContainer{
+	position: relative;
+	width: 100%;
+	height: 50vh;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.ConcertContentsBody{
+	width: 100%;
+	height: 100%;
+}
+.TicketContentsBody{
+	width: 100%;
+	height: 100%;
+}
+
+.concertBody .wrapper{
+	position: relative;
+	background: #0000009e;
+	font-size: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	border-radius: 5px;
+	width: fit-content;
+	padding-right: 50px;
+}
+.imageHolder{
+	background-image:url('img/concert.jpg')!important;
+	background-repeat: no-repeat;
+	background-size: fill;
+	background: #333;
+	height: 80px;
+	width: 80px;
+	margin: 10px;
+	border-radius:5px;
+}
+.Concertdetails{
+	margin-top: 4px;
+}
+.Concertdetails .name{
+	border-bottom: 2px solid #19f;
+	height: 23px;
+}
+.Concertdetails .Date{
+	font-size: 18px;
+	margin-top: 5px;
+}
+.Concertdetails .Date .color{
+	color: #00fdab!important;
+}
+.more{
+	display: flex;
+	flex-wrap: wrap;
+}
+.arrowBody{
+	width: 100px;
+	position: relative;
+}
+.arrowBody .arrow1{
+	background: #fff;
+	width: 50px;
+	height: 2px;
+	margin-top: 15px;
+	margin-left: 10px;
+}
+.arrowBody .arrow1::before{
+	content: '';	
+	background: #fff;
+	position: absolute;
+	width: 20px;
+	height: 2px;
+	margin-left: 32px;
+	margin-top: 5px;
+	transform: rotate(-30deg);
+}
+.arrowBody .arrow1::After{
+	content: '';
+	background: #fff;
+	position: absolute;
+	width: 20px;
+	height: 2px;
+	margin-left: 32px;
+	margin-top: -5px;
+	transform: rotate(30deg);
+}
+.TicketContentsBody .ConcertTicket{
+	background: #000000bf;
+	font-size: 35px;
+	width: fit-content;
+	border-radius: 10px;
+	padding: 10px 20px;
+	margin-top: 15px;
+}
+.TicketContentsBody .ConcertTicket tt span{
+	color: #19f;
+}
+.TicketContentsBody  p{
+	font-size: 20px;
+}
