@@ -20,14 +20,14 @@ let SignInInputs  = _.Select('.Sign-In div input', true);
 let SignUpInputs  = _.Select('.Sign-Up div input', true);
 
 let App = {
-	DataBaseConfiguration:function (tellnumber, name, password){ // fire base.
+	DataBaseConfiguration:function (tellnumber, name, passworddata){ // fire base.
 		// configering firestore database.
 		// Add a new document in collection "cities"
 
 		db.collection("users").doc(`${tellnumber}`).set({
 			name: `${name}`,
 			tellphone: `${tellnumber}`,
-			password: `${password}`
+			password: `${passworddata}`
 		})
 		.then(() => {
 			console.log("Document successfully written!");
