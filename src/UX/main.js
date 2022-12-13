@@ -20,13 +20,13 @@ let SignInInputs  = _.Select('.Sign-In div input', true);
 let SignUpInputs  = _.Select('.Sign-Up div input', true);
 
 let App = {
-	DataBaseConfiguration:function (){ // fire base.
+	DataBaseConfiguration:function (phonenumber,namedata,tellphonedata, passworddata ){ // fire base.
 		// configering firestore database.
 		// Add a new document in collection "cities"
-		db.collection("cities").doc("LA").set({
-			name: "Los Angeles",
-			state: "CA",
-			country: "USA"
+		db.collection("users").doc(tellphonedata).set({
+			name: namedata,
+			tellphone: tellphonedata,
+			password: passworddata
 		})
 		.then(() => {
 			console.log("Document successfully written!");
@@ -35,7 +35,7 @@ let App = {
 			console.error("Error writing document: ", error);
 		});
 
-		
+
 
 
 	},
@@ -180,5 +180,5 @@ let App = {
 }
 App.DataBaseConfiguration()
 App.buttonRresponse();
-App.UserAccountAndDbsConfiguration();
 App.ClientArea();
+App.UserAccountAndDbsConfiguration('Kato','0705207718', '1234' );
