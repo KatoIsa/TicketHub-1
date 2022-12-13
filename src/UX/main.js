@@ -25,9 +25,9 @@ let App = {
 		// Add a new document in collection "cities"
 
 		db.collection("users").doc(`${tellnumber}`).set({
-			name: name,
-			tellphone: tellnumber,
-			password: password
+			name: `${name}`,
+			tellphone: `${tellnumber}`,
+			password: `${password}`
 		})
 		.then(() => {
 			console.log("Document successfully written!");
