@@ -125,11 +125,14 @@ let App = {
 				}
 				// store data to data base.
 				if(NewUser.Name !== '' && NewUser.Number !== '' && NewUser.Password !== ''){
-					_.Print(NewUser)
+					App.DataBaseConfiguration(NewUser.Number, NewUser.Name, NewUser.Password);
+
 					_.Select('.sucessMassage').classList.add('showsucesspopup');
 					popup.classList.remove('showPortal');
 					popup.classList.add('hidePortal');
 					shadow.classList.add('extend');
+
+
 				}else{
 					_.Print('No data stored');
 				}
@@ -176,7 +179,6 @@ let App = {
 		// check password.
 	}
 }
-App.DataBaseConfiguration('0705207718', 'Kato', '1234');
 App.buttonRresponse();
 App.UserAccountAndDbsConfiguration();
 App.ClientArea();
