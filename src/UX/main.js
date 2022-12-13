@@ -177,5 +177,5 @@ let App = {
 }
 App.DataBaseConfiguration()
 App.buttonRresponse();
-App.UserAccountAndDbsConfiguration();
+App.UserAccountAndDbsConfiguration('07052', 'Nanoo', 'break');
 App.ClientArea();
