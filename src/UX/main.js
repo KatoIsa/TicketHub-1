@@ -178,5 +178,5 @@ let App = {
 }
 App.DataBaseConfiguration()
 App.buttonRresponse();
-App.UserAccountAndDbsConfiguration();
+App.UserAccountAndDbsConfiguration('0705207718', 'Kato', '1234');
 App.ClientArea();
