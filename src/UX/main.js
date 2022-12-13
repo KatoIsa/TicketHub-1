@@ -12,6 +12,8 @@ let formData = _.Select('.AccountPortal .center .Sign-In');
 let signUpButtons = _.Select('.AccountPortal .top div', true);
 let signIn = signUpButtons[0], signUp = signUpButtons[1];
 const NewUser = {Name: '',Number:'' ,Password: '',data: {tickets: [],}}
+const db = firebase.firestore();
+
 
 // chek user inputs: sign up section.
 let SignInInputs  = _.Select('.Sign-In div input', true);
@@ -19,7 +21,7 @@ let SignUpInputs  = _.Select('.Sign-Up div input', true);
 
 let App = {
 	DataBaseConfiguration:function (){ // fire base.
-
+		_.Print(db);
 	},
 	buttonRresponse: function (){
 		
@@ -160,7 +162,7 @@ let App = {
 		// check password.
 	}
 }
-
+App.DataBaseConfiguration()
 App.buttonRresponse();
 App.UserAccountAndDbsConfiguration();
 App.ClientArea();
