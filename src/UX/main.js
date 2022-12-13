@@ -20,6 +20,23 @@ let SignInInputs  = _.Select('.Sign-In div input', true);
 let SignUpInputs  = _.Select('.Sign-Up div input', true);
 
 let App = {
+	DataBaseConfiguration:function (tellnumber, namedata, passworddata){ // fire base.
+		// configering firestore database.
+		// Add a new document in collection "cities"
+
+		db.collection("users").doc(`${tellnumber}`).set({
+			name: `${namedata}`,
+			tellphone: `${tellnumber}`,
+			password: `${passworddata}`
+		})
+		.then(() => {
+			console.log("Document successfully written!");
+		})
+		.catch((error) => {
+			console.error("Error writing document: ", error);
+		});
+		
+	},
 	buttonRresponse: function (){
 		
 
@@ -108,24 +125,11 @@ let App = {
 				}
 				// store data to data base.
 				if(NewUser.Name !== '' && NewUser.Number !== '' && NewUser.Password !== ''){
+					_.Print(NewUser)
 					_.Select('.sucessMassage').classList.add('showsucesspopup');
 					popup.classList.remove('showPortal');
 					popup.classList.add('hidePortal');
 					shadow.classList.add('extend');
-
-					// store data to database
-					db.collection("users").doc(`${NewUser.Number}`).set({
-						name: `${NewUser.Name}`,
-						tellphone: `${NewUser.Number}`,
-						password: `${NewUser.Password}`
-					})
-					.then(() => {
-						console.log("Document successfully written!");
-					})
-					.catch((error) => {
-						console.error("Error writing document: ", error);
-					});
-
 				}else{
 					_.Print('No data stored');
 				}
@@ -172,6 +176,7 @@ let App = {
 		// check password.
 	}
 }
-App.DataBaseConfiguration()
+App.DataBaseConfiguration('0705207718', 'Kato', '1234');
 App.buttonRresponse();
+App.UserAccountAndDbsConfiguration();
 App.ClientArea();
