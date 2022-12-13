@@ -21,7 +21,23 @@ let SignUpInputs  = _.Select('.Sign-Up div input', true);
 
 let App = {
 	DataBaseConfiguration:function (){ // fire base.
-		_.Print(db);
+		// configering firestore database.
+		// Add a new document in collection "cities"
+		db.collection("cities").doc("LA").set({
+			name: "Los Angeles",
+			state: "CA",
+			country: "USA"
+		})
+		.then(() => {
+			console.log("Document successfully written!");
+		})
+		.catch((error) => {
+			console.error("Error writing document: ", error);
+		});
+
+		
+
+
 	},
 	buttonRresponse: function (){
 		
