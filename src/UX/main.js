@@ -23,7 +23,7 @@ let App = {
 	DataBaseConfiguration:function (namedata,tellphonedata, passworddata ){ // fire base.
 		// configering firestore database.
 		// Add a new document in collection "cities"
-		db.collection("users").doc(tellphonedata).set({
+		db.collection("users").doc('${tellphonedata}').set({
 			name: namedata,
 			tellphone: tellphonedata,
 			password: passworddata
