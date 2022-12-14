@@ -39,7 +39,7 @@ let App = {
 		getData: function (){
 			// get data.
 			const colRef = collection(db, "users");
-			const docsSnap = await getDocs(colRef);
+			const docsSnap = getDocs(colRef);
 
 			docsSnap.forEach(doc => {
 				console.log(doc.data());
