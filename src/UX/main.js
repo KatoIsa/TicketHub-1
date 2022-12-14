@@ -18,7 +18,7 @@ const db = firebase.firestore();
 // chek user inputs: sign up section.
 let SignInInputs  = _.Select('.Sign-In div input', true);
 let SignUpInputs  = _.Select('.Sign-Up div input', true);
-let dataFromDataBase = {nameDataBase: '', passwordDataBase: '', numberDataBase = ''};
+let dataFromDataBase = {nameDataBase: '', passwordDataBase: '', numberDataBase: ''};
 
 let App = {
 	dataBase:{ // fire base.
