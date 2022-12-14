@@ -177,9 +177,7 @@ let App = {
 					}
 				}
 			}, true);
-
-		ErrorHandling();
-		
+			
 	},
 	ClientArea: function(){
 		// user sign In: pull data from dataBase:
