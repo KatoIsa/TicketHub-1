@@ -133,7 +133,8 @@ let App = {
 			await GetDataFromDataBase();
 
 			function ErrorHandling(){
-				_.Print(usernameDataBase, passwordDataBase, phoneDataBase); 
+				// _.Print(usernameDataBase, passwordDataBase, phoneDataBase); 
+				_.Print("data has been uploaded succesfully...")
 	
 				_.Event(submitButtonSignUp, 'click', function(){
 					// check inputs: Sign Up name: number: password
@@ -189,7 +190,7 @@ let App = {
 			}, true);
 			ErrorHandling();
 		}
-		
+
 		userSignUp_SignIn();
 	},
 	ClientArea: function(){
