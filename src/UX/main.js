@@ -114,9 +114,6 @@ let App = {
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
 
-					signUpDataBaseConnect();
-
-				} else {
 					// doc.data() will be undefined in this case
 					_.Print('error user does not exists....')
 					_.Event(submitButtonSignUp, 'click', function(){
@@ -153,9 +150,12 @@ let App = {
 							_.Print('No data stored');
 						}
 					}, true);
+
+				} else {
+					signUpDataBaseConnect();
 				}
 			}).catch((error) => {
-				console.log("Error getting document:", error);
+				console.log("Error getting document:");
 			});		
 		}, true);
 
