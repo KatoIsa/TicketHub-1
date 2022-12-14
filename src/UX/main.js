@@ -103,15 +103,36 @@ let App = {
 	// user acount and database configuron for user login
 	UserAccountAndDbsConfiguration: function () {
 
-		
+		async function GetDataFromDataBase(){
+			_.Print("waiting for data ...");
+
+			// collect data from dataBse
+			let userreferance = db.collection("users").doc("0705207718");
+			let usernameDataBase, passwordDataBase, phoneDataBase;
+
+			userreferance.get().then((doc) => {
+				if (doc.exists) {
+					let JSONData = JSON.stringify(doc.data());
+					let extract = JSON.parse(JSONData);
+
+					usernameDataBase = `${extract["name"]}`;
+					passwordDataBase = `${extract["password"]}`;
+					phoneDataBase = `${extract["tellphone"]}`;
+				} else {
+					// doc.data() will be undefined in this case
+					return console.log("No such document!");
+				}
+			}).catch((error) => {
+				console.log("Error getting document:");
+			});
+		}
 
 		
-
 		async function userSignUp_SignIn(){
 			await GetDataFromDataBase();
 			// _.Print(usernameDataBase, passwordDataBase, phoneDataBase); 
 			_.Print('data has been uploaded successfully... ')
-				
+			
 			// sign in button.
 			_.Event(submitButtonSignIn, 'click', function(){
 				// check inputs: Sign In
@@ -165,30 +186,6 @@ let App = {
 					_.Print('No data stored');
 				}
 			}, true);
-		}
-
-		async function GetDataFromDataBase(){
-			_.Print("waiting for data ...");
-
-			// collect data from dataBse
-			let userreferance = db.collection("users").doc("0705207718");
-			let usernameDataBase, passwordDataBase, phoneDataBase;
-
-			userreferance.get().then((doc) => {
-				if (doc.exists) {
-					let JSONData = JSON.stringify(doc.data());
-					let extract = JSON.parse(JSONData);
-
-					usernameDataBase = `${extract["name"]}`;
-					passwordDataBase = `${extract["password"]}`;
-					phoneDataBase = `${extract["tellphone"]}`;
-				} else {
-					// doc.data() will be undefined in this case
-					return console.log("No such document!");
-				}
-			}).catch((error) => {
-				console.log("Error getting document:");
-			});
 		}
 
 		userSignUp_SignIn();
