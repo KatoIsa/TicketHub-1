@@ -45,7 +45,7 @@ let App = {
 					let JSONData = JSON.stringify(doc.data())
 					let extract = JSON.parse(JSONData);
 
-					return console.log("Document data:", `${extract[0]}`);
+					return console.log("Document data:", `${extract['name']}`);
 				} else {
 					// doc.data() will be undefined in this case
 					return console.log("No such document!");
