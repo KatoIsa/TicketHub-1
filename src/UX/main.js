@@ -176,7 +176,7 @@ let App = {
 					}
 				}
 			}, true);
-		}
+		}userinterfacedata();
 
 	},
 	ClientArea: function(){
