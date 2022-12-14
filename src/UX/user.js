@@ -39,10 +39,7 @@ let User = {
 		
 	},
 	UserAreaActions: function (){
-		
-		// _.Select('.userIdName') 
-		// let userreferance = db.collection("users").doc(``);
-			
+
 		// 	// SignUpInputs[i].value.split()
 		// 	userreferance.get().then((doc) => {
 		// 		if (doc.exists) {
@@ -61,6 +58,9 @@ let User = {
 		// 	}).catch((error) => {
 		// 		console.log("Error getting document:");
 		// 	});	
+
+		// fill user data.
+		
 	}
 }
 
