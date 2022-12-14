@@ -21,6 +21,28 @@ let SignUpInputs  = _.Select('.Sign-Up div input', true);
 let dataFromDataBase = {nameDataBase: '', passwordDataBase: '', numberDataBase: ''};
 
 let App = {
+	firestoreDatabase: function (number){
+		// get data.
+		let userreferance = db.collection("users").doc(`${number}`);
+
+		userreferance.get().then((doc) => {
+			if (doc.exists) {
+				let jsondata = JSON.stringify(doc.data());
+				let getjsondata = JSON.parse(jsondata);
+
+				dataFromDataBase.nameDataBase =  getjsondata.name;
+				dataFromDataBase.passwordDataBase = getjsondata.password;
+				dataFromDataBase.numberDataBase = getjsondata.tellphone;
+
+				return _.Print(dataFromDataBase);
+			} else {
+				// doc.data() will be undefined in this case
+				return console.log("No such document!");
+			}
+		}).catch((error) => {
+			console.log("Error getting document:", error);
+		});
+	},
 	dataBase: { // fire base.
 		write: function (tellnumber, namedata, passworddata) {
 			// configering firestore database.
@@ -36,31 +58,7 @@ let App = {
 			.catch((error) => {
 				console.error("Error writing document: ", error);
 			});
-		},
-		getData: function (number){
-			// get data.
-			let userreferance = db.collection("users").doc(`${number}`);
-
-			userreferance.get().then((doc) => {
-				if (doc.exists) {
-					let jsondata = JSON.stringify(doc.data());
-					let getjsondata = JSON.parse(jsondata);
-
-					dataFromDataBase.nameDataBase =  getjsondata.name;
-					dataFromDataBase.passwordDataBase = getjsondata.password;
-					dataFromDataBase.numberDataBase = getjsondata.tellphone;
-
-					return _.Print(dataFromDataBase);
-				} else {
-					// doc.data() will be undefined in this case
-					return console.log("No such document!");
-				}
-			}).catch((error) => {
-				console.log("Error getting document:", error);
-			});
-
-		}
-		
+		}	
 	},
 	buttonRresponse: function (){
 		
@@ -124,7 +122,7 @@ let App = {
 		
 		function ErrorHandling(){
 			// sign up button configuration...
-			App.dataBase.getData('0705207718');
+			App.firestoreDatabase('0705207718');
 
 			_.Print(dataFromDataBase);
 			_.Event(submitButtonSignUp, 'click', function(){
