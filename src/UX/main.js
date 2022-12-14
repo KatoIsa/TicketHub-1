@@ -191,7 +191,7 @@ let App = {
 			});
 		}
 
-		GetDataFromDataBase();
+		userSignUp_SignIn();
 	},
 	ClientArea: function(){
 		// user sign In: pull data from dataBase:
