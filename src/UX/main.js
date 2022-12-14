@@ -101,7 +101,7 @@ let App = {
 		// signUp 
 		_.Event(submitButtonSignUp, 'click', function(){
 			let userreferance = db.collection("users").doc(`${SignUpInputs[1].value.split()}`);
-
+			
 			// SignUpInputs[i].value.split()
 			userreferance.get().then((doc) => {
 				if (doc.exists) {
@@ -113,28 +113,10 @@ let App = {
 					let userdatabasename =  getjsondata.name;
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
-
-					// doc.data() will be undefined in this case
-					_.Event(submitButtonSignUp, 'click', function(){
-						// check inputs: Sign Up name: number: password
-						for(var i = 0; i < SignUpInputs.length; i++){
-							if(SignUpInputs[i].value.split() == '' || SignUpInputs[i].value.split() == 'Kato Isa' || SignUpInputs[i].value.split() == '256 705207***'){
-								SignUpInputs[i].classList.add('error');
-								SignUpInputs[i].value = '';
-							}
-						}
-						// store data to data base.
-						if(NewUser.Name !== '' && NewUser.Number !== '' && NewUser.Password !== ''){
-							popup.classList.remove('showPortal');
-							popup.classList.add('hidePortal');
-							shadow.classList.add('extend');
-						}else{
-							_.Print('No data stored');
-						}
-					}, true);
-
-				} else {
+					
 					signUpDataBaseConnect();
+				} else {
+					_.Print('error');
 				}
 			}).catch((error) => {
 				console.log("Error getting document:");
