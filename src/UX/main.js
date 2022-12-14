@@ -36,23 +36,9 @@ let App = {
 				console.error("Error writing document: ", error);
 			});
 		},
-		getData: function (number){
+		getData: function (){
 			// get data.
-			let userreferance = db.collection("users").doc(`${number}`);
-
-			userreferance.get().then((doc) => {
-				if (doc.exists) {
-					let JSONData = JSON.stringify(doc.data());
-					let extract = JSON.parse(JSONData);
-
-					return `${extract["tellphone"]}`;
-				} else {
-					// doc.data() will be undefined in this case
-					return console.log("No such document!");
-				}
-			}).catch((error) => {
-				console.log("Error getting document:", error);
-			});
+			
 
 		}
 		
@@ -118,8 +104,25 @@ let App = {
 	UserAccountAndDbsConfiguration: function () {
 
 		function ErrorHandling(){
-			// sign up button configuration...
-			console.log(App.dataBase.getData('0705207718'));
+			// collect data from dataBse
+			let userreferance = db.collection("users").doc(`${number}`);
+			let usernameDataBase, passwordDataBase, phoneDataBase;
+
+			userreferance.get().then((doc) => {
+				if (doc.exists) {
+					let JSONData = JSON.stringify(doc.data());
+					let extract = JSON.parse(JSONData);
+
+					usernameDataBase = `${extract["name"]}`;
+					passwordDataBase = `${extract["password"]}`;
+					phoneDataBase = `${extract["tellphone"]}`;
+				} else {
+					// doc.data() will be undefined in this case
+					return console.log("No such document!");
+				}
+			}).catch((error) => {
+				console.log("Error getting document:", error);
+			});
 			
 			_.Event(submitButtonSignUp, 'click', function(){
 				// check inputs: Sign Up name: number: password
