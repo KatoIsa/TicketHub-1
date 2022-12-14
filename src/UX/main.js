@@ -187,7 +187,7 @@ let App = {
 
 
 		// sign up: check if user exits if not write data to database:
-		function userAuthrSignUp(data_1, data_2, data_3){
+		function userAuthrSignUp(){
 			// store data to data base.
 			if(NewUser.Name !== '' && NewUser.Number !== '' && NewUser.Password !== ''){
 				// add new uaer to data base 
@@ -216,7 +216,7 @@ let App = {
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
 					
-					userAuthrSignUp(getjsondata.tellphone, getjsondata.password)
+					userAuthrSignUp();
 
 				} else {
 					_.Print("error logging in ...")
