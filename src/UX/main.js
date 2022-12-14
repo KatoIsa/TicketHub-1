@@ -105,8 +105,10 @@ let App = {
 		
 		// collect data from dataBse
 		let userreferance = db.collection("users").doc("0705207718");
-		
+
 		async function GetDataFromDataBase(){
+			await userSignUp_SignIn();
+
 			userreferance.get().then((doc) => {
 				if (doc.exists) {
 					let JSONData = JSON.stringify(doc.data());
@@ -128,8 +130,6 @@ let App = {
 
 
 		async function userSignUp_SignIn(){
-			await GetDataFromDataBase();
-
 			// _.Print(usernameDataBase, passwordDataBase, phoneDataBase); 
 			_.Print('function excecuted sucessfully....');
 			_.Print(usernameDataBase);
@@ -188,7 +188,7 @@ let App = {
 			}, true);
 		}
 
-		userSignUp_SignIn();
+		GetDataFromDataBase();
 	},
 	ClientArea: function(){
 		// user sign In: pull data from dataBase:
