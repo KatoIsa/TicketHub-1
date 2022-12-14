@@ -118,10 +118,6 @@ let App = {
 					passwordDataBase = `${extract["password"]}`;
 					phoneDataBase = `${extract["tellphone"]}`;
 
-					_.Print(usernameDataBase);
-					_.Print(passwordDataBase);
-					_.Print(phoneDataBase);
-					
 					_.Print("waiting for data ...");
 				} else {
 					// doc.data() will be undefined in this case
@@ -137,7 +133,7 @@ let App = {
 			await GetDataFromDataBase();
 			// _.Print(usernameDataBase, passwordDataBase, phoneDataBase); 
 			_.Print('function excecuted sucessfully....');
-			
+			_.Print(usernameDataBase);
 			// sign in button.
 			_.Event(submitButtonSignIn, 'click', function(){
 				// check inputs: Sign In
