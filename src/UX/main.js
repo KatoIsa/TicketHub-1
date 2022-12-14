@@ -225,7 +225,7 @@ let App = {
 			}).catch((error) => {
 				console.log("Error getting document:");
 			});	
-		});
+		}, true);
 		
 	}
 }
