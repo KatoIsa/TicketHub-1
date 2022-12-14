@@ -36,7 +36,7 @@ let App = {
 				console.error("Error writing document: ", error);
 			});
 		},
-		getData: function (number){
+		getData: function (){
 			// get data.
 			const colRef = collection(db, "users");
 			const docsSnap = await getDocs(colRef);
@@ -110,7 +110,7 @@ let App = {
 
 		function ErrorHandling(){
 			// sign up button configuration...
-			let document = App.dataBase.getData('0705207718');
+			App.dataBase.getData();
 			
 			_.Event(submitButtonSignUp, 'click', function(){
 				// check inputs: Sign Up name: number: password
