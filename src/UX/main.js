@@ -102,13 +102,12 @@ let App = {
 
 	// user acount and database configuron for user login
 	UserAccountAndDbsConfiguration: function () {
-
+		
+		// collect data from dataBse
+		let userreferance = db.collection("users").doc("0705207718");
+		let usernameDataBase, passwordDataBase, phoneDataBase;
+		
 		async function GetDataFromDataBase(){
-
-			// collect data from dataBse
-			let userreferance = db.collection("users").doc("0705207718");
-			let usernameDataBase, passwordDataBase, phoneDataBase;
-
 			userreferance.get().then((doc) => {
 				if (doc.exists) {
 					let JSONData = JSON.stringify(doc.data());
@@ -131,6 +130,7 @@ let App = {
 
 		async function userSignUp_SignIn(){
 			await GetDataFromDataBase();
+
 			// _.Print(usernameDataBase, passwordDataBase, phoneDataBase); 
 			_.Print('function excecuted sucessfully....');
 			_.Print(usernameDataBase);
