@@ -36,10 +36,21 @@ let App = {
 				console.error("Error writing document: ", error);
 			});
 		},
-		getData: function (){
-			let dataContainer = db.collection("users")
+		getData: function (number){
+			// get data.
+			let userreferance = db.collection("users").doc(`${number}`);
 
-			_.Print(dataContainer)
+			userreferance.get().then((doc) => {
+				if (doc.exists) {
+					return console.log("Document data:", doc.data());
+				} else {
+					// doc.data() will be undefined in this case
+					return console.log("No such document!");
+				}
+			}).catch((error) => {
+				console.log("Error getting document:", error);
+			});
+
 		}
 		
 	},
@@ -105,7 +116,7 @@ let App = {
 
 		function ErrorHandling(){
 			// sign up button configuration...
-			App.dataBase.getData()
+			App.dataBase.getData('0705207718')
 			_.Event(submitButtonSignUp, 'click', function(){
 				// check inputs: Sign Up name: number: password
 				for(var i = 0; i < SignUpInputs.length; i++){
