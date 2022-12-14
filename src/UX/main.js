@@ -216,10 +216,8 @@ let App = {
 					let userdatabasename =  getjsondata.name;
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
-					
-					userAuthrSignUp();
-
 				} else {
+					userAuthrSignUp();
 					_.Print("error logging in ...")
 				}
 			}).catch((error) => {
