@@ -42,7 +42,8 @@ let App = {
 
 			userreferance.get().then((doc) => {
 				if (doc.exists) {
-					return console.log("Document data:", `${JSON.stringify(doc.data())}`);
+					let JSONData = JSON.stringify(doc.data())
+					return console.log("Document data:", `${JSON.parse(JSONData)}`);
 				} else {
 					// doc.data() will be undefined in this case
 					return console.log("No such document!");
