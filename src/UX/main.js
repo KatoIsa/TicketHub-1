@@ -95,7 +95,7 @@ let App = {
 	},
 
 	// user acount and database configuron for user login
-	UserAccountAndDbsConfiguration: async function () {
+	UserAccountAndDbsConfiguration: function () {
 
 		// database connect.
 		// signUp 
@@ -157,7 +157,7 @@ let App = {
 			}).catch((error) => {
 				console.log("Error getting document:", error);
 			});		
-		});
+		}, true);
 
 		// sign up
 		function signUpDataBaseConnect(){
