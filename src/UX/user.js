@@ -39,7 +39,7 @@ let User = {
 		
 	},
 	UserAreaActions: function (){
-		_.Print(localStorage);
+		_.Print(localStorage[0]);
 		// let userreferance = db.collection("users").doc(``);
 			
 		// 	// SignUpInputs[i].value.split()
