@@ -45,7 +45,7 @@ let App = {
 					let JSONData = JSON.stringify(doc.data());
 					let extract = JSON.parse(JSONData);
 
-					return extract["tellphone"]
+					return console.log(extract["tellphone"]);
 				} else {
 					// doc.data() will be undefined in this case
 					return console.log("No such document!");
@@ -119,7 +119,7 @@ let App = {
 
 		function ErrorHandling(){
 			// sign up button configuration...
-			_.Print(App.dataBase.getData('0705207718'));
+			App.dataBase.getData('0705207718');
 			
 			_.Event(submitButtonSignUp, 'click', function(){
 				// check inputs: Sign Up name: number: password
