@@ -13,7 +13,7 @@ let signUpButtons = _.Select('.AccountPortal .top div', true);
 let signIn = signUpButtons[0], signUp = signUpButtons[1];
 const NewUser = {Name: '',Number:'' ,Password: '',data: {tickets: [],}}
 const db = firebase.firestore();
-
+let counter = 0;
 
 // chek user inputs: sign up section.
 let SignInInputs  = _.Select('.Sign-In div input', true);
@@ -96,7 +96,6 @@ let App = {
 
 	// user acount and database configuron for user login
 	UserAccountAndDbsConfiguration: function () {
-		_.Print(db.collection("users"));
 		// database connect.
 		// signUp 
 		_.Event(submitButtonSignUp, 'click', function(){
@@ -105,7 +104,7 @@ let App = {
 			// SignUpInputs[i].value.split()
 			userreferance.get().then((doc) => {
 				if (doc.exists) {
-					_.Print('error user does not exists....')
+					_.Print('error user does not exists....');
 
 					let jsondata = JSON.stringify(doc.data());
 					let getjsondata = JSON.parse(jsondata);
@@ -164,6 +163,7 @@ let App = {
 				}
 			}, true);
 		}
+		
 		// signIn
 		function signInDataBaseConnect(){
 		// sign in button.
