@@ -39,7 +39,27 @@ let User = {
 		
 	},
 	UserAreaActions: function (){
-		
+		_.Print(localStorage);
+		// let userreferance = db.collection("users").doc(``);
+			
+		// 	// SignUpInputs[i].value.split()
+		// 	userreferance.get().then((doc) => {
+		// 		if (doc.exists) {
+		// 			let jsondata = JSON.stringify(doc.data());
+		// 			let getjsondata = JSON.parse(jsondata);
+		// 			// user data extraction from dataBase.
+		// 			let userdatabasename =  getjsondata.name;
+		// 			let userdatabasepassword = getjsondata.password;
+		// 			let userdatabasetell = getjsondata.tellphone;
+					
+		// 			userAuthr(getjsondata.tellphone, getjsondata.password)
+		// 		    _.DB.Create(userdatabasetell, jsondata);
+		// 		} else {
+		// 			_.Print("error logging in ...")
+		// 		}
+		// 	}).catch((error) => {
+		// 		console.log("Error getting document:");
+		// 	});	
 	}
 }
 
