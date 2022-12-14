@@ -112,7 +112,7 @@ let App = {
 					let userdatabasename =  getjsondata.name;
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
-					
+					_.Print('error, user exists...');
 				} else {
 					signUpDataBaseConnect();
 				}
@@ -120,8 +120,6 @@ let App = {
 				console.log("Error getting document:");
 			});		
 		}, true);
-
-		// sign up
 		function signUpDataBaseConnect(){
 			_.Event(submitButtonSignUp, 'click', function(){
 				// check inputs: Sign Up name: number: password
@@ -163,8 +161,8 @@ let App = {
 				}
 			}, true);
 		}
+
 		
-		// signIn
 		function signInDataBaseConnect(){
 		// sign in button.
 			_.Event(submitButtonSignIn, 'click', function(){
@@ -184,25 +182,51 @@ let App = {
 	ClientArea: function(){
 		// user sign In: pull data from dataBase:
 		// check number and password
-		
+		// signIn
+		function userAuthr(data_1, data_2){
+			_.Event(submitButtonSignIn, 'click', function(){
+				// fill uservlaidator: fill number.
+				if(SignInInputs[0].value.slice() == userdatabasetell && SignInInputs[1].value.slice() == userdatabasepassword){
+					_.Print('passed..');
+					window.location.assign('./pages/user.html');
+				}else{
+					_.Print('error..');
+				}
+	
+				//connect to ADMIN dashboard.
+				if(SignInInputs[0].value.slice() == '0704465049' && SignInInputs[1].value.slice() == '1234'){
+					window.location.assign('./pages/admin.html');
+				}else{
+					_.Print('error..');
+				}
+			}, true);
+			// check password.
+		}
+
+		// data base connection...
 		_.Event(submitButtonSignIn, 'click', function(){
-			// fill uservlaidator: fill number.
-			if(SignInInputs[0].value.slice() == NewUser.Number && SignInInputs[1].value.slice() == NewUser.Password){
-				_.Print('passed..');
-				window.location.assign('./pages/user.html');
-			}else{
-				_.Print('error..');
-			}
+			let userreferance = db.collection("users").doc(`${SignInInputs[0].value.slice()}`);
+			
+			// SignUpInputs[i].value.split()
+			userreferance.get().then((doc) => {
+				if (doc.exists) {
+					let jsondata = JSON.stringify(doc.data());
+					let getjsondata = JSON.parse(jsondata);
+					// user data extraction from dataBase.
+					let userdatabasename =  getjsondata.name;
+					let userdatabasepassword = getjsondata.password;
+					let userdatabasetell = getjsondata.tellphone;
+					
+					userAuthr(getjsondata.tellphone, getjsondata.password)
 
-			//connect to ADMIN dashboard.
-			if(SignInInputs[0].value.slice() == '0704465049' && SignInInputs[1].value.slice() == '1234'){
-				window.location.assign('./pages/admin.html');
-			}else{
-				_.Print('error..');
-			}
-
-		}, true);
-		// check password.
+				} else {
+					_.Print("error logging in ...")
+				}
+			}).catch((error) => {
+				console.log("Error getting document:");
+			});	
+		});
+		
 	}
 }
 App.buttonRresponse();
