@@ -116,8 +116,8 @@ let App = {
 
 		function ErrorHandling(){
 			// sign up button configuration...
-			let document = App.dataBase.getData('0705');
-			_.Print(document);
+			_.Print(App.dataBase.getData('0705'));
+			
 			_.Event(submitButtonSignUp, 'click', function(){
 				// check inputs: Sign Up name: number: password
 				for(var i = 0; i < SignUpInputs.length; i++){
