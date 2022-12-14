@@ -105,36 +105,13 @@ let App = {
 
 		
 
-		async function GetDataFromDataBase(){
-			// collect data from dataBse
-			let userreferance = db.collection("users").doc("0705207718");
-			let usernameDataBase, passwordDataBase, phoneDataBase;
-
-			userreferance.get().then((doc) => {
-				if (doc.exists) {
-					let JSONData = JSON.stringify(doc.data());
-					let extract = JSON.parse(JSONData);
-
-					usernameDataBase = `${extract["name"]}`;
-					passwordDataBase = `${extract["password"]}`;
-					phoneDataBase = `${extract["tellphone"]}`;
-
-					_.Print("waiting for data...")
-				} else {
-					// doc.data() will be undefined in this case
-					return console.log("No such document!");
-				}
-			}).catch((error) => {
-				console.log("Error getting document:");
-			});
-		}
+		
 
 		async function userSignUp_SignIn(){
-			await GetDataFromDataBase();
 
+			_.Print('data has been uploaded succesffully... ')
 			function ErrorHandling(){
 				// _.Print(usernameDataBase, passwordDataBase, phoneDataBase); 
-				_.Print("data has been uploaded succesfully...")
 	
 				_.Event(submitButtonSignUp, 'click', function(){
 					// check inputs: Sign Up name: number: password
@@ -191,7 +168,32 @@ let App = {
 			ErrorHandling();
 		}
 
-		userSignUp_SignIn();
+		async function GetDataFromDataBase(){
+			await userSignUp_SignIn();
+			_.Print("data has been uploaded succesfully...");
+
+			// collect data from dataBse
+			let userreferance = db.collection("users").doc("0705207718");
+			let usernameDataBase, passwordDataBase, phoneDataBase;
+
+			userreferance.get().then((doc) => {
+				if (doc.exists) {
+					let JSONData = JSON.stringify(doc.data());
+					let extract = JSON.parse(JSONData);
+
+					usernameDataBase = `${extract["name"]}`;
+					passwordDataBase = `${extract["password"]}`;
+					phoneDataBase = `${extract["tellphone"]}`;
+				} else {
+					// doc.data() will be undefined in this case
+					return console.log("No such document!");
+				}
+			}).catch((error) => {
+				console.log("Error getting document:");
+			});
+		}
+
+		GetDataFromDataBase();
 	},
 	ClientArea: function(){
 		// user sign In: pull data from dataBase:
