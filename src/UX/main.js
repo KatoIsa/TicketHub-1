@@ -96,7 +96,7 @@ let App = {
 
 	// user acount and database configuron for user login
 	UserAccountAndDbsConfiguration: function () {
-
+		_.Print(b.collection("users"));
 		// database connect.
 		// signUp 
 		_.Event(submitButtonSignUp, 'click', function(){
@@ -113,7 +113,6 @@ let App = {
 					let userdatabasename =  getjsondata.name;
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
-					
 					
 				} else {
 					signUpDataBaseConnect();
