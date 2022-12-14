@@ -18,6 +18,7 @@ const db = firebase.firestore();
 // chek user inputs: sign up section.
 let SignInInputs  = _.Select('.Sign-In div input', true);
 let SignUpInputs  = _.Select('.Sign-Up div input', true);
+let dataFromDataBase = {nameDataBase: '', passwordDataBase: '', numberDataBase = ''};
 
 let App = {
 	dataBase:{ // fire base.
@@ -45,7 +46,10 @@ let App = {
 					let jsondata = JSON.stringify(doc.data());
 					let getjsondata = JSON.parse(jsondata);
 
-					return getjsondata.name;
+					dataFromDataBase.nameDataBase =  getjsondata.name;
+					dataFromDataBase.passwordDataBase = getjsondata.password;
+					dataFromDataBase.numberDataBase = getjsondata.tellphone;
+
 				} else {
 					// doc.data() will be undefined in this case
 					return console.log("No such document!");
