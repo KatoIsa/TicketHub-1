@@ -186,7 +186,7 @@ let App = {
 		function userAuthr(data_1, data_2){
 			_.Event(submitButtonSignIn, 'click', function(){
 				// fill uservlaidator: fill number.
-				if(SignInInputs[0].value.slice() == userdatabasetell && SignInInputs[1].value.slice() == userdatabasepassword){
+				if(SignInInputs[0].value.slice() == data_1 && SignInInputs[1].value.slice() == data_2){
 					_.Print('passed..');
 					window.location.assign('./pages/user.html');
 				}else{
