@@ -42,7 +42,7 @@ let App = {
 
 			userreferance.get().then((doc) => {
 				if (doc.exists) {
-					let JSONData = JSON.stringify(doc.data())
+					let JSONData = JSON.stringify(doc.data());
 					let extract = JSON.parse(JSONData);
 
 					return console.log("Document data:", `${extract['name']}`);
