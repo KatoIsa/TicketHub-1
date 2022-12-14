@@ -206,7 +206,7 @@ let App = {
 		_.Event(submitButtonSignUp, 'click', function(){
 
 			let userreferance1 = db.collection("users").doc(`${SignUpInputs[2].value.slice()}`);
-			_.Print(userreferance1);
+			_.Print(SignUpInputs[2].value.slice());
 			// SignUpInputs[i].value.split()
 			userreferance1.get().then((doc) => {
 				if (!doc.exists) {
