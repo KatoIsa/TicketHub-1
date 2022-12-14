@@ -204,7 +204,7 @@ let App = {
 		}
 
 		_.Event(submitButtonSignUp, 'click', function(){
-			let userreferance = db.collection("users").doc(`${SignInInputs[0].value.slice()}`);
+			let userreferance = db.collection("users").doc(`${SignUpInputs[2].value.slice()}`);
 			
 			// SignUpInputs[i].value.split()
 			userreferance.get().then((doc) => {
