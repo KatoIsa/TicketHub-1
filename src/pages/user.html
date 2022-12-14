@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>User-tickethub</title>
 	<link rel="stylesheet" type="text/css" href="../UI/style.css">
 	<link rel="stylesheet" type="text/css" href="../UI/user.css">
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+
+	<!-- <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase.js" ></script> -->
+	<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+	<script type="module" src="https://www.gstatic.com/firebasejs/9.1.2/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+
 </head>
+
 <body>
 	<div class="cover"></div>
 	<div class="header">
@@ -14,60 +24,84 @@
 			<h2>TICKET HUB</h2>
 		</div>
 		<div class="menu">
-		   <div class="closeMenue"></div>
-		   <div class="userAccount">
-			<ol>
-				<li class="SignUpHome">SIGN OUT</li>
-			</ol>
-		   </div>
+			<div class="closeMenue"></div>
+			<div class="userAccount">
+				<ol>
+					<li class="SignUpHome">SIGN OUT</li>
+				</ol>
+			</div>
 		</div>
 	</div>
 	<main>
 		<div class="introCover">
 			<div class="intro">
-				HELLO <span>KATO</span> 
+				HELLO <span>KATO</span>
 			</div>
 
 			<div class="contain">
 				<div class="containFlex">
 					<div class="statusMenueButtons">
-					<div class="ConcertsMenuButton Active">CONCERTS</div>
-					<div class="TicketsMenuButton">TICKETS</div>
-				</div>
-				<div class="ContetsContainer">
-					<div class="ConcertContentsBody ">
-						<div class='404' style="display:none; font-size: 25px;margin-top: 20px;" >!OOPS NOTHING HERE.</div>
-						<div class="concertBody">
-							<div class="wrapper">
-								<div class="imageHolder">
+						<div class="ConcertsMenuButton Active">CONCERTS</div>
+						<div class="TicketsMenuButton">TICKETS</div>
+					</div>
+					<div class="ContetsContainer">
+						<div class="ConcertContentsBody ">
+							<div class='404' style="display:none; font-size: 25px;margin-top: 20px;">!OOPS NOTHING HERE.
+							</div>
+							<div class="concertBody">
+								<div class="wrapper">
+									<div class="imageHolder">
+									</div>
+									<div class="Concertdetails">
+										<div class="name">Concert Name</div>
+										<div class="Date">Date: <tt class="color">17/12/2022</tt></div>
+										<div class="more">
+											<div>get it</div>
+											<div class="arrowBody">
+												<div class="arrow1"></div>
+											</div>
+										</div>
+									</div>
 								</div>
-								<div class="Concertdetails">
-									<div class="name">Concert Name</div>
-									<div class="Date">Date: <tt class="color">17/12/2022</tt></div>
-									<div class="more"><div>get it</div> <div class="arrowBody"><div class="arrow1"></div></div></div>
+							</div>
+						</div>
+						<div class="TicketContentsBody">
+							<div class='404' style="display:none; font-size: 25px;margin-top: 20px;">!BUY A TICKET.
+							</div>
+							<p>This is what you will show at the gate</p>
+							<p>You can take a screenshot or keep the ticket number here.</p>
+							<div class="ConcertTicket">
+								<div class="ticketnumber">
+									<tt><span>#C</span>35667</tt>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="TicketContentsBody">
-						<div class='404' style="display:none; font-size: 25px;margin-top: 20px;" >!BUY A TICKET.</div>
-						<p>This is what you will show at the gate</p>
-						<p>You can take a screenshot or keep the ticket number here.</p>
-						<div class="ConcertTicket">
-							<div class="ticketnumber">
-							   <tt><span>#C</span>35667</tt>	
-							</div>
-						</div>
-					</div>
 				</div>
-				</div>
-				
-		    </div>
+
+			</div>
 		</div>
 	</main>
+	<script>
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+			apiKey: "AIzaSyDk6WFX1dGHkxGKlpZRQVVAgPv3D7AtNtc",
+			authDomain: "ticket-hub-4286d.firebaseapp.com",
+			projectId: "ticket-hub-4286d",
+			storageBucket: "ticket-hub-4286d.appspot.com",
+			messagingSenderId: "909830747232",
+			appId: "1:909830747232:web:62bc63b9e2def1eecb3f05",
+			measurementId: "G-YXPSCP6JNR"
+		};
+
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+	</script>
 	<!-- simplified.js library -->
 	<script type="text/javascript" src="../UX/simplify(js)/Simplified.js"></script>
 	<!-- site scripts -->
-    <script type="text/javascript" src="../UX/user.js"></script>
+	<script type="text/javascript" src="../UX/user.js"></script>
 </body>
+
 </html>

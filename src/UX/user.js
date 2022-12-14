@@ -39,8 +39,9 @@ let User = {
 		
 	},
 	UserAreaActions: function (){
-
+		
 	}
 }
 
 User.buttonRresponse();
+User.userAccount();
