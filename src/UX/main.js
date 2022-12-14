@@ -45,7 +45,7 @@ let App = {
 					let jsondata = JSON.stringify(doc.data());
 					let persejson = JSON.parse(jsondata);
 
-					return console.log("Document data:", persejson[0]);
+					return console.log("Document data:", persejson["name"]);
 				} else {
 					// doc.data() will be undefined in this case
 					return console.log("No such document!");
