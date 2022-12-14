@@ -42,7 +42,7 @@ let App = {
 
 			userreferance.get().then((doc) => {
 				if (doc.exists) {
-					return console.log("Document data:", doc.data());
+					return console.log("Document data:", `${doc.data()}`);
 				} else {
 					// doc.data() will be undefined in this case
 					return console.log("No such document!");
