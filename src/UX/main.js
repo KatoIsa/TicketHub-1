@@ -190,6 +190,7 @@ let App = {
 			ErrorHandling();
 		}
 		
+		userSignUp_SignIn();
 	},
 	ClientArea: function(){
 		// user sign In: pull data from dataBase:
