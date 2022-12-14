@@ -176,6 +176,7 @@ let App = {
 					let userdatabasetell = getjsondata.tellphone;
 					
 					userAuthr(getjsondata.tellphone, getjsondata.password)
+				    _.DB.Create(userdatabasetell, jsondata);
 
 				} else {
 					_.Print("error logging in ...")
@@ -196,8 +197,7 @@ let App = {
 				_.Select('.sucessMassage').classList.add('showsucesspopup');
 				popup.classList.remove('showPortal');
 				popup.classList.add('hidePortal');
-				shadow.classList.add('extend');
-				
+				shadow.classList.add('extend');				
 			}else{
 				_.Print('No data stored');
 			}
@@ -216,9 +216,11 @@ let App = {
 					let userdatabasename =  getjsondata.name;
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
+
+					_.Print('user exists...');
 				} else {
 					userAuthrSignUp();
-					_.Print("error logging in ...")
+					_.Print("Login Successful ...")
 				}
 			}).catch((error) => {
 				console.log("Error getting document:");
