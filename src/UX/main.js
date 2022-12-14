@@ -44,8 +44,8 @@ let App = {
 				if (doc.exists) {
 					let jsondata = JSON.stringify(doc.data());
 					let getjsondata = JSON.parse(jsondata);
-					
-					return console.log(getjsondata);
+
+					return console.log(getjsondata.name);
 				} else {
 					// doc.data() will be undefined in this case
 					return console.log("No such document!");
