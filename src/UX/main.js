@@ -21,7 +21,7 @@ let SignUpInputs  = _.Select('.Sign-Up div input', true);
 let dataFromDataBase = {nameDataBase: '', passwordDataBase: '', numberDataBase: ''};
 
 let App = {
-	dataBase:{ // fire base.
+	dataBase: { // fire base.
 		write: function (tellnumber, namedata, passworddata) {
 			// configering firestore database.
 			// Add a new document in collection "cities"
@@ -50,7 +50,7 @@ let App = {
 					dataFromDataBase.passwordDataBase = getjsondata.password;
 					dataFromDataBase.numberDataBase = getjsondata.tellphone;
 
-					return _.Print(dataFromDataBase)
+					return _.Print(dataFromDataBase);
 				} else {
 					// doc.data() will be undefined in this case
 					return console.log("No such document!");
