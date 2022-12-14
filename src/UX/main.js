@@ -21,28 +21,6 @@ let SignUpInputs  = _.Select('.Sign-Up div input', true);
 let dataFromDataBase = {nameDataBase: '', passwordDataBase: '', numberDataBase: ''};
 
 let App = {
-	firestoreDatabase:async function (number){
-		// get data.
-		let userreferance = db.collection("users").doc(`${number}`);
-
-		userreferance.get().then((doc) => {
-			if (doc.exists) {
-				let jsondata = JSON.stringify(doc.data());
-				let getjsondata = JSON.parse(jsondata);
-
-				dataFromDataBase.nameDataBase =  getjsondata.name;
-				dataFromDataBase.passwordDataBase = getjsondata.password;
-				dataFromDataBase.numberDataBase = getjsondata.tellphone;
-
-				return _.Print(dataFromDataBase);
-			} else {
-				// doc.data() will be undefined in this case
-				return console.log("No such document!");
-			}
-		}).catch((error) => {
-			console.log("Error getting document:", error);
-		});
-	},
 	dataBase: { // fire base.
 		write: function (tellnumber, namedata, passworddata) {
 			// configering firestore database.
@@ -119,51 +97,72 @@ let App = {
 
 	// user acount and database configuron for user login
 	UserAccountAndDbsConfiguration: async function () {
-		// sign up button configuration...
-		await App.firestoreDatabase('0705207718');
+		// database connect.
+		async function getdatafrombase(){
+			// get data.
+			let userreferance = db.collection("users").doc(`${number}`);
 
-		_.Print(dataFromDataBase);
+			userreferance.get().then((doc) => {
+				if (doc.exists) {
+					let jsondata = JSON.stringify(doc.data());
+					let getjsondata = JSON.parse(jsondata);
 
-		// sign up
-		_.Event(submitButtonSignUp, 'click', function(){
-			// check inputs: Sign Up name: number: password
-			for(var i = 0; i < SignUpInputs.length; i++){
-				if(SignUpInputs[i].value.split() == '' || SignUpInputs[i].value.split() == 'Kato Isa' || SignUpInputs[i].value.split() == '256 705207***'){
-					SignUpInputs[i].classList.add('error');
-					SignUpInputs[i].value = '';
-				}else{
-					SignUpInputs[i].classList.remove('error');
+					dataFromDataBase.nameDataBase =  getjsondata.name;
+					dataFromDataBase.passwordDataBase = getjsondata.password;
+					dataFromDataBase.numberDataBase = getjsondata.tellphone;
+
+					return _.Print(dataFromDataBase);
+				} else {
+					// doc.data() will be undefined in this case
+					return console.log("No such document!");
 				}
-			} 
-			// store user data. for future data base storage.
+			}).catch((error) => {
+				console.log("Error getting document:", error);
+			});		
+		}
+		async function userinterfacedata(){
+			await getdatafrombase();
+		// sign up
+		    return _.Print(dataFromDataBase);
+			_.Event(submitButtonSignUp, 'click', function(){
+				// check inputs: Sign Up name: number: password
+				for(var i = 0; i < SignUpInputs.length; i++){
+					if(SignUpInputs[i].value.split() == '' || SignUpInputs[i].value.split() == 'Kato Isa' || SignUpInputs[i].value.split() == '256 705207***'){
+						SignUpInputs[i].classList.add('error');
+						SignUpInputs[i].value = '';
+					}else{
+						SignUpInputs[i].classList.remove('error');
+					}
+				} 
+				// store user data. for future data base storage.
 
-			// store name.
-			if (SignUpInputs[0].value.split() !== '' | SignUpInputs[0].value.split() !== 'Kato Isa'){
-				NewUser.Name = SignUpInputs[0].value;
-			}
-			// phone number.
-			if (SignUpInputs[1].value.split() !== '' | SignUpInputs[2].value.split() !== '256 705207***'){
-				NewUser.Number = SignUpInputs[1].value;
-			}
-			// password.
-			if (SignUpInputs[2].value.split() !== ''){
-				NewUser.Password = SignUpInputs[2].value;
-			}
-			// store data to data base.
-			if(NewUser.Name !== '' && NewUser.Number !== '' && NewUser.Password !== ''){
-				// add new uaer to data base 
-				App.dataBase.write(NewUser.Number, NewUser.Name, NewUser.Password);
+				// store name.
+				if (SignUpInputs[0].value.split() !== '' | SignUpInputs[0].value.split() !== 'Kato Isa'){
+					NewUser.Name = SignUpInputs[0].value;
+				}
+				// phone number.
+				if (SignUpInputs[1].value.split() !== '' | SignUpInputs[2].value.split() !== '256 705207***'){
+					NewUser.Number = SignUpInputs[1].value;
+				}
+				// password.
+				if (SignUpInputs[2].value.split() !== ''){
+					NewUser.Password = SignUpInputs[2].value;
+				}
+				// store data to data base.
+				if(NewUser.Name !== '' && NewUser.Number !== '' && NewUser.Password !== ''){
+					// add new uaer to data base 
+					App.dataBase.write(NewUser.Number, NewUser.Name, NewUser.Password);
 
-				_.Select('.sucessMassage').classList.add('showsucesspopup');
-				popup.classList.remove('showPortal');
-				popup.classList.add('hidePortal');
-				shadow.classList.add('extend');
+					_.Select('.sucessMassage').classList.add('showsucesspopup');
+					popup.classList.remove('showPortal');
+					popup.classList.add('hidePortal');
+					shadow.classList.add('extend');
 
 
-			}else{
-				_.Print('No data stored');
-			}
-		}, true);
+				}else{
+					_.Print('No data stored');
+				}
+			}, true);
 
 		// sign in button.
 			_.Event(submitButtonSignIn, 'click', function(){
@@ -177,7 +176,8 @@ let App = {
 					}
 				}
 			}, true);
-			
+		}
+
 	},
 	ClientArea: function(){
 		// user sign In: pull data from dataBase:
