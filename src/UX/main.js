@@ -42,10 +42,10 @@ let App = {
 
 			userreferance.get().then((doc) => {
 				if (doc.exists) {
-					return true;
+					return console.log("Document data:", doc.data());
 				} else {
 					// doc.data() will be undefined in this case
-					return false
+					return console.log("No such document!");
 				}
 			}).catch((error) => {
 				console.log("Error getting document:", error);
@@ -116,8 +116,8 @@ let App = {
 
 		function ErrorHandling(){
 			// sign up button configuration...
-			_.Print(App.dataBase.getData('0705207718'));
-
+			let document = App.dataBase.getData('0705');
+			
 			_.Event(submitButtonSignUp, 'click', function(){
 				// check inputs: Sign Up name: number: password
 				for(var i = 0; i < SignUpInputs.length; i++){
