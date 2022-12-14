@@ -108,8 +108,8 @@ let App = {
 		
 
 		async function userSignUp_SignIn(){
+			await GetDataFromDataBase();
 			// _.Print(usernameDataBase, passwordDataBase, phoneDataBase); 
-
 			_.Print('data has been uploaded successfully... ')
 				
 			// sign in button.
@@ -168,8 +168,6 @@ let App = {
 		}
 
 		async function GetDataFromDataBase(){
-			await userSignUp_SignIn();
-
 			_.Print("waiting for data ...");
 
 			// collect data from dataBse
