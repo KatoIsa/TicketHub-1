@@ -38,14 +38,40 @@ let App = {
 		},
 		getData: function (number){
 			// get data.
-			let userreferance = db.collection("users").doc(`${number}`);
+			class Users {
+				constructor(name, usernumber, userpassword) {
+					this.name = name;
+					this.usernumber = usernumber;
+					this.userpassword = userpassword;
+				}
+				toString() {
+					return this.name + ', ' + this.usernumber + ', ' + this.userpassword;
+				}
+			}
 
-			userreferance.get().then((doc) => {
+			// Firestore data converter
+			var userdataconverter = {
+				toFirestore: function (user) {
+					return {
+						name: user.name,
+						usernumber: user.usernumber,
+						userpassword: user.userpassword
+					};
+				},
+				fromFirestore: function (snapshot, options) {
+					const data = snapshot.data(options);
+					return new user(data.name, data.usernumber, data.userpassword);
+				}
+			};
+
+			db.collection("users").doc(`${number}`).withConverter(userdataconverter).get().then((doc) => {
 				if (doc.exists) {
-					return console.log("Document data:", doc.data());
+					// Convert to user object
+					var user = doc.data();
+					// Use a user instance method
+					console.log(user.toString());
 				} else {
-					// doc.data() will be undefined in this case
-					return console.log("No such document!");
+					console.log("No such document!");
 				}
 			}).catch((error) => {
 				console.log("Error getting document:", error);
