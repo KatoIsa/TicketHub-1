@@ -114,9 +114,9 @@ let App = {
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
 					
-					signUpDataBaseConnect();
+					
 				} else {
-					_.Print('error');
+					signUpDataBaseConnect();
 				}
 			}).catch((error) => {
 				console.log("Error getting document:");
