@@ -64,4 +64,4 @@ let User = {
 }
 
 User.buttonRresponse();
-User.userAccount();
+User.UserAreaActions();
