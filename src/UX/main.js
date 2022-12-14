@@ -36,13 +36,14 @@ let App = {
 				console.error("Error writing document: ", error);
 			});
 		},
-		getData: function (number){
+		getData: async function (number){
 			// get data.
 			let userreferance = db.collection("users").doc(`${number}`);
 
 			userreferance.get().then((doc) => {
 				if (doc.exists) {
-					return console.log("Document data:", `${doc.data()}`);
+					let jsondata = JSON.parse(doc.data())
+					return console.log("Document data:", jsondata);
 				} else {
 					// doc.data() will be undefined in this case
 					return console.log("No such document!");
