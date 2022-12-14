@@ -50,7 +50,7 @@ let App = {
 					dataFromDataBase.passwordDataBase = getjsondata.password;
 					dataFromDataBase.numberDataBase = getjsondata.tellphone;
 
-					_.Print(dataFromDataBase)
+					return _.Print(dataFromDataBase)
 				} else {
 					// doc.data() will be undefined in this case
 					return console.log("No such document!");
