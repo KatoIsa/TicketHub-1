@@ -105,7 +105,6 @@ let App = {
 		
 		// collect data from dataBse
 		let userreferance = db.collection("users").doc("0705207718");
-		let usernameDataBase, passwordDataBase, phoneDataBase;
 		
 		async function GetDataFromDataBase(){
 			userreferance.get().then((doc) => {
@@ -113,9 +112,9 @@ let App = {
 					let JSONData = JSON.stringify(doc.data());
 					let extract = JSON.parse(JSONData);
 
-					usernameDataBase = `${extract["name"]}`;
-					passwordDataBase = `${extract["password"]}`;
-					phoneDataBase = `${extract["tellphone"]}`;
+					let usernameDataBase = `${extract["name"]}`;
+					let passwordDataBase = `${extract["password"]}`;
+					let phoneDataBase = `${extract["tellphone"]}`;
 
 					_.Print("waiting for data ...");
 				} else {
