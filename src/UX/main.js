@@ -120,10 +120,11 @@ let App = {
 				console.log("Error getting document:", error);
 			});		
 		}
+
 		async function userinterfacedata(){
 			await getdatafrombase();
 		// sign up
-		    return _.Print(dataFromDataBase);
+		    _.Print(dataFromDataBase);
 			_.Event(submitButtonSignUp, 'click', function(){
 				// check inputs: Sign Up name: number: password
 				for(var i = 0; i < SignUpInputs.length; i++){
