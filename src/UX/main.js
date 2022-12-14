@@ -27,7 +27,9 @@ let App = {
 			db.collection("users").doc(`${tellnumber}`).set({
 				name: `${namedata}`,
 				tellphone: `${tellnumber}`,
-				password: `${passworddata}`
+				password: `${passworddata}`,
+				ticket: '',
+				varified: false,
 			})
 			.then(() => {
 				console.log("Document successfully written!");
