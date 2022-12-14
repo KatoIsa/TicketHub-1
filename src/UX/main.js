@@ -124,6 +124,8 @@ let App = {
 				console.log("Error getting document:", error);
 			});
 			
+			_.Print(usernameDataBase, passwordDataBase, phoneDataBase); 
+			
 			_.Event(submitButtonSignUp, 'click', function(){
 				// check inputs: Sign Up name: number: password
 				for(var i = 0; i < SignUpInputs.length; i++){
