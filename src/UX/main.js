@@ -37,7 +37,9 @@ let App = {
 			});
 		},
 		getDataFromDataBase: function (){
+			let dataContainer = db.collection("users")
 
+			_.Print(dataContainer)
 		}
 		
 	},
