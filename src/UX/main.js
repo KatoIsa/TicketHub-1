@@ -98,31 +98,7 @@ let App = {
 	// user acount and database configuron for user login
 	UserAccountAndDbsConfiguration: async function () {
 		// database connect.
-		async function getdatafrombase(){
-			// get data.
-			let userreferance = db.collection("users").doc(`${'0705207718'}`);
-
-			userreferance.get().then((doc) => {
-				if (doc.exists) {
-					let jsondata = JSON.stringify(doc.data());
-					let getjsondata = JSON.parse(jsondata);
-
-					dataFromDataBase.nameDataBase =  getjsondata.name;
-					dataFromDataBase.passwordDataBase = getjsondata.password;
-					dataFromDataBase.numberDataBase = getjsondata.tellphone;
-
-					return _.Print(dataFromDataBase);
-				} else {
-					// doc.data() will be undefined in this case
-					return console.log("No such document!");
-				}
-			}).catch((error) => {
-				console.log("Error getting document:", error);
-			});		
-		}
-
-		async function userinterfacedata(){
-			await getdatafrombase();
+		function userinterfacedata(){
 		// sign up
 		    _.Print(dataFromDataBase);
 			_.Event(submitButtonSignUp, 'click', function(){
@@ -177,7 +153,30 @@ let App = {
 					}
 				}
 			}, true);
-		}userinterfacedata();
+		}
+
+		function getdatafrombase(){
+			// get data.
+			let userreferance = db.collection("users").doc(`${'0705207718'}`);
+
+			userreferance.get().then((doc) => {
+				if (doc.exists) {
+					let jsondata = JSON.stringify(doc.data());
+					let getjsondata = JSON.parse(jsondata);
+
+					dataFromDataBase.nameDataBase =  getjsondata.name;
+					dataFromDataBase.passwordDataBase = getjsondata.password;
+					dataFromDataBase.numberDataBase = getjsondata.tellphone;
+
+					userinterfacedata();
+				} else {
+					// doc.data() will be undefined in this case
+					return console.log("No such document!");
+				}
+			}).catch((error) => {
+				console.log("Error getting document:", error);
+			});		
+		}getdatafrombase();
 
 	},
 	ClientArea: function(){
