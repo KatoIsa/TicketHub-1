@@ -204,10 +204,11 @@ let App = {
 		}
 
 		_.Event(submitButtonSignUp, 'click', function(){
-			let userreferance = db.collection("users").doc(`${SignUpInputs[2].value.slice()}`);
+
+			let userreferance1 = db.collection("users").doc(`${SignUpInputs[2].value.slice()}`);
 			
 			// SignUpInputs[i].value.split()
-			userreferance.get().then((doc) => {
+			userreferance1.get().then((doc) => {
 				if (!doc.exists) {
 					let jsondata = JSON.stringify(doc.data());
 					let getjsondata = JSON.parse(jsondata);
