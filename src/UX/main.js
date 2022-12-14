@@ -95,88 +95,47 @@ let App = {
 	},
 
 	// user acount and database configuron for user login
-	UserAccountAndDbsConfiguration: function () {
-		// database connect.
-		// signUp 
+	SignIn_SignUp_Error_Checking: function () {
+		// sign up button.
 		_.Event(submitButtonSignUp, 'click', function(){
-			let userreferance = db.collection("users").doc(`${SignUpInputs[1].value.split()}`);
-			
-			// SignUpInputs[i].value.split()
-			userreferance.get().then((doc) => {
-				if (doc.exists) {
-					_.Print('error user does not exists....');
-
-					let jsondata = JSON.stringify(doc.data());
-					let getjsondata = JSON.parse(jsondata);
-					// user data extraction from dataBase.
-					let userdatabasename =  getjsondata.name;
-					let userdatabasepassword = getjsondata.password;
-					let userdatabasetell = getjsondata.tellphone;
-					_.Print('error, user exists...');
-				} else {
-					signUpDataBaseConnect();
-				}
-			}).catch((error) => {
-				console.log("Error getting document:");
-			});		
-		}, true);
-		function signUpDataBaseConnect(){
-			_.Event(submitButtonSignUp, 'click', function(){
-				// check inputs: Sign Up name: number: password
-				for(var i = 0; i < SignUpInputs.length; i++){
-					if(SignUpInputs[i].value.split() == '' || SignUpInputs[i].value.split() == 'Kato Isa' || SignUpInputs[i].value.split() == '256 705207***'){
-						SignUpInputs[i].classList.add('error');
-						SignUpInputs[i].value = '';
-					}else{
-						SignUpInputs[i].classList.remove('error');
-					}
-				} 
-				// store user data. for future data base storage.
-
-				// store name.
-				if (SignUpInputs[0].value.split() !== '' | SignUpInputs[0].value.split() !== 'Kato Isa'){
-					NewUser.Name = SignUpInputs[0].value;
-				}
-				// phone number.
-				if (SignUpInputs[1].value.split() !== '' | SignUpInputs[2].value.split() !== '256 705207***'){
-					NewUser.Number = SignUpInputs[1].value;
-				}
-				// password.
-				if (SignUpInputs[2].value.split() !== ''){
-					NewUser.Password = SignUpInputs[2].value;
-				}
-				// store data to data base.
-				if(NewUser.Name !== '' && NewUser.Number !== '' && NewUser.Password !== ''){
-					// add new uaer to data base 
-					App.dataBase.write(NewUser.Number, NewUser.Name, NewUser.Password);
-
-					_.Select('.sucessMassage').classList.add('showsucesspopup');
-					popup.classList.remove('showPortal');
-					popup.classList.add('hidePortal');
-					shadow.classList.add('extend');
-
-
+			// check inputs: Sign Up name: number: password
+			for(var i = 0; i < SignUpInputs.length; i++){
+				if(SignUpInputs[i].value.split() == '' || SignUpInputs[i].value.split() == 'Kato Isa' || SignUpInputs[i].value.split() == '256 705207***'){
+					SignUpInputs[i].classList.add('error');
+					SignUpInputs[i].value = '';
 				}else{
-					_.Print('No data stored');
+					SignUpInputs[i].classList.remove('error');
 				}
-			}, true);
-		}
+			} 
+			// store user data. for future data base storage.
 
+			// store name.
+			if (SignUpInputs[0].value.split() !== '' | SignUpInputs[0].value.split() !== 'Kato Isa'){
+				NewUser.Name = SignUpInputs[0].value;
+			}
+			// phone number.
+			if (SignUpInputs[1].value.split() !== '' | SignUpInputs[2].value.split() !== '256 705207***'){
+				NewUser.Number = SignUpInputs[1].value;
+			}
+			// password.
+			if (SignUpInputs[2].value.split() !== ''){
+				NewUser.Password = SignUpInputs[2].value;
+			}
+			
+		}, true);
 		
-		function signInDataBaseConnect(){
 		// sign in button.
-			_.Event(submitButtonSignIn, 'click', function(){
-				// check inputs: Sign In
-				for(var i = 0; i < SignInInputs.length; i++){
-					if(SignInInputs[i].value.slice() == '256 705207***' || SignInInputs[i].value.slice() == ''){
-						SignInInputs[i].classList.add('error');
-						SignInInputs[i].value = '';
-					}else{
-						SignInInputs[i].classList.remove('error');
-					}
+		_.Event(submitButtonSignIn, 'click', function(){
+			// check inputs: Sign In
+			for(var i = 0; i < SignInInputs.length; i++){
+				if(SignInInputs[i].value.slice() == '256 705207***' || SignInInputs[i].value.slice() == ''){
+					SignInInputs[i].classList.add('error');
+					SignInInputs[i].value = '';
+				}else{
+					SignInInputs[i].classList.remove('error');
 				}
-			}, true);
-		}
+			}
+		}, true);
 
 	},
 	ClientArea: function(){
@@ -202,7 +161,6 @@ let App = {
 			}, true);
 			// check password.
 		}
-
 		// data base connection...
 		_.Event(submitButtonSignIn, 'click', function(){
 			let userreferance = db.collection("users").doc(`${SignInInputs[0].value.slice()}`);
@@ -226,9 +184,52 @@ let App = {
 				console.log("Error getting document:");
 			});	
 		}, true);
+
+
+		// sign up: check if user exits if not write data to database:
+		function userAuthrSignUp(data_1, data_2, data_3){
+			// store data to data base.
+			if(NewUser.Name !== '' && NewUser.Number !== '' && NewUser.Password !== ''){
+				// add new uaer to data base 
+				App.dataBase.write(NewUser.Number, NewUser.Name, NewUser.Password);
+
+				_.Select('.sucessMassage').classList.add('showsucesspopup');
+				popup.classList.remove('showPortal');
+				popup.classList.add('hidePortal');
+				shadow.classList.add('extend');
+				
+			}else{
+				_.Print('No data stored');
+			}
+		}
+
+		_.Event(submitButtonSignUp, 'click', function(){
+			let userreferance = db.collection("users").doc(`${SignInInputs[0].value.slice()}`);
+			
+			// SignUpInputs[i].value.split()
+			userreferance.get().then((doc) => {
+				if (!doc.exists) {
+					let jsondata = JSON.stringify(doc.data());
+					let getjsondata = JSON.parse(jsondata);
+					// user data extraction from dataBase.
+					let userdatabasename =  getjsondata.name;
+					let userdatabasepassword = getjsondata.password;
+					let userdatabasetell = getjsondata.tellphone;
+					
+					userAuthrSignUp(getjsondata.tellphone, getjsondata.password)
+
+				} else {
+					_.Print("error logging in ...")
+				}
+			}).catch((error) => {
+				console.log("Error getting document:");
+			});
+		},true);
+
+
 		
 	}
 }
 App.buttonRresponse();
-App.UserAccountAndDbsConfiguration();
+App.SignIn_SignUp_Error_Checking();
 App.ClientArea();
