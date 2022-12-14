@@ -36,7 +36,7 @@ let App = {
 				console.error("Error writing document: ", error);
 			});
 		},
-		getData:async function (number){
+		getData: function (number){
 			// get data.
 			let userreferance = db.collection("users").doc(`${number}`);
 
@@ -115,8 +115,7 @@ let App = {
 	},
 
 	// user acount and database configuron for user login
-	UserAccountAndDbsConfiguration: async function () {
-		await App.dataBase.getData('0705207718');
+	UserAccountAndDbsConfiguration: function () {
 		
 		function ErrorHandling(){
 			// sign up button configuration...
