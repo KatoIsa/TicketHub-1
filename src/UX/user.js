@@ -39,10 +39,8 @@ let User = {
 		
 	},
 	UserAreaActions: function (){
-		for (var i=0; i <= localStorage.length; i++)  {
-			_.Print(localStorage.getItem(i))
-		 }
-		 
+		
+		// _.Select('.userIdName') 
 		// let userreferance = db.collection("users").doc(``);
 			
 		// 	// SignUpInputs[i].value.split()
