@@ -118,7 +118,10 @@ let App = {
 					passwordDataBase = `${extract["password"]}`;
 					phoneDataBase = `${extract["tellphone"]}`;
 
-					_.Print(usernameDataBase, passwordDataBase, phoneDataBase);
+					_.Print(usernameDataBase);
+					_.Print(passwordDataBase);
+					_.Print(phoneDataBase);
+					
 					_.Print("waiting for data ...");
 				} else {
 					// doc.data() will be undefined in this case
