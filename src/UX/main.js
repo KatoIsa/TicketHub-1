@@ -36,9 +36,20 @@ let App = {
 				console.error("Error writing document: ", error);
 			});
 		},
-		getData: function (){
+		getData: function (number){
 			// get data.
-			
+			let userreferance = db.collection("users").doc(`${number}`);
+
+			userreferance.get().then((doc) => {
+				if (doc.exists) {
+					return console.log("Document data:", `${doc.data()}`);
+				} else {
+					// doc.data() will be undefined in this case
+					return console.log("No such document!");
+				}
+			}).catch((error) => {
+				console.log("Error getting document:", error);
+			});
 
 		}
 		
@@ -102,51 +113,11 @@ let App = {
 
 	// user acount and database configuron for user login
 	UserAccountAndDbsConfiguration: function () {
-		
-		// collect data from dataBse
-		let userreferance = db.collection("users").doc("0705207718");
 
-		async function GetDataFromDataBase(){
-			await userSignUp_SignIn();
-
-			userreferance.get().then((doc) => {
-				if (doc.exists) {
-					let JSONData = JSON.stringify(doc.data());
-					let extract = JSON.parse(JSONData);
-
-					let usernameDataBase = `${extract["name"]}`;
-					let passwordDataBase = `${extract["password"]}`;
-					let phoneDataBase = `${extract["tellphone"]}`;
-
-					_.Print("waiting for data ...");
-				} else {
-					// doc.data() will be undefined in this case
-					return console.log("No such document!");
-				}
-			}).catch((error) => {
-				console.log("Error getting document:");
-			});
-		}
-
-
-		async function userSignUp_SignIn(){
-			// _.Print(usernameDataBase, passwordDataBase, phoneDataBase); 
-			_.Print('function excecuted sucessfully....');
-			_.Print(usernameDataBase);
-			// sign in button.
-			_.Event(submitButtonSignIn, 'click', function(){
-				// check inputs: Sign In
-				for(var i = 0; i < SignInInputs.length; i++){
-					if(SignInInputs[i].value.slice() == '256 705207***' || SignInInputs[i].value.slice() == ''){
-						SignInInputs[i].classList.add('error');
-						SignInInputs[i].value = '';
-					}else{
-						SignInInputs[i].classList.remove('error');
-					}
-				}
-			}, true);
-
-			// signUp button
+		function ErrorHandling(){
+			// sign up button configuration...
+			App.dataBase.getData('0705207718');
+			
 			_.Event(submitButtonSignUp, 'click', function(){
 				// check inputs: Sign Up name: number: password
 				for(var i = 0; i < SignUpInputs.length; i++){
@@ -188,7 +159,21 @@ let App = {
 			}, true);
 		}
 
-		GetDataFromDataBase();
+		// sign in button.
+			_.Event(submitButtonSignIn, 'click', function(){
+				// check inputs: Sign In
+				for(var i = 0; i < SignInInputs.length; i++){
+					if(SignInInputs[i].value.slice() == '256 705207***' || SignInInputs[i].value.slice() == ''){
+						SignInInputs[i].classList.add('error');
+						SignInInputs[i].value = '';
+					}else{
+						SignInInputs[i].classList.remove('error');
+					}
+				}
+			}, true);
+
+		ErrorHandling();
+		
 	},
 	ClientArea: function(){
 		// user sign In: pull data from dataBase:
