@@ -209,7 +209,7 @@ let App = {
 			_.Print(SignUpInputs[1]);
 			// SignUpInputs[i].value.split()
 			userreferance1.get().then((doc) => {
-				if (!doc.exists) {
+				if (doc.exists) {
 					let jsondata = JSON.stringify(doc.data());
 					let getjsondata = JSON.parse(jsondata);
 					// user data extraction from dataBase.
