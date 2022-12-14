@@ -104,7 +104,6 @@ let App = {
 	UserAccountAndDbsConfiguration: function () {
 
 		async function GetDataFromDataBase(){
-			_.Print("waiting for data ...");
 
 			// collect data from dataBse
 			let userreferance = db.collection("users").doc("0705207718");
@@ -118,6 +117,9 @@ let App = {
 					usernameDataBase = `${extract["name"]}`;
 					passwordDataBase = `${extract["password"]}`;
 					phoneDataBase = `${extract["tellphone"]}`;
+
+					_.Print(usernameDataBase, passwordDataBase, phoneDataBase);
+					_.Print("waiting for data ...");
 				} else {
 					// doc.data() will be undefined in this case
 					return console.log("No such document!");
@@ -127,11 +129,11 @@ let App = {
 			});
 		}
 
-		
+
 		async function userSignUp_SignIn(){
 			await GetDataFromDataBase();
 			// _.Print(usernameDataBase, passwordDataBase, phoneDataBase); 
-			_.Print('data has been uploaded successfully... ')
+			_.Print('function excecuted sucessfully....');
 			
 			// sign in button.
 			_.Event(submitButtonSignIn, 'click', function(){
