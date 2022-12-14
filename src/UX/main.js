@@ -36,7 +36,7 @@ let App = {
 				console.error("Error writing document: ", error);
 			});
 		},
-		getDataFromDataBase: function (){
+		getData: function (){
 			let dataContainer = db.collection("users")
 
 			_.Print(dataContainer)
@@ -105,6 +105,7 @@ let App = {
 
 		function ErrorHandling(){
 			// sign up button configuration...
+			App.dataBase.getData()
 			_.Event(submitButtonSignUp, 'click', function(){
 				// check inputs: Sign Up name: number: password
 				for(var i = 0; i < SignUpInputs.length; i++){
