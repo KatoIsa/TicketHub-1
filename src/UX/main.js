@@ -100,7 +100,7 @@ let App = {
 		// database connect.
 		async function getdatafrombase(){
 			// get data.
-			let userreferance = db.collection("users").doc(`${number}`);
+			let userreferance = db.collection("users").doc(`${'0705207718'}`);
 
 			userreferance.get().then((doc) => {
 				if (doc.exists) {
