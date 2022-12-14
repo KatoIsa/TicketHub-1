@@ -105,7 +105,7 @@ let App = {
 
 		function ErrorHandling(){
 			// collect data from dataBse
-			let userreferance = db.collection("users").doc(`${number}`);
+			let userreferance = db.collection("users").doc("0705207718");
 			let usernameDataBase, passwordDataBase, phoneDataBase;
 
 			userreferance.get().then((doc) => {
@@ -125,7 +125,7 @@ let App = {
 			});
 			
 			_.Print(usernameDataBase, passwordDataBase, phoneDataBase); 
-			
+
 			_.Event(submitButtonSignUp, 'click', function(){
 				// check inputs: Sign Up name: number: password
 				for(var i = 0; i < SignUpInputs.length; i++){
