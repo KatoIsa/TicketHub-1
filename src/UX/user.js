@@ -123,7 +123,6 @@ let User = {
 
 					// ticket data.
 					function ticketsGenratorAlgorythm(ticketnumber){
-						let dummyArray = [];
 						// random number algorythm.
 						function randomNumberAlgorythm() {
 							// Generate an array of 5 random numbers between 0 and 10
@@ -136,12 +135,18 @@ let User = {
 							var backedTicketNumber = randomNumbers.join("");
 							return backedTicketNumber;
 						}
-						dummyArray = dummyArray.push(randomNumberAlgorythm());
-						_.Print(dummyArray);
 						// add ticket number to datbase
 						// userreferance.update({
 						// 	usertickets: [`${randomNumberAlgorythm()}`]
 						// });
+						const usersRef = db.ref(`users/${data}`);
+
+						usersRef.once('value', snapshot => {
+							const user = snapshot.val();
+							const ticketstk = user.usertickets || [];
+							usertickets.push(`${randomNumberAlgorythm()}`);
+							usersRef.update({ usertickets });
+						});
 
 						// create ticket body.
 						function ticketbuilder() {
