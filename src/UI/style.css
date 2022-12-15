@@ -22,7 +22,6 @@ body{
 	color: red!important;
 }
 .sucessMassage{
-	display: none;
 	position: absolute;
 	background: #fff;
 	color: #11ff70;
