@@ -39,19 +39,6 @@ let User = {
 		
 	},
 	UserAreaActions: function (){
-		let users = [];
-		const usersRef = db.collection('users');
-			usersRef.get()
-			.then((snapshot) => {
-				snapshot.forEach((doc) => {
-				users.push(doc);
-				console.log(doc.id, '=>', doc.data());
-				});
-			})
-			.catch((err) => {
-				console.log('Error getting documents', err);
-		});
-
 		// connect and fill in user data using users number.
 		// SignUpInputs[i].value.split()
 		function getlocalstoragedata(){
@@ -86,14 +73,14 @@ let User = {
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
 					_.Print(jsondata);
-
 				} else {
 					_.Print("error logging in ...")
 				}
 			}).catch((error) => {
 				console.log("Error getting document:");
 			});
-		}connecttodatabase();
+		}
+		connecttodatabase();
 
 	}
 }
