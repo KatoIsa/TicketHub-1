@@ -199,3 +199,16 @@ body{
 .paymentsetup .paymentbody{
 	font-family: poppins-light!important;
 }
+.paymentbody{
+	font-family: poppins-light;
+	border: none;
+	background: #fff;	
+	border-bottom: 1px solid #19f;
+	margin-bottom: 30px;
+	color: #19f;
+	outline: none;
+	font-size: 18px;
+	font-weight: 300;
+	width: 200px;
+	text-align: left!important;
+}
