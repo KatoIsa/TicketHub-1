@@ -85,7 +85,7 @@ let User = {
 							</div>
 						`;
 						let ticketBody = _.Select('.TicketContentsBody');
-						ticketBody.appendchild(ticketsData);
+						ticketBody.appendChild(ticketsData);
 						_.Print(ticketBody);
 
 					}ticketsBody();
