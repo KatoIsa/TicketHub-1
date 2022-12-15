@@ -181,5 +181,10 @@ body{
 	left: 50%;
 	transform: translateX(-50%);
 	padding: 10px;
-	font-family: poppins;
+}
+.paymentsetup h2{
+	font-family: poppins!important;
+}
+.paymentsetup .paymentbody{
+	font-family: poppins-light!important;
 }
