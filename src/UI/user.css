@@ -183,6 +183,9 @@ body{
 	padding: 15px;
 	border-radius: 10px;
 }
+.paymentsetup div{
+	margin-bottom: 10px;
+}
 @media (max-width: 647px){
 	.paymentsetup{
 		width: 90%!important;
