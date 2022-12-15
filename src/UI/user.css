@@ -212,6 +212,9 @@ body{
 	width: 200px;
 	text-align: left!important;
 }
+.paymentbody .submitButton{
+	text-align: center;
+}
 .paymentbody .submitButton button{
 	background: #19f!important;
 	border: none;
