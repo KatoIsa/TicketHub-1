@@ -177,6 +177,7 @@ button:hover{
 }
 /* payment details section */
 .paymentsetup{
+	display: none;
 	background: white;
 	color: #333;
 	position: absolute;
