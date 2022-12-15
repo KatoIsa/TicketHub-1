@@ -13,6 +13,9 @@ body{
 .cover{
 	background: #000000ba!important;
 }
+button:hover{
+	cursor: pointer;
+}
 .introCover{
 	color: #fff;
 	font-size: 70px;
