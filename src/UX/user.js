@@ -44,7 +44,10 @@ let User = {
 			buyPopUpWindow.classList.add('showpaymentsetup');
 			shadow.classList.add('extend');
 		}, true);
-		
+		_.Event('.paymentbody .submitButton .close', 'click', function(){
+			buyPopUpWindow.classList.remove('showpaymentsetup');
+			shadow.classList.remove('extend');
+		});
 	},
 	UserAreaActions: function (){
 		// connect and fill in user data using users number.
