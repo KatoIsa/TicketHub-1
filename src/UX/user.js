@@ -62,7 +62,8 @@ let User = {
 		function connecttodatabase(){
 			let data = getlocalstoragedata();
 			let userreferance = db.collection("users").doc(`${data}`);
-
+			_.Print(userreferance);
+			
 			userreferance.get().then((doc) => {
 				if (doc.exists) {
 					let jsondata = JSON.stringify(doc.data());
