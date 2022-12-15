@@ -188,6 +188,11 @@ body{
 		width: 90%!important;
 	}
 }
+@media (max-width: 383px){
+	.paymentsetup{
+		width: 100%;
+	}
+}
 .paymentsetup h2{
 	font-family: poppins!important;
 }
