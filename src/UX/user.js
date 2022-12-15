@@ -72,9 +72,9 @@ let User = {
 					let userdatabasename =  getjsondata.name;
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
-				    // add user name.
-					_.Select('.userIdName').innerHTML = userdatabasename
-					
+				    // add user data.
+					User.AddAndCollectUserData();
+
 				} else {
 					_.Print("error logging in ...")
 				}
@@ -83,6 +83,13 @@ let User = {
 			});
 		}
 		connecttodatabase();
+
+	},
+	AddAndCollectUserData: function (){
+		// add name.
+		_.Select('.userIdName').innerHTML = userdatabasename
+
+		// add and collect ticket data
 
 	}
 }
