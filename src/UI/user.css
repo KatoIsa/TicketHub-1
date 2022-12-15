@@ -172,3 +172,12 @@ body{
 .TicketContentsBody  p{
 	font-size: 20px;
 }
+/* payment details section */
+.paymentsetup{
+	background: white;
+	color: #333;
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+}
