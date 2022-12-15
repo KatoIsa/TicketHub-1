@@ -198,6 +198,7 @@ body{
 }
 .paymentsetup .paymentbody{
 	font-family: poppins-light!important;
+	text-align: center;
 }
 .paymentbody input{
 	font-family: poppins-light;
