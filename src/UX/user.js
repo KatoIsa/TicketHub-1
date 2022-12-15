@@ -70,11 +70,12 @@ let User = {
 			// Log the keys to the console
 			return keys[0];
 		}
-		let data = getlocalstoragedata();
-		_.Print(data);
 		
+
 		function connecttodatabase(){
-			let userreferance = db.collection("users").doc(`${SignInInputs[0].value.slice()}`);
+			let data = getlocalstoragedata();
+		    _.Print(data);
+			let userreferance = db.collection("users").doc(`${data}`);
 
 			userreferance.get().then((doc) => {
 				if (doc.exists) {
@@ -84,16 +85,15 @@ let User = {
 					let userdatabasename =  getjsondata.name;
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
-				
-					userAuthr(getjsondata.tellphone, getjsondata.password);
-					_.DB.Create(getjsondata.tellphone);
+					_.Print(jsondata);
+
 				} else {
 					_.Print("error logging in ...")
 				}
 			}).catch((error) => {
 				console.log("Error getting document:");
 			});
-		}
+		}connecttodatabase();
 
 	}
 }
