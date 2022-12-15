@@ -95,7 +95,7 @@ let User = {
 							function validate(input) {
 								var validPhoneNumber = /^\d{10}$/;
 								var validTRid = /^\d{11}$/;
-								if (numberInput.value.split().match(validPhoneNumber) && TransactionID.value.split().match(validTRid)) {
+								if (numberInput.value.match(validPhoneNumber) && TransactionID.value.match(validTRid)) {
 									_.Print('varification compeleted successfully ...');
 									ticketsBody('1233');
 								}
