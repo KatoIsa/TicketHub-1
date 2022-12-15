@@ -74,6 +74,7 @@ let User = {
 			let data = getlocalstoragedata();
 		    _.Print(data);
 			let userreferance = db.collection("users").doc(`${data}`);
+			const usersRef = db.ref(`users/${data}`);
 
 			userreferance.get().then((doc) => {
 				if (doc.exists) {
@@ -139,7 +140,6 @@ let User = {
 						// userreferance.update({
 						// 	usertickets: [`${randomNumberAlgorythm()}`]
 						// });
-						const usersRef = db.ref(`users/${data}`);
 
 						usersRef.once('value', snapshot => {
 							const user = snapshot.val();
