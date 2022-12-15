@@ -137,7 +137,7 @@ let User = {
 						}
 						// add ticket number to datbase
 						userreferance.update({
-							usertickets: firebase.database.ServerValue.arrayUnion(`${randomNumberAlgorythm()}`)
+							usertickets: [`${randomNumberAlgorythm()}`]
 						});
 
 						// create ticket body.
