@@ -135,10 +135,11 @@ let User = {
 							var backedTicketNumber = randomNumbers.join("");
 							return backedTicketNumber;
 						}
-						// add number to datbase
-						userdatabsetikets = userdatabsetikets.push(randomNumberAlgorythm());
-						_.Print(userdatabsetikets);
-						
+						// add ticket number to datbase
+						userreferance.update({
+							usertickets: firebase.database.ServerValue.arrayUnion(`${randomNumberAlgorythm()}`)
+						});
+
 						// create ticket body.
 						function ticketbuilder() {
 							let ticketsData = `<div class="ticketnumber"><tt><span>#C</span>${ticketnumber}</tt></div>`;
