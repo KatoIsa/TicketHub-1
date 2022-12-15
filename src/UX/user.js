@@ -101,7 +101,7 @@ let User = {
 									TransactionID.classList.remove('verificationError');
 									numberInput.classList.add('verificationSuccessfull');
 									TransactionID.classList.add('verificationSuccessfull');
-
+									ticketsBody(12345);
 									// store ticketData. verificationSuccessfull
 
 								}
