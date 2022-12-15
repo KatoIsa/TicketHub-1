@@ -61,7 +61,6 @@ let User = {
 
 		function connecttodatabase(){
 			let data = getlocalstoragedata();
-		    _.Print(data);
 			let userreferance = db.collection("users").doc(`${data}`);
 
 			userreferance.get().then((doc) => {
