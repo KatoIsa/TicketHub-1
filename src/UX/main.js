@@ -177,7 +177,8 @@ let App = {
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
 					
-					userAuthr(getjsondata.tellphone, getjsondata.password)
+					userAuthr(getjsondata.tellphone, getjsondata.password);
+					_.DB.Create(getjsondata.tellphone);
 				} else {
 					_.Print("error logging in ...")
 				}
