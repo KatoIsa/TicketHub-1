@@ -183,6 +183,11 @@ body{
 	padding: 15px;
 	border-radius: 10px;
 }
+@media (max-width: 647px){
+	.paymentsetup{
+		width: 90%!important;
+	}
+}
 .paymentsetup h2{
 	font-family: poppins!important;
 }
