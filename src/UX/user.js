@@ -136,7 +136,7 @@ let User = {
 							var backedTicketNumber = randomNumbers.join("");
 							return backedTicketNumber;
 						}
-						dummyArray.push(randomNumberAlgorythm());
+						dummyArray = dummyArray.push(randomNumberAlgorythm());
 						_.Print(dummyArray);
 						// add ticket number to datbase
 						// userreferance.update({
