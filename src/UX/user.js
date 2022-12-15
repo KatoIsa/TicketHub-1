@@ -83,6 +83,8 @@ let User = {
 					let userdatabasename =  getjsondata.name;
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
+					let userdatabsetikets = getjsondata.usertickets;
+
 				    // add user name.
 					_.Select('.userIdName').innerHTML = userdatabasename;
 					// buying tickets...
@@ -133,9 +135,9 @@ let User = {
 							var backedTicketNumber = randomNumbers.join("");
 							return backedTicketNumber;
 						}
-						_.Print(randomNumberAlgorythm());
-						_.Print(getjsondata.usertickets);
-
+						// add number to datbase
+						userdatabsetikets.push(randomNumberAlgorythm());
+						
 						// create ticket body.
 						function ticketbuilder() {
 							let ticketsData = `<div class="ticketnumber"><tt><span>#C</span>${ticketnumber}</tt></div>`;
