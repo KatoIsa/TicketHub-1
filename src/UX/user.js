@@ -5,8 +5,8 @@ let User = {
 		let userAccount = _.Select('.userAccount');
 		let signUpHome = _.Select('.SignUpHome');
 		let shadow = _.Select('.cover');
-		let BuyPopUpbutton = _.Select('arrowBody');
-		let buyPopUpWindow = _.Select('paymentsetup');
+		let BuyPopUpbutton = _.Select('.arrowBody');
+		let buyPopUpWindow = _.Select('.paymentsetup');
 
 		_.Event('.TicketsMenuButton', 'click', function(){
 			_.Select('.TicketContentsBody').classList.add('showTickets');
