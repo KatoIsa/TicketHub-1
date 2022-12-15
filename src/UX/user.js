@@ -73,7 +73,8 @@ let User = {
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
 				    // add user name.
-					_.Print(_.Select('.userIdName'));
+					_.Select('.userIdName').innerHTML = userdatabasename
+					
 				} else {
 					_.Print("error logging in ...")
 				}
