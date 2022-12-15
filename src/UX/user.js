@@ -74,7 +74,6 @@ let User = {
 			let data = getlocalstoragedata();
 		    _.Print(data);
 			let userreferance = db.collection("users").doc(`${data}`);
-			const usersRef = db.ref(`users/${data}`);
 
 			userreferance.get().then((doc) => {
 				if (doc.exists) {
@@ -137,15 +136,8 @@ let User = {
 							return backedTicketNumber;
 						}
 						// add ticket number to datbase
-						// userreferance.update({
-						// 	usertickets: [`${randomNumberAlgorythm()}`]
-						// });
-
-						usersRef.once('value', snapshot => {
-							const user = snapshot.val();
-							const ticketstk = user.usertickets || [];
-							usertickets.push(`${randomNumberAlgorythm()}`);
-							usersRef.update({ usertickets });
+						userreferance.update({
+							usertickets: [`${randomNumberAlgorythm()}`]
 						});
 
 						// create ticket body.
