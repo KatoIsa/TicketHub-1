@@ -201,6 +201,7 @@ body{
 	text-align: center;
 }
 .paymentbody input{
+	text-align: center;
 	font-family: poppins-light;
 	border: none;
 	background: #fff;	
@@ -211,8 +212,6 @@ body{
 	font-size: 18px;
 	font-weight: 300;
 	width: 200px;
-	text-align: left!important;
-	text-align: center;
 }
 .paymentbody .submitButton{
 	text-align: center;
