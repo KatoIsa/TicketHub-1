@@ -77,23 +77,15 @@ let User = {
 
 					// ticket data.
 					function ticketsBody(){
-						let ticketsData = `
-							<div class="ConcertTicket">
-								<div class="ticketnumber">
-									<tt><span>#C</span>35667</tt>
-								</div>
-							</div>
-						`;
+						let ticketsData = '<div class="ticketnumber"><tt><span>#C</span>35667</tt></div>';
 						let ticketBody = _.Select('.TicketContentsBody');
 						let elementData = document.createElement('div');
+						elementData.innerHTML = ticketsData;
 						elementData.classList.add("ConcertTicket");
 						ticketBody.appendChild(elementData);
-						
-						_.Print(ticketBody);
 
+						_.Print(ticketBody);
 					}ticketsBody();
-				} else {
-					_.Print("error logging in ...")
 				}
 			}).catch((error) => {
 				console.log("Error getting document:");
