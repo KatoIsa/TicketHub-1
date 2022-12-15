@@ -78,14 +78,16 @@ let User = {
 					// ticket data.
 					function ticketsBody(){
 						let ticketsData = `
-							<div class="ConcertTicket">
+							
 								<div class="ticketnumber">
 									<tt><span>#C</span>35667</tt>
 								</div>
-							</div>
+							
 						`;
 						let ticketBody = _.Select('.TicketContentsBody');
-						ticketBody.appendChild(ticketsData);
+						let elementData = document.createElement('div');
+						elementData.classList.add()
+						ticketBody.appendChild('ConcertTicket');
 						_.Print(ticketBody);
 
 					}ticketsBody();
