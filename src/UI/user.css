@@ -186,7 +186,7 @@ button:hover{
 	transform: translateX(-50%);
 	padding: 15px;
 	border-radius: 10px;
-	z-index: 110px;
+	z-index: 110;
 }
 .showpaymentsetup{
 	display: block!important;
