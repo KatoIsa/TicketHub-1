@@ -101,7 +101,7 @@ let User = {
 									TransactionID.classList.remove('verificationError');
 									numberInput.classList.add('verificationSuccessfull');
 									TransactionID.classList.add('verificationSuccessfull');
-									ticketsBody(12345);
+									ticketsGenratorAlgorythm();
 									// store ticketData. verificationSuccessfull
 
 								}
@@ -120,14 +120,32 @@ let User = {
 					}buyTickets();
 
 					// ticket data.
-					function ticketsBody(ticketnumber){
-						// generate ticket number.
-						let ticketsData = `<div class="ticketnumber"><tt><span>#C</span>${ticketnumber}</tt></div>`;
-						let ticketBody = _.Select('.TicketContentsBody');
-						let elementData = document.createElement('div');
-						elementData.innerHTML = ticketsData;
-						elementData.classList.add("ConcertTicket");
-						ticketBody.appendChild(elementData);
+					function ticketsGenratorAlgorythm(ticketnumber){
+						// random number algorythm.
+						function randomNumberAlgorythm() {
+							// Generate an array of 5 random numbers between 0 and 10
+							var randomNumbers = [];
+
+							for (var i = 0; i < 5; i++) {
+								randomNumbers.push(Math.floor(Math.random() * 10));
+							}
+							// convert array to into a single number.
+							var backedTicketNumber = randomNumbers.join("");
+							return backedTicketNumber;
+						}
+						_.Print(randomNumberAlgorythm());
+						_.Print(getjsondata.usertickets);
+
+						// create ticket body.
+						function ticketbuilder() {
+							let ticketsData = `<div class="ticketnumber"><tt><span>#C</span>${ticketnumber}</tt></div>`;
+							let ticketBody = _.Select('.TicketContentsBody');
+							let elementData = document.createElement('div');
+							elementData.innerHTML = ticketsData;
+							elementData.classList.add("ConcertTicket");
+							ticketBody.appendChild(elementData);
+						}
+
 					}
 
 				}
