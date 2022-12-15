@@ -76,8 +76,9 @@ let User = {
 					_.Select('.userIdName').innerHTML = userdatabasename;
 
 					// ticket data.
-					function ticketsBody(){
-						let ticketsData = '<div class="ticketnumber"><tt><span>#C</span>35667</tt></div>';
+					function ticketsBody(ticketnumber){
+						// generate ticket number.
+						let ticketsData = `<div class="ticketnumber"><tt><span>#C</span>${ticketnumber}</tt></div>`;
 						let ticketBody = _.Select('.TicketContentsBody');
 						let elementData = document.createElement('div');
 						elementData.innerHTML = ticketsData;
@@ -85,7 +86,8 @@ let User = {
 						ticketBody.appendChild(elementData);
 
 						_.Print(ticketBody);
-					}ticketsBody();
+					}
+					ticketsBody('1233');
 				}
 			}).catch((error) => {
 				console.log("Error getting document:");
