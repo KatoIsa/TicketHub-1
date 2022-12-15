@@ -240,3 +240,6 @@ button:hover{
 	border-radius: 40px;
 	transition: ease-in-out 0.3s;
 }
+.paymentbody .submitButton .close{
+	background-color: red;
+}
