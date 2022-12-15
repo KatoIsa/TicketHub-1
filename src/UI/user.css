@@ -187,6 +187,9 @@ button:hover{
 	padding: 15px;
 	border-radius: 10px;
 }
+.showpaymentsetup{
+	display: block!important;
+}
 .paymentsetup div{
 	margin-bottom: 10px;
 }
