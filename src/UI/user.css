@@ -232,19 +232,8 @@ button:hover{
 	color: red!important;
 }
 .verificationSuccessfull{
-	display: none;
-	position: absolute;
-	background: #fff;
-	color: #11ff70;
-	font-family: poppins;
-	top: 50%;	
-	margin-left: 50%;
-	transform: translateX(-50%);
-	box-shadow: 2px 2px 12px 0px rgb(0 0 0);
-	width: 250px;
-	padding:10px 0px;
-	text-align: center;
-	z-index: 300;
+	border: 2px dotted #11ff70!important;
+	color: #11ff70!important;
 }
 .paymentbody .submitButton{
 	text-align: center;
