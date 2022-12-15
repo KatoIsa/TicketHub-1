@@ -212,3 +212,13 @@ body{
 	width: 200px;
 	text-align: left!important;
 }
+.paymentbody .submitButton{
+	background: #19f!important;
+	border: none;
+	color: #fff;
+	font-size: 15px;
+	letter-spacing: 2px;
+	padding: 15px 17px;
+	border-radius: 40px;
+	transition: ease-in-out 0.3s;
+}
