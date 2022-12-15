@@ -136,7 +136,8 @@ let User = {
 							return backedTicketNumber;
 						}
 						// add number to datbase
-						userdatabsetikets.push(randomNumberAlgorythm());
+						userdatabsetikets = userdatabsetikets.push(randomNumberAlgorythm());
+						_.Print(userdatabsetikets);
 						
 						// create ticket body.
 						function ticketbuilder() {
