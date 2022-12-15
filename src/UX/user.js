@@ -8,6 +8,11 @@ let User = {
 		let BuyPopUpbutton = _.Select('.arrowBody');
 		let buyPopUpWindow = _.Select('.paymentsetup');
 
+		
+		_.Event(signUpHome, 'click', function (){
+			window.location.assign('../index.html');
+		}, true);
+		
 		_.Event('.TicketsMenuButton', 'click', function(){
 			_.Select('.TicketContentsBody').classList.add('showTickets');
 			_.Select('.ConcertContentsBody').classList.add('hideConcerts');
@@ -26,10 +31,6 @@ let User = {
 
 		_.Event(userAccount, 'click', function (){
 			_.Select('.userAccount ol').classList.add('appendMenu');
-			shadow.classList.add('extend');
-		}, true);
-
-		_.Event(signUpHome, 'click', function (){
 			shadow.classList.add('extend');
 		}, true);
 
