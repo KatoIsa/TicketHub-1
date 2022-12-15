@@ -134,6 +134,9 @@ button:hover{
 	width: 100px;
 	position: relative;
 }
+.arrowBody:hover{
+	cursor: pointer;
+}
 .arrowBody .arrow1{
 	background: #fff;
 	width: 50px;
