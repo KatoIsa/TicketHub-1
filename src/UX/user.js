@@ -51,6 +51,50 @@ let User = {
 			.catch((err) => {
 				console.log('Error getting documents', err);
 		});
+
+		// connect and fill in user data using users number.
+		// SignUpInputs[i].value.split()
+		function getlocalstoragedata(){
+			// Create an empty array to store the keys
+				const keys = [];
+
+				// Loop through all keys in the local storage
+				for (let i = 0; i < localStorage.length; i++) {
+				// Get the key at the current index
+				const key = localStorage.key(i);
+
+				// Push the key into the array
+				keys.push(key);
+			}
+
+			// Log the keys to the console
+			return keys[0];
+		}
+		let data = getlocalstoragedata();
+		_.Print(data);
+		
+		function connecttodatabase(){
+			let userreferance = db.collection("users").doc(`${SignInInputs[0].value.slice()}`);
+
+			userreferance.get().then((doc) => {
+				if (doc.exists) {
+					let jsondata = JSON.stringify(doc.data());
+					let getjsondata = JSON.parse(jsondata);
+					// user data extraction from dataBase.
+					let userdatabasename =  getjsondata.name;
+					let userdatabasepassword = getjsondata.password;
+					let userdatabasetell = getjsondata.tellphone;
+				
+					userAuthr(getjsondata.tellphone, getjsondata.password);
+					_.DB.Create(getjsondata.tellphone);
+				} else {
+					_.Print("error logging in ...")
+				}
+			}).catch((error) => {
+				console.log("Error getting document:");
+			});
+		}
+
 	}
 }
 
