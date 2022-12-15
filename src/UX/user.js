@@ -97,9 +97,21 @@ let User = {
 								var validTRid = /^\d{11}$/;
 								if (numberInput.value.match(validPhoneNumber) && TransactionID.value.match(validTRid)) {
 									_.Print('varification compeleted successfully ...');
-									ticketsBody('1233');
+									numberInput.classList.remove('verificationError');
+									TransactionID.classList.remove('verificationError');
+									numberInput.classList.add('verificationSuccessfull');
+									TransactionID.classList.add('verificationSuccessfull');
+
+									// store ticketData. verificationSuccessfull
+
 								}
 								else {
+									numberInput.classList.add('verificationError');
+									TransactionID.classList.add('verificationError');
+									numberInput.classList.remove('verificationSuccessfull');
+									TransactionID.classList.remove('verificationSuccessfull');
+									numberInput.value = 'enter valid number';
+									TransactionID.value = 'enter valid Trans ID';
 									_.Print('varification error...');
 								}
 							}validate(numberInput.value.split());
