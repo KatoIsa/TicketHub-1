@@ -85,8 +85,9 @@ let User = {
 							</div>
 						`;
 						let ticketBody = _.Select('.TicketContentsBody');
+						ticketBody.appendchild(ticketsData);
 						_.Print(ticketBody);
-						
+
 					}ticketsBody();
 				} else {
 					_.Print("error logging in ...")
