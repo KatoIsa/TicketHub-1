@@ -61,9 +61,9 @@ let User = {
 
 		function connecttodatabase(){
 			let data = getlocalstoragedata();
+		    _.Print(data);
 			let userreferance = db.collection("users").doc(`${data}`);
-			_.Print(userreferance);
-			
+
 			userreferance.get().then((doc) => {
 				if (doc.exists) {
 					let jsondata = JSON.stringify(doc.data());
@@ -72,9 +72,8 @@ let User = {
 					let userdatabasename =  getjsondata.name;
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
-				    // add user data.
-					User.AddAndCollectUserData();
-
+				    // add user name.
+					_.Select('.userIdName').innerHTML = userdatabasename;
 				} else {
 					_.Print("error logging in ...")
 				}
@@ -83,13 +82,6 @@ let User = {
 			});
 		}
 		connecttodatabase();
-
-	},
-	AddAndCollectUserData: function (){
-		// add name.
-		_.Select('.userIdName').innerHTML = userdatabasename
-
-		// add and collect ticket data
 
 	}
 }
