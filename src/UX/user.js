@@ -39,18 +39,18 @@ let User = {
 		
 	},
 	UserAreaActions: function (){
-
+		let users = [];
 		const usersRef = db.collection('users');
 			usersRef.get()
 			.then((snapshot) => {
 				snapshot.forEach((doc) => {
+				users.push(doc);
 				console.log(doc.id, '=>', doc.data());
 				});
 			})
 			.catch((err) => {
 				console.log('Error getting documents', err);
 		});
-		
 	}
 }
 
