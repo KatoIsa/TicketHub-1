@@ -101,7 +101,7 @@ let App = {
 		_.Event(submitButtonSignUp, 'click', function(){
 			// check inputs: Sign Up name: number: password
 			for(var i = 0; i < SignUpInputs.length; i++){
-				if(SignUpInputs[i].value.split() == '' || SignUpInputs[i].value.split() == 'IBRAHIM TUMWESIGYE' || SignUpInputs[i].value.length !== 10){
+				if(SignUpInputs[i].value.split() == '' || SignUpInputs[i].value.split() == 'IBRAHIM TUMWESIGYE' || SignUpInputs[i].value.split() == '0704803772'){
 					SignUpInputs[i].classList.add('error');
 					SignUpInputs[i].value = '';
 				}else{
@@ -115,7 +115,7 @@ let App = {
 				NewUser.Name = SignUpInputs[0].value;
 			}
 			// phone number.
-			if (SignUpInputs[1].value.split() !== '' | SignUpInputs[2].value.length !== 10){
+			if (SignUpInputs[1].value.split() !== '' | SignUpInputs[2].value.split() !== '0704803772'){
 				NewUser.Number = SignUpInputs[1].value;
 			}
 			// password.
@@ -129,7 +129,7 @@ let App = {
 		_.Event(submitButtonSignIn, 'click', function(){
 			// check inputs: Sign In
 			for(var i = 0; i < SignInInputs.length; i++){
-				if(SignInInputs[i].value.length !== 10 || SignInInputs[i].value.slice() == ''){
+				if(SignInInputs[i].value.slice() == '0704803772' || SignInInputs[i].value.slice() == ''){
 					SignInInputs[i].classList.add('error');
 					SignInInputs[i].value = '';
 				}else{
