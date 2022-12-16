@@ -135,7 +135,7 @@ let User = {
 							var backedTicketNumber = randomNumbers.join("");
 							return backedTicketNumber;
 						}
-						let store = [3333,3333,3333,3333];
+						let store = ['3333','3333','3333','3333'];
 						// add ticket number to datbase
 						for(var i = 0; i <= store.length; i++){
 							_.Print(store[i]);
