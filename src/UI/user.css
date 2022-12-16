@@ -204,9 +204,11 @@ button:hover{
 	border-left: 3px solid #00ff40;
 }
 .TicketContentsBody .status{
-	position: relative;
-	background: #19f;
 	font-size: 15px;
+}
+.TicketContentsBody .status .clear, .TicketContentsBody .status .off{
+	display: flex;
+	flex-direction: row;
 }
 .TicketContentsBody .status .clear:nth-child(1){
 	background: #11ff70;
@@ -214,7 +216,7 @@ button:hover{
 	height: 20px;
 	border-radius: 100%;
 }
-.TicketContentsBody .off .clear:nth-child(1){
+.TicketContentsBody .status .off:nth-child(1){
 	background: #ff4b4b;
 	width: 20px;
 	height: 20px;
