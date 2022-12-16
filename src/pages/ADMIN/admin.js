@@ -37,7 +37,11 @@ let User = {
 					let userdatabsetikets = getjsondata.usertickets;
 					let lastcount = getjsondata.counterStop;
 
-					console.log(getjsondata);
+					function addElement(){
+						let elementData = `
+							
+						`
+					}
 				}else{
 					console.log('error something went wrong....');
 				}
