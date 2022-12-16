@@ -172,7 +172,7 @@ let App = {
 					console.log("Error getting document:");
 				});	
 			}, true);
-		}AdminAuthr
+		}AdminAuthr();
 
 		function userAuthr(data_1, data_2){
 			_.Event(submitButtonSignIn, 'click', function(){
