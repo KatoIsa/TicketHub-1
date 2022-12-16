@@ -26,9 +26,11 @@ let Authr = {
                         async function goTohome() {
                             await updateData();
                             _.Print('function finished executing...');
-                            window.location.assign('home-admin.html');
+                            window.location.assign('admin.html');
                         } goTohome();
-					}
+					}else{
+                        alert('error logging in..')
+                    }
 
 				}else{
                     console.log('error cant retrieve data..');
