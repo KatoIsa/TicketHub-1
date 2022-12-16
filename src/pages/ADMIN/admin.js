@@ -21,8 +21,23 @@ let User = {
 		}, true)
 	},
 	AdminAuth: function (){
-		
+		_.Event(_.Select(), 'click', function (){
+			let AdminRefer = db.collection("ADMIN").doc('0704465049');
+			
+			AdminRefer.get().then((doc) => {
+				if (doc.exists) {
+					let jsondata = JSON.stringify(doc.data());
+					let getjsondata = JSON.parse(jsondata);
+					// user data extraction from dataBase.
+					_.Print(getjsondata);
+
+				}
+			}).catch((error) => {
+				console.log("Error getting document:", error);
+			});
+		});
 	}
 }
 
 User.buttonRresponse();
+User.AdminAuth();

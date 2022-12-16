@@ -57,7 +57,7 @@ let User = {
 			let data = _.DB.Get('data');
 			console.log(data);
 			let userreferance = db.collection("users").doc(`${data}`);
-
+			
 			userreferance.get().then((doc) => {
 				if (doc.exists) {
 					let jsondata = JSON.stringify(doc.data());
