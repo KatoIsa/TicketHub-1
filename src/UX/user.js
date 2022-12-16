@@ -155,7 +155,6 @@ let User = {
 						}
 
 					}
-					window.location.assign('user.html');
 				}
 			}).catch((error) => {
 				console.log("Error getting document:");
