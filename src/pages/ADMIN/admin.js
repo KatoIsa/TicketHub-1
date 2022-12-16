@@ -71,4 +71,4 @@ let User = {
 }
 
 User.buttonRresponse();
-user.AccountHandler();
+User.AccountHandler();
