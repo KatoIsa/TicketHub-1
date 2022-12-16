@@ -91,6 +91,8 @@ let User = {
 							_.Print('ticket saved ....');
 							if(getjsondata.varified == true){
 								_.Select('.TicketContentsBody .ConcertTicket').classList.add('verifiedUserTi');
+							}else{
+								_.Print('not verified..');
 							}
 						} ticketbuilder(getjsondata.usertickets)
 						}
