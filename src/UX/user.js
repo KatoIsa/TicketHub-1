@@ -158,17 +158,19 @@ let User = {
 							let AllDataBasekeys = Object.keys(getjsondata);
 							_.Print(AllDataBasekeys);
 
-							for (let i = 0; i < AllDataBasekeys.length; i++) {
-								const word = AllDataBasekeys[i];
+							const words = ['apple', 'ape', 'banana', 'bat', 'cat', 'car'];
+							const newArray = [];
+
+							for (let i = 0; i < words.length; i++) {
+								const word = words[i];
 								const firstThreeLetters = word.substring(0, 3);
 
 								// Check if the first three letters of the current word match the first three letters of any previous word
-								if (getAllTickets.some(prevWord => prevWord.substring(0, 3) === firstThreeLetters)) {
+								if (newArray.some(prevWord => prevWord.substring(0, 3) === firstThreeLetters)) {
 									// If a match is found, push the current word into the new array
-									getAllTickets.push(word);
+									newArray.push(word);
 								}
-							}
-							console.log(getAllTickets);
+							}console.log(newArray);
 
 						}ticketbuilder();
 					}
