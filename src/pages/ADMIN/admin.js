@@ -68,7 +68,12 @@ let User = {
 						SearchResults.innerHTML = elementData;
 					}
 					addElement(userdatabasename,userdatabasetell,userdatabsetikets,transID);
-					
+					_.Event('.verifyUser', 'click',function (){
+						userreferance.update({
+							varified: true,
+						});
+					});
+
 				}else{
 					console.log('error something went wrong....');
 				}
