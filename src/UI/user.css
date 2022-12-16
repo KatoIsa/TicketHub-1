@@ -9,6 +9,7 @@
 
 body{
 	font-family: poppins-light;
+	overflow: hidden;
 }
 .remove{
 	display: none!important;
