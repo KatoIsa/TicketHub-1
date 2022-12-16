@@ -114,7 +114,7 @@ button:hover{
 }
 @media (max-width: 517px){
 	.concertBody .wrapper{
-		width: 98%!important;
+		width: 100%!important;
 	}
 }
 .imageHolder{
