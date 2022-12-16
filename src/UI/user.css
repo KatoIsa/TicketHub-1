@@ -150,6 +150,9 @@ button:hover{
 	display: flex;
 	flex-wrap: wrap;
 }
+.more .CTaction{
+	background: #ff4b4b;
+}
 .arrowBody{
 	width: 100px;
 	position: relative;
