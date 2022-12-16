@@ -112,6 +112,11 @@ button:hover{
 	width: fit-content;
 	padding-right: 50px;
 }
+@media (max-width: 517px){
+	.concertBody .wrapper{
+		width: 98%!important;
+	}
+}
 .imageHolder{
 	background-image:url('img/concert.jpg')!important;
 	background-repeat: no-repeat;
