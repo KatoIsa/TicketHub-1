@@ -13,7 +13,17 @@ let Authr = {
 					let getjsondata = JSON.parse(jsondata);
 					
 					if(_.Select('.inputnumber').value == getjsondata.number && _.Select('.inputPassword').value == getjsondata.password){
+                        async function updateData() {
+                            _.Print('running please wait...');
+                            userreferance.update({
+                                Authr: true
+                            });
 
+                        }
+                        async function goTohome() {
+                            await updateData();
+                            _.Print('function finished executing...');
+                        } goTohome();
 					}
 
 				}
