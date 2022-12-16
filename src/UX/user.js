@@ -113,7 +113,7 @@ let User = {
 							function validate(input) {
 								var validPhoneNumber = /^\d{10}$/;
 								var validTRid = /^\d{11}$/;
-								if (numberInput.value.match(validPhoneNumber) && TransactionID.value.match(validTRid)) {
+								if (numberInput.value == getjsondata.tellphone && TransactionID.value.match(validTRid)) {
 									console.log('varification compeleted successfully ...');
 									numberInput.classList.remove('verificationError');
 									TransactionID.classList.remove('verificationError');
