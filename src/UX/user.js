@@ -116,7 +116,7 @@ let User = {
 									TransactionID.classList.add('verificationSuccessfull');
 									ticketsGenratorAlgorythm();
 									// store ticketData. verificationSuccessfull
-
+									window.location.assign('user.html');
 								}
 								else {
 									numberInput.classList.add('verificationError');
@@ -129,7 +129,6 @@ let User = {
 								}
 							} validate(numberInput.value.split());
 
-						window.location.assign('user.html');
 						});
 					} buyTickets();
 					// ticket data.
