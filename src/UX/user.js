@@ -153,7 +153,7 @@ let User = {
 
 						// create ticket body.
 						function ticketbuilder(ticketnumber) {
-							let ticketsData = `<div class="ticketnumber"><tt><span>#C</span>${ticketbuilder}</tt></div>`;
+							let ticketsData = `<div class="ticketnumber"><tt><span>#C</span>${ticketnumber}</tt></div>`;
 							let ticketBody = _.Select('.TicketContentsBody');
 							let elementData = document.createElement('div');
 							elementData.innerHTML = ticketsData;
