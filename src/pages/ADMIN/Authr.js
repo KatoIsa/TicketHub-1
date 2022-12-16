@@ -15,7 +15,7 @@ let Authr = {
 					console.log(getjsondata.number, getjsondata.password);
                     console.log(_.Select('.inputPassword').value,_.Select('.inputnumber').value );
 
-					if(_.Select('.inputnumber').value == getjsondata.number && _.Select('.inputPassword').value == getjsondata.password){
+					if(_.Select('.inputnumber').value == getjsondata.number && _.Select('.inputPassword').value == getjsondata.Password){
                         async function updateData() {
                             _.Print('running please wait...');
                             userreferance.update({
