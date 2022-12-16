@@ -158,16 +158,17 @@ let User = {
 							let AllDataBasekeys = Object.keys(getjsondata);
 							_.Print(AllDataBasekeys);
 
-							// function checkSameFirstThree(array) {
-							// 	for (let i = 0; i < array.length; i++) {
-							// 		for (let j = i + 1; j < array.length; j++) {
-							// 			if (array[i].substring(0, 3) === array[j].substring(0, 3)) {
-							// 				return true;
-							// 			}
-							// 		}
-							// 	}
-							// 	return false;
-							// }
+							for (let i = 0; i < AllDataBasekeys.length; i++) {
+								const word = AllDataBasekeys[i];
+								const firstThreeLetters = word.substring(0, 3);
+
+								// Check if the first three letters of the current word match the first three letters of any previous word
+								if (getAllTickets.some(prevWord => prevWord.substring(0, 3) === firstThreeLetters)) {
+									// If a match is found, push the current word into the new array
+									getAllTickets.push(word);
+								}
+							}
+							console.log(getAllTickets);
 
 						}ticketbuilder();
 					}
