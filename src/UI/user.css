@@ -206,22 +206,8 @@ button:hover{
 .TicketContentsBody .status{
 	font-size: 15px;
 }
-.TicketContentsBody .status .clear, .TicketContentsBody .status .off{
-	display: flex;
-	flex-direction: row;
-}
-.TicketContentsBody .status .clear:nth-child(1){
-	background: #11ff70;
-	width: 20px;
-	height: 20px;
-	border-radius: 100%;
-}
-.TicketContentsBody .status .off:nth-child(1){
-	background: #ff4b4b;
-	width: 20px;
-	height: 20px;
-	border-radius: 100%;
-}
+
+
 
 .TicketContentsBody .ConcertTicket tt span{
 	color: #19f;
