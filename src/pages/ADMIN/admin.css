@@ -57,6 +57,11 @@
 	text-align: left;
 	box-shadow: 2px 2px 3px 4px rgb(0 0 0);
 }
+@media (max-width:435px){
+	.SearchResults .person{
+		width: 100%!important;
+	}
+}
 .SearchResults .person .row{
 	display: flex;
 	flex-direction: row;
