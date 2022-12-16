@@ -350,12 +350,14 @@ main{
 	background: #00ffab;
 	width: 55px;
 	height: 0px;
+	display: none;
 	border-radius: 100%;
 	margin-left: 50%;
 	transform: translate(-50%);
 }
 .displaySubmitSignIn{
 	height: 55px!important;
+	display: block!important;
 }
 .removeSubmitSignUp{
 	height: 0px!important;
