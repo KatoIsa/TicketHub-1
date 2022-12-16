@@ -142,7 +142,7 @@ let User = {
 						// add ticket number to datbase
 						userreferance.update({
 							[`usertickets${counter}`]: randomNumberAlgorythm(),
-							counterStop: counter + 1
+							counterStop: counter
 						});
 						// create ticket body.
 						function ticketbuilder() {							
