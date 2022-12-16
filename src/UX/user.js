@@ -156,7 +156,7 @@ let User = {
 							let getAllTickets = [];
 							// get all keys.
 							let AllDataBasekeys = Object.keys(getjsondata);
-							_.Print(AllDataBasekeys);
+							// _.Print(AllDataBasekeys);
 
 							const words = ['apple', 'ape', 'banana', 'bat', 'cat', 'car'];
 							const newArray = [];
