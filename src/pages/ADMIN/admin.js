@@ -30,8 +30,10 @@ let User = {
 				if (doc.exists) {
 					let jsondata = JSON.stringify(doc.data());
 					let getjsondata = JSON.parse(jsondata);
-					// user data extraction from dataBase.
-					_.Print(getjsondata);
+					
+					if(_.Select('.inputnumber').value == getjsondata.number && _.Select('.inputPassword').value == getjsondata.password){
+						
+					}
 
 				}
 			}).catch((error) => {
