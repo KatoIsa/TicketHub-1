@@ -85,6 +85,7 @@ let User = {
 					let userdatabasetell = getjsondata.tellphone;
 					let userdatabsetikets = getjsondata.usertickets;
 					let counter = 0;
+					if(counterStop){counter = counterStop}
 
 				    // add user name.
 					_.Select('.userIdName').innerHTML = userdatabasename;
@@ -139,9 +140,9 @@ let User = {
 						}
 						// add ticket number to datbase
 						userreferance.update({
-							[`usertickets${counter}`]: randomNumberAlgorythm()
+							[`usertickets${counter}`]: randomNumberAlgorythm(),
+							counterStop: counter
 						});
-						_.Print(getjsondata);
 						// create ticket body.
 						function ticketbuilder() {
 							let ticketsData = `<div class="ticketnumber"><tt><span>#C</span>${ticketnumber}</tt></div>`;
@@ -153,7 +154,7 @@ let User = {
 						}
 
 					}
-
+					window.location.assign('user.html');
 				}
 			}).catch((error) => {
 				console.log("Error getting document:");
