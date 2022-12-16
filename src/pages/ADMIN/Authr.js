@@ -26,7 +26,9 @@ let Authr = {
                         } goTohome();
 					}
 
-				}
+				}else{
+                    console.log('error cant retrieve data..');
+                }
 			}).catch((error) => {
 				console.log("Error getting document:", error);
 			});
