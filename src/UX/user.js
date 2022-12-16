@@ -90,7 +90,7 @@ let User = {
 					function ticketLimit(){
 						if(getjsondata.limitreached == true){
 							let element1 = _.Select('.paymentbody .submitButton .submit');
-							let element2 = _.Sele('.paymentbody .paymentnumber');
+							let element2 = _.Select('.paymentbody .paymentnumber');
 							element1.classList.add('remove');
 							element2.innerHTML = 'Limit Reached,<br> you can only buy one ticket';
 						}
