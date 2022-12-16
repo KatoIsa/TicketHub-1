@@ -144,74 +144,42 @@ let App = {
 		// user sign In: pull data from dataBase:
 		// check number and password
 		// signIn
-		function userAuthenticatioProcess(){
+		function userAuthr(data_1, data_2){
 			_.Event(submitButtonSignIn, 'click', function(){
-				if(SignInInputs[0].value == '0704465049'){
-					let userreferance = db.collection("users").doc(`0704465049`);
-				
-					userreferance.get().then((doc) => {
-						if (doc.exists) {
-							let jsondata = JSON.stringify(doc.data());
-							let getjsondata = JSON.parse(jsondata);
-							// user data extraction from dataBase.
-							let userdatabasename =  getjsondata.name;
-							let userdatabasepassword = getjsondata.password;
-							let userdatabasetell = getjsondata.tellphone;
-							_.DB.Create('data', getjsondata.tellphone);
-
-							//connect to ADMIN dashboard.
-							if(SignInInputs[0].value.slice() == userdatabasetell && SignInInputs[1].value.slice() == userdatabasepassword){
-								console.log('Admin logged succesfully...');
-								window.location.assign('./pages/admin.html');
-							}else{
-								console.log('error, Admin');
-							}
-						} else {
-							_.Print("error logging in ...")
-						}
-					}).catch((error) => {
-						console.log("Error getting document:");
-					});	
+				// fill uservlaidator: fill number.
+				if(SignInInputs[0].value.slice() == data_1 && SignInInputs[1].value.slice() == data_2){
+					_.Print('passed..');
+					window.location.assign('./pages/user.html');
 				}else{
-					function userAuthr(data_1, data_2){
-						_.Event(submitButtonSignIn, 'click', function(){
-							// fill uservlaidator: fill number.
-							if(SignInInputs[0].value.slice() == data_1 && SignInInputs[1].value.slice() == data_2){
-								_.Print('passed..');
-								window.location.assign('./pages/user.html');
-							}else{
-								console.log('error, user')
-							}
-						}, true);
-						// check password.
-					}
-					// data base connection...
-					_.Event(submitButtonSignIn, 'click', function(){
-						let userreferance = db.collection("users").doc(`${SignInInputs[0].value.slice()}`);
-						
-						// SignUpInputs[i].value.split()
-						userreferance.get().then((doc) => {
-							if (doc.exists) {
-								let jsondata = JSON.stringify(doc.data());
-								let getjsondata = JSON.parse(jsondata);
-								// user data extraction from dataBase.
-								let userdatabasename =  getjsondata.name;
-								let userdatabasepassword = getjsondata.password;
-								let userdatabasetell = getjsondata.tellphone;
-								
-								userAuthr(getjsondata.tellphone, getjsondata.password);
-								_.DB.Create('data', getjsondata.tellphone);
-							} else {
-								_.Print("error logging in ...")
-							}
-						}).catch((error) => {
-							console.log("Error getting document:");
-						});	
-					}, true);
+					console.log('error, user')
 				}
 			}, true);
+			// check password.
+		}
+		// data base connection...
+		_.Event(submitButtonSignIn, 'click', function(){
+			let userreferance = db.collection("users").doc(`${SignInInputs[0].value.slice()}`);
+			
+			// SignUpInputs[i].value.split()
+			userreferance.get().then((doc) => {
+				if (doc.exists) {
+					let jsondata = JSON.stringify(doc.data());
+					let getjsondata = JSON.parse(jsondata);
+					// user data extraction from dataBase.
+					let userdatabasename =  getjsondata.name;
+					let userdatabasepassword = getjsondata.password;
+					let userdatabasetell = getjsondata.tellphone;
+					
+					userAuthr(getjsondata.tellphone, getjsondata.password);
+					_.DB.Create('data', getjsondata.tellphone);
+				} else {
+					_.Print("error logging in ...")
+				}
+			}).catch((error) => {
+				console.log("Error getting document:");
+			});	
+		}, true);
 
-		}userAuthenticatioProcess();
 
 		// sign up: check if user exits if not write data to database:
 		function userAuthrSignUp(){
