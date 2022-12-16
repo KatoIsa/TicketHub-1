@@ -103,7 +103,7 @@ let App = {
 			var validPhoneNumber = /^\d{10}$/;
 
 			for(var i = 0; i < SignUpInputs.length; i++){
-				if(SignUpInputs[i].value.split() == '' || SignUpInputs[i].value.split() == 'IBRAHIM TUMWESIGYE' || SignUpInputs[i].value.split() == '0704803772' || SignUpInputs[i].value.match(validPhoneNumber)){
+				if(SignUpInputs[i].value.split() == '' || SignUpInputs[i].value.split() == 'IBRAHIM TUMWESIGYE' || SignUpInputs[i].value.match(validPhoneNumber)){
 					SignUpInputs[i].classList.add('error');
 					SignUpInputs[i].value = '';
 				}else{
