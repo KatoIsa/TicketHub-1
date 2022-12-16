@@ -84,8 +84,9 @@ let User = {
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
 					let userdatabsetikets = getjsondata.usertickets;
+					let lastcount = getjsondata.counterStop;
 					let counter = 0;
-					if(counterStop){counter = counterStop}
+					if(lastcount != 0){counter = lastcount}
 
 				    // add user name.
 					_.Select('.userIdName').innerHTML = userdatabasename;
