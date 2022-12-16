@@ -146,31 +146,34 @@ let App = {
 		// signIn
 		function AdminAuthr(){
 			_.Event(submitButtonSignIn, 'click', function(){
-				let userreferance = db.collection("users").doc(`0704465049`);
+				if(SignInInputs[0].value == '0704465049'){
+					let userreferance = db.collection("users").doc(`0704465049`);
 				
-				userreferance.get().then((doc) => {
-					if (doc.exists) {
-						let jsondata = JSON.stringify(doc.data());
-						let getjsondata = JSON.parse(jsondata);
-						// user data extraction from dataBase.
-						let userdatabasename =  getjsondata.name;
-						let userdatabasepassword = getjsondata.password;
-						let userdatabasetell = getjsondata.tellphone;
-						_.DB.Create('data', getjsondata.tellphone);
+					userreferance.get().then((doc) => {
+						if (doc.exists) {
+							let jsondata = JSON.stringify(doc.data());
+							let getjsondata = JSON.parse(jsondata);
+							// user data extraction from dataBase.
+							let userdatabasename =  getjsondata.name;
+							let userdatabasepassword = getjsondata.password;
+							let userdatabasetell = getjsondata.tellphone;
+							_.DB.Create('data', getjsondata.tellphone);
 
-						//connect to ADMIN dashboard.
-						if(SignInInputs[0].value.slice() == userdatabasetell && SignInInputs[1].value.slice() == userdatabasepassword){
-							console.log('Admin logged succesfully...');
-							window.location.assign('./pages/admin.html');
-						}else{
-							console.log('error, Admin');
+							//connect to ADMIN dashboard.
+							if(SignInInputs[0].value.slice() == userdatabasetell && SignInInputs[1].value.slice() == userdatabasepassword){
+								console.log('Admin logged succesfully...');
+								window.location.assign('./pages/admin.html');
+							}else{
+								console.log('error, Admin');
+							}
+						} else {
+							_.Print("error logging in ...")
 						}
-					} else {
-						_.Print("error logging in ...")
-					}
-				}).catch((error) => {
-					console.log("Error getting document:");
-				});	
+					}).catch((error) => {
+						console.log("Error getting document:");
+					});	
+				}
+				
 			}, true);
 		}AdminAuthr();
 
