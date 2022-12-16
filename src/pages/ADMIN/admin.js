@@ -21,7 +21,9 @@ let User = {
 		}, true)
 	},
 	AdminAuth: function (){
-		_.Event(_.Select('.submit-2'), 'click', function (){
+		let submitButton = _.Select('.submit-2');
+		
+		_.Event(submitButton, 'click', function (){
 			let AdminRefer = db.collection("ADMIN").doc('0704465049');
 			
 			AdminRefer.get().then((doc) => {
@@ -35,7 +37,7 @@ let User = {
 			}).catch((error) => {
 				console.log("Error getting document:", error);
 			});
-		});
+		}, true);
 	}
 }
 
