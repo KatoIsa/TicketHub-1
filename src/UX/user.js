@@ -84,12 +84,14 @@ let User = {
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
 					let userdatabsetikets = getjsondata.usertickets;
+					let counter = 0;
 
 				    // add user name.
 					_.Select('.userIdName').innerHTML = userdatabasename;
 					// buying tickets...
 					function buyTickets(){
 						_.Event('.paymentbody .submitButton .submit', 'click', function (){
+							counter++
 							// check phone number and check varification ID.
 							let numberInput = _.Select('.paymentnumber .numberInput');
 							let TransactionID = _.Select('.paymentnumber .varificaionCodeInput');
@@ -136,9 +138,9 @@ let User = {
 							return backedTicketNumber;
 						}
 						// add ticket number to datbase
-
+						
 						userreferance.update({
-							'usertickets1': randomNumberAlgorythm()
+							[`usertickets${counter}`]: randomNumberAlgorythm()
 						});
 						
 						
