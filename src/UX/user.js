@@ -85,8 +85,8 @@ let User = {
 					let userdatabasetell = getjsondata.tellphone;
 					let userdatabsetikets = getjsondata.usertickets;
 					let lastcount = getjsondata.counterStop;
-					let counter = 0;
-					if(lastcount != 0){counter = lastcount}
+					let counter = -1;
+					if(lastcount != -1){counter = lastcount}
 
 				    // add user name.
 					_.Select('.userIdName').innerHTML = userdatabasename;
@@ -142,7 +142,7 @@ let User = {
 						// add ticket number to datbase
 						userreferance.update({
 							[`usertickets${counter}`]: randomNumberAlgorythm(),
-							counterStop: counter
+							counterStop: counter + 1
 						});
 						// create ticket body.
 						function ticketbuilder() {							
