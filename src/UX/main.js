@@ -154,13 +154,13 @@ let App = {
 					_.Print('error..');
 				}
 	
-				//connect to ADMIN dashboard.
-				if(SignInInputs[0].value.slice() == '0704465049' && SignInInputs[1].value.slice() == '1234'){
+				//connect to ADMIN dashboard. 
+				if(SignInInputs[0].value.slice() == data_1 && SignInInputs[1].value.slice() == data_2){
 					window.location.assign('./pages/admin.html');
 				}else{
 					_.Print('error..');
 				}
-				
+
 			}, true);
 			// check password.
 		}
