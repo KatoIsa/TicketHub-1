@@ -156,8 +156,8 @@ let User = {
 							let getAllTickets = [];
 							// get all keys.
 							let AllDataBasekeys = Object.keys(jsondata);
-							_.print(AllDataBasekeys);
-							
+							_.Print(AllDataBasekeys);
+
 							function checkSameFirstThree(array) {
 								for (let i = 0; i < array.length; i++) {
 									for (let j = i + 1; j < array.length; j++) {
