@@ -29,6 +29,8 @@ let App = {
 				tellphone: `${tellnumber}`,
 				password: `${passworddata}`,
 				limitreached: false,
+				usertickets:'',
+				Trans_ID:'',
 				varified: false,
 			})
 			.then(() => {

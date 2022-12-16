@@ -36,7 +36,6 @@ let User = {
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
 					let userdatabsetikets = getjsondata.usertickets;
-					let lastcount = getjsondata.counterStop;
 					let transID = getjsondata.Trans_ID;
 
 					function addElement(UserLoginname, UserLoginnumber, UserLoginTickets, UserLogInTransaction) {
