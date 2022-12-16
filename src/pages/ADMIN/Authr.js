@@ -12,7 +12,7 @@ let Authr = {
 				if (doc.exists) {
 					let jsondata = JSON.stringify(doc.data());
 					let getjsondata = JSON.parse(jsondata);
-					
+					_.Print(jsondata);
 					if(_.Select('.inputnumber').value == getjsondata.number && _.Select('.inputPassword').value == getjsondata.password){
                         async function updateData() {
                             _.Print('running please wait...');
