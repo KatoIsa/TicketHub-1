@@ -21,41 +21,30 @@ let User = {
 		}, true)
 	},
 	AccountHandler() {
-		const firestore = firebase.firestore();
-		const collection = firestore.collection('collectionName');
+		_.Event('.submitsearch', 'click', function (){
+			let searchedCContact = _.Select('.search')
+			let userreferance = db.collection("users").doc(`${data}`);
+			
+			userreferance.get().then((doc) => {
+				if (doc.exists) {
+					let jsondata = JSON.stringify(doc.data());
+					let getjsondata = JSON.parse(jsondata);
+					// user data extraction from dataBase.
+					let userdatabasename = getjsondata.name;
+					let userdatabasepassword = getjsondata.password;
+					let userdatabasetell = getjsondata.tellphone;
+					let userdatabsetikets = getjsondata.usertickets;
+					let lastcount = getjsondata.counterStop;
 
-		collection.get()
-			.then((snapshot) => {
-				snapshot.forEach((doc) => {
-					console.log(doc.id, '=>', doc.data());
-				});
-			})
-			.catch((err) => {
-				console.log('Error getting documents', err);
+					console.log(getjsondata);
+				}else{
+					console.log('error something went wrong....');
+				}
+			}).catch((error) => {
+				console.log("Error getting document:", error);
 			});
+		});
 	},
-	// UserData() {
-	// 	// Assume that you have a reference to your Firestore database
-	// 	const db = firebase.firestore();
-
-	// 	// Define a function to retrieve all documents from a collection
-	// 	async function getAllDocuments(collection) {
-	// 		const snapshot = await collection.get();
-	// 		const documents = [];
-	// 		snapshot.forEach((doc) => {
-	// 			documents.push(doc.data());
-	// 		});
-	// 		return documents;
-	// 	}
-
-	// 	// Call the function to retrieve all documents from the "users" collection
-	// 	const usersCollection = db.collection('users');
-	// 	const users = await getAllDocuments(usersCollection);
-
-	// 	// The "users" array now contains all documents from the "users" collection
-	// 	console.log(users);
-
-	// }
 }
 
 User.buttonRresponse();
