@@ -18,7 +18,7 @@ let Authr = {
 					if(_.Select('.inputnumber').value == getjsondata.number && _.Select('.inputPassword').value == getjsondata.Password){
                         async function updateData() {
                             _.Print('running please wait...');
-                            userreferance.update({
+                            AdminRefer.update({
                                 Authr: true
                             });
 
