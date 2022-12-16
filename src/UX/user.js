@@ -138,13 +138,10 @@ let User = {
 							return backedTicketNumber;
 						}
 						// add ticket number to datbase
-						
 						userreferance.update({
 							[`usertickets${counter}`]: randomNumberAlgorythm()
 						});
-						
-						
-
+						_.Print(getjsondata);
 						// create ticket body.
 						function ticketbuilder() {
 							let ticketsData = `<div class="ticketnumber"><tt><span>#C</span>${ticketnumber}</tt></div>`;
