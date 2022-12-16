@@ -15,7 +15,7 @@ main{
 	background: hsl(71, 100%, 50%);
 	overflow: auto;
 	height: 100vh;
-	padding-bottom:20px;
+	padding-bottom:100px;
 }
 .remove{
 	display: none!important;
