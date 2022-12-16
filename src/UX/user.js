@@ -163,6 +163,13 @@ let User = {
 							_.Print('ticket saved ....');
 						} 
 						ticketbuilder(randomNumberAlgorythm());
+						// ticket limit.
+						function ticketLimit2(){
+							let element1 = _.Select('.paymentbody .submitButton .submit');
+							let element2 = _.Select('.paymentbody .paymentnumber');
+							element1.classList.add('remove');
+							element2.innerHTML = 'Limit Reached,<br> you can only buy one ticket';
+						}ticketLimit2();
 					}
 				}
 			}).catch((error) => {
