@@ -10,6 +10,7 @@
 	src: url('fonts/Poppins-Light.ttf');
 }
 body{
+	background: url('img/background.jpg');
 	font-family: poppins-light;
 	overflow: hidden;
 }
