@@ -22,7 +22,6 @@ let User = {
 	},
 	AccountHandler() {
 		const firestore = firebase.firestore();
-
 		const collection = firestore.collection('collectionName');
 
 		collection.get()
