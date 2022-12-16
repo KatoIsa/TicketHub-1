@@ -100,8 +100,10 @@ let App = {
 		// sign up button.
 		_.Event(submitButtonSignUp, 'click', function(){
 			// check inputs: Sign Up name: number: password
+			var validPhoneNumber = /^\d{10}$/;
+
 			for(var i = 0; i < SignUpInputs.length; i++){
-				if(SignUpInputs[i].value.split() == '' || SignUpInputs[i].value.split() == 'IBRAHIM TUMWESIGYE' || SignUpInputs[i].value.split() == '0704803772'){
+				if(SignUpInputs[i].value.split() == '' || SignUpInputs[i].value.split() == 'IBRAHIM TUMWESIGYE' || SignUpInputs[i].value.split() == '0704803772' || SignUpInputs.value.match(validPhoneNumber)){
 					SignUpInputs[i].classList.add('error');
 					SignUpInputs[i].value = '';
 				}else{
@@ -115,7 +117,7 @@ let App = {
 				NewUser.Name = SignUpInputs[0].value;
 			}
 			// phone number.
-			if (SignUpInputs[1].value.split() !== '' | SignUpInputs[2].value.split() !== '0704803772'){
+			if (SignUpInputs[1].value.match(validPhoneNumber)){
 				NewUser.Number = SignUpInputs[1].value;
 			}
 			// password.

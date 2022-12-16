@@ -37,11 +37,35 @@ let User = {
 					let userdatabsetikets = getjsondata.usertickets;
 					let lastcount = getjsondata.counterStop;
 
-					function addElement(){
+					function addElement(UserLoginname, UserLoginnumber, UserLoginTickets, UserLogInTransaction) {
 						let elementData = `
-							
+						<div class="person">
+						<div class="row namewrapper">
+							<div class="nameHead"><tt>Name</tt></div>
+							<div class="name"><tt>${UserLoginname}</tt></div>
+						</div>
+						<div class="row numberwrapper">
+							<div class="numberHead"><tt>Number</tt></div>
+							<div class="number"><tt>>${UserLoginnumber}</tt></div>
+						</div>
+						<div class="row ticketIDwrapper">
+							<div class="ticketNoHead"><tt>Ticket</tt></div>
+							<div class="ticketNo"><tt><span>#C</span>${UserLoginTickets}</tt></div>
+						</div>
+						<div class="row numberwrapper">
+							<div class="numberHead"><tt>Trans ID</tt></div>
+							<div class="number"><tt>${UserLogInTransaction}</tt></div>
+						</div>
+						<div class="row numberwrapper">
+							<div class="numberHead"><tt>--></tt></div>
+							<div class="number"><button class="verifyUser">Verify</button></div>
+						</div>
+					</div>
 						`
+						let SearchResults = _.Select('.SearchResults');
+						SearchResults.innerHTML = elementData;
 					}
+					
 				}else{
 					console.log('error something went wrong....');
 				}
