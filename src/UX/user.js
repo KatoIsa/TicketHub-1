@@ -93,6 +93,7 @@ let User = {
 					// buying tickets...
 					function buyTickets(){
 						_.Event('.paymentbody .submitButton .submit', 'click', function (){
+							alert('works')
 							counter++
 							// check phone number and check varification ID.
 							let numberInput = _.Select('.paymentnumber .numberInput');
@@ -124,7 +125,6 @@ let User = {
 
 						});
 					}buyTickets();
-
 					// ticket data.
 					function ticketsGenratorAlgorythm(ticketnumber){
 						// random number algorythm.
