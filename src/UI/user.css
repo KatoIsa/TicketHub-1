@@ -11,7 +11,7 @@ body{
 	font-family: poppins-light;
 	overflow: hidden;
 }
-.main{
+main{
 	overflow: auto;
 }
 .remove{
