@@ -19,11 +19,9 @@ let User = {
 			shadow.classList.remove('extend');
 			_.Select('.userAccount ol').classList.remove('appendMenu');
 		}, true)
-
-		
 	},
-	UserAreaActions: function (){
-
+	AdminAuth: function (){
+		
 	}
 }
 

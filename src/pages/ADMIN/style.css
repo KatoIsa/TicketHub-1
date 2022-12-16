@@ -268,18 +268,7 @@ main{
 	justify-content: space-between;
 }
 .AccountPortal .top{
-	display: flex;
-	justify-content: space-between;
-}
-.AccountPortal .top .rdioButton{
-	position: relative;
-	background: #E1DFDF;
-	width: 80px;
-	height: 34px;
-	border-radius: 20px;
-	display: flex;
-	align-items: center;
-	margin-left: 20px;
+	text-align: center;
 }
 
 .AccountPortal .top .rdioButton div{
@@ -289,6 +278,7 @@ main{
 	width: 25px;
 	border-radius: 100%;
 }
+
 .AccountPortal .Title h2{
 	font-family: poppins;
 	color: #19f;
@@ -299,7 +289,7 @@ main{
 	color: #19f;
 	margin-left: 20px;
 }
-.AccountPortal .Title2 h2:hover, .AccountPortal .Title h2:hover{
+.AccountPortal .Title2 h2:hover{
 	cursor: pointer;
 	border-bottom: 2px solid #19f;
 }
@@ -312,20 +302,16 @@ main{
  	height: 300px;
  	overflow: hidden;
  }
- .AccountPortal .center .Sign-Up, .AccountPortal .center .Sign-In{
+.AccountPortal .center .Sign-In{
  	height: 100%;
  	display: flex;
  	align-items: center;
  }
- .AccountPortal .center .Sign-In div, .AccountPortal .center .Sign-Up div{
+ .AccountPortal .center .Sign-In div{
 	margin-left: 22px;
 	margin-top: 15px;
  }
- .AccountPortal .center .Sign-Up div{
- 	height: fit-content;
- 	width: fit-content;
- 	text-align: center;
- }
+
 .AccountPortal .center .Sign-In{
 	background: #fff;
   	position: absolute;
