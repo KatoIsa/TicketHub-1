@@ -52,23 +52,6 @@ let User = {
 	UserAreaActions: function () {
 		// connect and fill in user data using users number.
 		// SignUpInputs[i].value.split()
-		function getlocalstoragedata() {
-			// Create an empty array to store the keys
-			const keys = [];
-
-			// Loop through all keys in the local storage
-			for (let i = 0; i < localStorage.length; i++) {
-				// Get the key at the current index
-				const key = localStorage.key(i);
-
-				// Push the key into the array
-				keys.push(key);
-			}
-
-			// Log the keys to the console
-			return keys[0];
-		}
-
 
 		function connecttodatabase() {
 			let data = _.DB.Get('data');
