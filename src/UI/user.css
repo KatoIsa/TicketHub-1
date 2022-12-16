@@ -196,12 +196,15 @@ button:hover{
 	border-radius: 10px;
 	padding: 10px 20px;
 	margin-top: 15px;
+	border-right: 3px solid #ff4b4b;
+	border-left: 3px solid #ff4b4b;
+}
+.verifiedUserTi{
 	border-right: 3px solid #00ff40;
 	border-left: 3px solid #00ff40;
 }
-.verifiedUserTicket{
-	border-right: 3px solid #00ff40;
-	border-left: 3px solid #00ff40;
+.TicketContentsBody .status{
+	background: #19f;
 }
 .TicketContentsBody .ConcertTicket tt span{
 	color: #19f;
