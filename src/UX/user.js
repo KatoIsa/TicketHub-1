@@ -160,9 +160,9 @@ let User = {
 							elementData.classList.add("ConcertTicket");
 							ticketBody.appendChild(elementData);
 							// collect all tickets from dataBase.
-							let getAllTickets = [];
-							_.Print(jsondata);
-						} ticketbuilder(randomNumberAlgorythm())
+							_.Print('ticket saved ....');
+						} 
+						ticketbuilder(randomNumberAlgorythm());
 					}
 				}
 			}).catch((error) => {
