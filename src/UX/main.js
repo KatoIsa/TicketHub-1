@@ -28,7 +28,7 @@ let App = {
 				name: `${namedata}`,
 				tellphone: `${tellnumber}`,
 				password: `${passworddata}`,
-				counterStop: 0,
+				counterStop: -1,
 				varified: false,
 			})
 			.then(() => {
