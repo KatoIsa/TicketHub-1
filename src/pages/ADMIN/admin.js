@@ -21,30 +21,19 @@ let User = {
 		}, true)
 	},
 	AccountHandler() {
-		let AdminRefer = db.collection("ADMIN").doc('0704465049');
+		const firestore = firebase.firestore();
 
-		AdminRefer.get().then((doc) => {
-			if (doc.exists) {
-				let jsondata = JSON.stringify(doc.data());
-				let getjsondata = JSON.parse(jsondata);
-				// check if valid?
-				if (getjsondata.Authr = true) {
-					// Get the document reference
-					const docRef = firestore.doc('users');
+		const collection = firestore.collection('collectionName');
 
-					// Get all collections in the document
-					docRef.listCollections().then(collections => {
-						console.log(collections);
-					});
-				} else {
-					window.location.assign('index.html');
-				}
-			} else {
-				console.log('error cant retrieve data..');
-			}
-		}).catch((error) => {
-			console.log("Error getting document:", error);
-		});
+		collection.get()
+			.then((snapshot) => {
+				snapshot.forEach((doc) => {
+					console.log(doc.id, '=>', doc.data());
+				});
+			})
+			.catch((err) => {
+				console.log('Error getting documents', err);
+			});
 	},
 	// UserData() {
 	// 	// Assume that you have a reference to your Firestore database
