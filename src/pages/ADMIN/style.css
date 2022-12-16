@@ -1,0 +1,432 @@
+*{
+	margin: 0;
+}
+@font-face{
+	font-family: "poppins";
+	src:  url("fonts/Poppins-Bold.ttf");
+}
+@font-face{
+	font-family: "poppins-light";
+	src: url('fonts/Poppins-Light.ttf');
+}
+body{
+	background: url('img/background.jpg');
+	font-family: poppins-light;
+	overflow: hidden;
+}
+main{
+	overflow: auto;
+	height: 100vh;
+	padding-bottom:100px;
+}
+/*
+  Error handling.
+*/
+.error{
+	border: 2px dotted red!important;
+	color: red!important;
+}
+.sucessMassage{
+	display: none;
+	position: absolute;
+	background: #fff;
+	color: #11ff70;
+	font-family: poppins;
+	top: 50%;	
+	margin-left: 50%;
+	transform: translateX(-50%);
+	box-shadow: 2px 2px 12px 0px rgb(0 0 0);
+	width: 250px;
+	padding:10px 0px;
+	text-align: center;
+	z-index: 300;
+}
+.showsucesspopup{
+	display: block!important;
+}
+/*
+	TOP BAR, STYLES.
+*/
+.cover{
+	background: #00000080;
+	position: absolute;
+	width: 100vw;
+	height: 100%;
+	z-index: -1 ;
+}
+.cover.extend{
+	z-index: 100;
+}
+
+.header{
+	background: #01a4ff91;
+	color:  #fff;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	height: 70px;
+}
+.header h2{
+	font-size: 40px;
+	font-family: poppins;
+	letter-spacing: 5px;
+	margin-left: 40px;
+}
+@media (max-width: 403px){
+	.header{
+		height: 55px;
+	}
+	.header h2{
+		font-size: 20px;
+	}
+	.userAccount{
+		margin-top: -2px!important;
+		width: 30px!important;
+		height: 30px!important;
+	}
+}
+
+/*
+	USER ACCOUNT ICON AND MENU: STYLES.
+*/
+.userAccount{
+	background-image: url(img/user.png)!important;
+	background-repeat: no-repeat;
+	background-size: cover!important;
+	width: 40px;
+	height: 40px;
+	margin-right: 40px;
+	margin-top: 7px;
+	border-radius: 100%;
+	background: #fff;
+}
+.userAccount:hover{
+	cursor: pointer;
+}
+/*.userAccount:hover ol{
+	visibility: visible!important;
+	margin-top: 30px!important;
+}*/
+
+.appendMenu{
+	visibility: visible!important;
+	margin-top: 30px!important;
+}
+
+.header .menu, .header .name{
+	margin-top: 13px;
+}
+.header .menu ol{
+	z-index:150 ;
+	visibility: hidden;
+	position: absolute;
+	background: #fff;
+	margin-top: 50px;
+	margin-left: -116px;
+	border-radius: 6px;
+	color: #000;
+	width: 80px;
+	height: 80px;
+	transition: cubic-bezier(0.88, 0.57, 0.02, 0.49) 0.3s;
+}
+
+.header .menu ol li{
+	color: #333;
+	list-style: none;
+	margin-left: -39px;
+	padding: 3px;
+	font-weight: 550;
+	text-align: center;
+	font-family: poppins-light;
+	transition: 0.3s;
+}
+.header .menu ol li:hover{
+	cursor: pointer;
+	background: #333;
+	color: #fff;
+}
+.header .menu ol li:nth-child(1){
+	border-bottom: 1px solid #33333359;
+	margin-top: 9px;
+	letter-spacing: 2px;
+}
+.header .menu ol li:nth-child(2){
+	letter-spacing: 3px;
+}
+
+/*
+	MAIN BODY, STYLES(center).
+*/
+@media (max-width: 733px){
+	.flex-help{
+		flex-direction: column-reverse;
+		align-items: center;
+		overflow: auto;
+	}
+	.CoreImage{
+		width: 250px!important;
+		height: 250px!important;
+		margin-right: unset!important;
+		margin-top: -20px!important;
+	}
+	.CallToAction .callToActionHeader h2{
+		margin-top: 10px;
+	}
+	.CallToAction{
+		width: 250px!important;
+		height: 250px!important;
+		padding: 10px 20px;
+	}
+	.CallToAction .buyButton button{
+		position: relative;
+	}
+	.CallToAction .ticketImage img{
+		width: 150px!important;
+	}
+}
+.main{
+	height: calc(100vh - 90px);
+	display: grid;
+	align-content: center;
+	overflow: auto;
+	font-family: poppins;
+}
+.flex-help{
+	display: flex;
+	justify-content: center;
+	overflow: auto;
+}
+.CoreImage{
+	position: relative;
+	background: #19f;
+	background-image: url(img/concert.jpg);
+	background-size: cover;
+	width: 350px;
+	height: 350px;
+	margin-top: 25px;
+	margin-right: -20px;
+	border-radius: 20px;
+}
+.CallToAction{
+ 	background: #fff;
+	width: 400px;
+	height: 400px;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.CallToAction .callToActionHeader h2{
+	color: #5A5A5A;
+	letter-spacing: 5px;
+}
+.CallToAction .buyButton button{
+	background: #19f!important;
+	border: none;
+	color: #fff;
+	font-size: 15px;
+	letter-spacing: 2px;
+	padding: 15px 17px;
+	border-radius: 40px;
+	transition: ease-in-out 0.3s;
+}
+.CallToAction .buyButton button:hover{
+	cursor: pointer;
+	letter-spacing: 3px;
+	padding: 15px 25px;
+}
+/*
+		ACOUNT SIGN IN/UP PORTAL:  MAIN DESING
+*/
+.PortalCover{
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.PortalCover.hidePortal{
+	visibility: hidden!important;
+}
+.PortalCover.showPortal{
+	visibility: visible!important;
+}
+
+.AccountPortal{
+	z-index: 200;
+	position: relative;
+	background: #fff;
+	height: 400px;
+	width: 300px;
+	padding: 10px;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.AccountPortal .top{
+	display: flex;
+	justify-content: space-between;
+}
+.AccountPortal .top .rdioButton{
+	position: relative;
+	background: #E1DFDF;
+	width: 80px;
+	height: 34px;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	margin-left: 20px;
+}
+
+.AccountPortal .top .rdioButton div{
+	margin-left:  5px;
+	background: #19f;
+	height:25px;
+	width: 25px;
+	border-radius: 100%;
+}
+.AccountPortal .Title h2{
+	font-family: poppins;
+	color: #19f;
+	margin-right: 20px;
+}
+.AccountPortal .Title2 h2{
+	font-family: poppins;
+	color: #19f;
+	margin-left: 20px;
+}
+.AccountPortal .Title2 h2:hover, .AccountPortal .Title h2:hover{
+	cursor: pointer;
+	border-bottom: 2px solid #19f;
+}
+.Active{
+	border-bottom: 2px solid #19f;
+}
+
+.AccountPortal .center{
+ 	position: relative;
+ 	height: 300px;
+ 	overflow: hidden;
+ }
+ .AccountPortal .center .Sign-Up, .AccountPortal .center .Sign-In{
+ 	height: 100%;
+ 	display: flex;
+ 	align-items: center;
+ }
+ .AccountPortal .center .Sign-In div, .AccountPortal .center .Sign-Up div{
+	margin-left: 22px;
+	margin-top: 15px;
+ }
+ .AccountPortal .center .Sign-Up div{
+ 	height: fit-content;
+ 	width: fit-content;
+ 	text-align: center;
+ }
+.AccountPortal .center .Sign-In{
+	background: #fff;
+  	position: absolute;
+  	width: 100%;
+}
+.displaySignIn{
+	top: 0px;
+}
+.AccountPortal .center .Sign-In div{
+	height: fit-content;
+	width: 100%;
+}
+.AccountPortal .center p{
+	font-family: poppins;
+	color: #19f;
+	outline: none;
+	text-align: left;
+	margin-bottom: 5px;
+	width: fit-content;
+}
+.AccountPortal .submit-1{
+	background: #00ffab;
+	width: 55px;
+	height: 0px;
+	display: none;
+	border-radius: 100%;
+	margin-left: 50%;
+	transform: translate(-50%);
+}
+.displaySubmitSignIn{
+	height: 55px!important;
+	display: block!important;
+}
+.removeSubmitSignUp{
+	height: 0px!important;
+}
+.AccountPortal .submit-2{
+	overflow: hidden;
+	background: #19f;
+	width: 55px;
+	height: 55px;
+	border-radius: 100%;
+	margin-left: 50%;
+	transform: translate(-50%);
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.arrow {
+  position: absolute;
+  top: 25px;
+  width: 50%;
+  height: 5px;
+  background-color: #fff;
+  animation: arrow 700ms linear infinite;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+}
+
+.arrow::after, .arrow::before {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 5px;
+  right: -4px;
+  background-color: #fff;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+}
+
+.arrow::after {
+  top: -5px;
+  transform: rotate(45deg);
+}
+
+.arrow::before {
+  top: 5px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+  transform: rotate(-45deg);
+}
+
+
+.AccountPortal .center .Sign-Up div input, .AccountPortal .center .Sign-In div input{
+	font-family: poppins-light;
+	border: none;
+	background: #fff;	
+	border-bottom: 1px solid #19f;
+	margin-bottom: 30px;
+	color: #19f;
+	outline: none;
+	font-size: 18px;
+	font-weight: 300;
+	width: 200px;
+	text-align: left!important;
+}
+.AccountPortal .center .Sign-Up div input:nth-child(1){
+	letter-spacing: 10px;
+}
