@@ -26,6 +26,7 @@ let Authr = {
                         async function goTohome() {
                             await updateData();
                             _.Print('function finished executing...');
+                            window.location.assign('home-admin.html');
                         } goTohome();
 					}
 
