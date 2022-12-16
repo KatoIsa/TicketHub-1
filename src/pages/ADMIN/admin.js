@@ -46,28 +46,28 @@ let User = {
 			console.log("Error getting document:", error);
 		});
 	},
-	UserData() {
-		// Assume that you have a reference to your Firestore database
-		const db = firebase.firestore();
+	// UserData() {
+	// 	// Assume that you have a reference to your Firestore database
+	// 	const db = firebase.firestore();
 
-		// Define a function to retrieve all documents from a collection
-		async function getAllDocuments(collection) {
-			const snapshot = await collection.get();
-			const documents = [];
-			snapshot.forEach((doc) => {
-				documents.push(doc.data());
-			});
-			return documents;
-		}
+	// 	// Define a function to retrieve all documents from a collection
+	// 	async function getAllDocuments(collection) {
+	// 		const snapshot = await collection.get();
+	// 		const documents = [];
+	// 		snapshot.forEach((doc) => {
+	// 			documents.push(doc.data());
+	// 		});
+	// 		return documents;
+	// 	}
 
-		// Call the function to retrieve all documents from the "users" collection
-		const usersCollection = db.collection('users');
-		const users = await getAllDocuments(usersCollection);
+	// 	// Call the function to retrieve all documents from the "users" collection
+	// 	const usersCollection = db.collection('users');
+	// 	const users = await getAllDocuments(usersCollection);
 
-		// The "users" array now contains all documents from the "users" collection
-		console.log(users);
+	// 	// The "users" array now contains all documents from the "users" collection
+	// 	console.log(users);
 
-	}
+	// }
 }
 
 User.buttonRresponse();
