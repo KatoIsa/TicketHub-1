@@ -146,7 +146,7 @@ let User = {
 						userreferance.update({
 							usertickets: randomNumberAlgorythm(),
 							limitreached: true,
-							otherNumber: numberInput.value
+							otherNumber: _.Select('.paymentnumber .numberInput').value
 						});
 
 						// create ticket body.
