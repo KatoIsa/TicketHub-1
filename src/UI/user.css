@@ -205,6 +205,7 @@ button:hover{
 }
 .TicketContentsBody .status{
 	background: #19f;
+	font-size: 20px;
 }
 .TicketContentsBody .ConcertTicket tt span{
 	color: #19f;
