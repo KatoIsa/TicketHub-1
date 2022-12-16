@@ -70,7 +70,6 @@ let App = {
 		}, true);
 
 		_.Event(shadow, 'click', function(){
-			_.Select('.sucessMassage').classList.remove('showsucesspopup');
 			popup.classList.remove('showPortal');
 			popup.classList.add('hidePortal');
 			shadow.classList.remove('extend');
@@ -187,8 +186,6 @@ let App = {
 			if(NewUser.Name !== '' && NewUser.Number !== '' && NewUser.Password !== ''){
 				// add new uaer to data base 
 				App.dataBase.write(NewUser.Number, NewUser.Name, NewUser.Password);
-
-				_.Select('.sucessMassage').classList.add('showsucesspopup');
 				popup.classList.remove('showPortal');
 				popup.classList.add('hidePortal');
 				shadow.classList.add('extend');				
