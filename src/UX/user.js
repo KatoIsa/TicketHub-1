@@ -135,14 +135,12 @@ let User = {
 							var backedTicketNumber = randomNumbers.join("");
 							return backedTicketNumber;
 						}
-						let store = ['r','3','4','5'];
 						// add ticket number to datbase
-						for(var i = 0; i <= store.length; i++){
-							console.log(store[i]);
-							userreferance.update({
-								usertickets: [`${store[i]}`]
-							});
-						}
+
+						userreferance.update({
+							'usertickets1': randomNumberAlgorythm()
+						});
+						
 						
 
 						// create ticket body.
