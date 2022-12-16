@@ -267,6 +267,7 @@ main{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	box-shadow: 2px 2px 5px 10px rgba(0, 0, 0, .2);
 }
 .AccountPortal .top{
 	text-align: center;
