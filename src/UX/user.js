@@ -141,7 +141,7 @@ let User = {
 						}
 						// add ticket number to datbase
 						userreferance.update({
-							[`usertickets${counter}`]: randomNumberAlgorythm(),
+							[`usertickets${counter}~`]: randomNumberAlgorythm(),
 							counterStop: counter + 1
 						});
 						// create ticket body.
@@ -157,24 +157,12 @@ let User = {
 							// get all keys.
 							let AllDataBasekeys = Object.keys(getjsondata);
 							// _.Print(AllDataBasekeys);
-
-							const words = ['apple', 'ape', 'banana', 'bat', 'cat', 'car'];
-							const newArray = [];
-
-							for (let i = 0; i < words.length; i++) {
-								const word = words[i];
-								const firstThreeLetters = word.substring(0, 3);
-
-								// Check if the first three letters of the current word match the first three letters of any previous word
-								if (newArray.some(prevWord => prevWord.substring(0, 3) === firstThreeLetters)) {
-									// If a match is found, push the current word into the new array
-									newArray.push(word);
+							for (let i = 0; i < AllDataBasekeys.length; i++) {
+								if(AllDataBasekeys[i][-1] == '~'){
+									console.log(true);
 								}
 							}
-
-							console.log(newArray);// Output: ["apple", "ape", "bat", "cat", "car"]
-
-
+							
 						}ticketbuilder();
 					}
 				}
