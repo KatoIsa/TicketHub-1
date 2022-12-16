@@ -111,7 +111,6 @@ let User = {
 							let TransactionID = _.Select('.paymentnumber .varificaionCodeInput');
 
 							function validate(input) {
-								var validPhoneNumber = /^\d{10}$/;
 								var validTRid = /^\d{11}$/;
 								if (numberInput.value == getjsondata.tellphone && TransactionID.value.match(validTRid)) {
 									console.log('varification compeleted successfully ...');
