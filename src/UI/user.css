@@ -12,7 +12,9 @@ body{
 	overflow: hidden;
 }
 main{
+	background: #00fdab;
 	overflow: auto;
+	height: 100vh;
 }
 .remove{
 	display: none!important;
