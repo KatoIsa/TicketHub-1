@@ -141,7 +141,7 @@ let User = {
 						}
 						// add ticket number to datbase
 						userreferance.update({
-							[`usertickets${counter}~`]: randomNumberAlgorythm(),
+							[`usertickets${counter}`]: randomNumberAlgorythm(),
 							counterStop: counter + 1
 						});
 						// create ticket body.
@@ -154,15 +154,17 @@ let User = {
 							ticketBody.appendChild(elementData);
 							// collect all tickets from dataBase.
 							let getAllTickets = [];
-							// get all keys.
-							let AllDataBasekeys = Object.keys(getjsondata);
-							// _.Print(AllDataBasekeys);
-							for (let i = 0; i < AllDataBasekeys.length; i++) {
-								if(AllDataBasekeys[i][-1] == '~'){
-									console.log(true);
-								}
-							}
 							
+							function checkSameFirstThree(array) {
+								for (let i = 0; i < array.length; i++) {
+									for (let j = i + 1; j < array.length; j++) {
+										if (array[i].substring(0, 3) === array[j].substring(0, 3)) {
+											return true;
+										}
+									}
+								}
+								return false;
+							}
 						}ticketbuilder();
 					}
 				}
