@@ -12,7 +12,7 @@ let Authr = {
 					let jsondata = JSON.stringify(doc.data());
 					let getjsondata = JSON.parse(jsondata);
 
-					console.log(getjsondata.number, getjsondata.password);
+					console.log(getjsondata.number, getjsondata.Password);
                     console.log(_.Select('.inputPassword').value,_.Select('.inputnumber').value );
 
 					if(_.Select('.inputnumber').value == getjsondata.number && _.Select('.inputPassword').value == getjsondata.Password){
