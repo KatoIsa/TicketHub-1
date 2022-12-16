@@ -151,16 +151,15 @@ let App = {
 					_.Print('passed..');
 					window.location.assign('./pages/user.html');
 				}else{
-					_.Print('error..');
+					console.log('error, user')
 				}
 	
-				//connect to ADMIN dashboard. 
+				//connect to ADMIN dashboard.
 				if(SignInInputs[0].value.slice() == data_1 && SignInInputs[1].value.slice() == data_2){
 					window.location.assign('./pages/admin.html');
 				}else{
-					_.Print('error..');
+					console.log('error, Admin');
 				}
-
 			}, true);
 			// check password.
 		}
