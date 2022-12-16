@@ -248,6 +248,7 @@ main{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	overflow: auto;
 }
 .PortalCover.hidePortal{
 	visibility: hidden!important;
