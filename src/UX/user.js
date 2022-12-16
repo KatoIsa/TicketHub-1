@@ -154,8 +154,22 @@ let User = {
 							ticketBody.appendChild(elementData);
 							// collect all tickets from dataBase.
 							let getAllTickets = [];
-							_.Print(jsondata);
-						}ticketbuilder()
+							// get all keys.
+							let AllDataBasekeys = Object.keys(jsondata);
+							_.print(AllDataBasekeys);
+							
+							function checkSameFirstThree(array) {
+								for (let i = 0; i < array.length; i++) {
+									for (let j = i + 1; j < array.length; j++) {
+										if (array[i].substring(0, 3) === array[j].substring(0, 3)) {
+											return true;
+										}
+									}
+								}
+								return false;
+							}
+
+						}ticketbuilder();
 					}
 				}
 			}).catch((error) => {
