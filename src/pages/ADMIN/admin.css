@@ -71,6 +71,9 @@
 .SearchResults .person .row:nth-child(2){
 	background: #1199774d;
 }
+.SearchResults .person .row:nth-child(4){
+	background: #1199774d;
+}
 .SearchResults .person .row:nth-child(2) .number{
 	font-size: 19px;
 }
