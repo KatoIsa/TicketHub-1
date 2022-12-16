@@ -197,6 +197,7 @@ button:hover{
 	padding: 10px 20px;
 	margin-top: 15px;
 	border-right: 3px solid #ff4b4b;
+	border-left: 3px solid #ff4b4b;
 }
 .TicketContentsBody .ConcertTicket tt span{
 	color: #19f;
