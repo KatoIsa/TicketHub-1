@@ -22,9 +22,9 @@ let User = {
 	},
 	AccountHandler() {
 		_.Event('.submitsearch', 'click', function (){
-			let searchedCContact = _.Select('.search');
+			let searchedCContact = _.Select('.searchInputarea');
 			let userreferance = db.collection("users").doc(`${searchedCContact.value}`);
-			console.log(searchedCContact);
+			console.log(searchedCContact.value);
 
 			userreferance.get().then((doc) => {
 				if (doc.exists) {
