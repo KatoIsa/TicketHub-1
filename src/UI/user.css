@@ -12,7 +12,7 @@ body{
 	overflow: hidden;
 }
 main{
-	background: #00fdab;
+	background: hsl(71, 100%, 50%);
 	overflow: auto;
 	height: 100vh;
 	padding-bottom:20px;
