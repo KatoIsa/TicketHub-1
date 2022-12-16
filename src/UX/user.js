@@ -72,7 +72,7 @@ let User = {
 
 		function connecttodatabase(){
 			let data = getlocalstoragedata();
-		    _.Print(data);
+		    console.log(data);
 			let userreferance = db.collection("users").doc(`${data}`);
 
 			userreferance.get().then((doc) => {
@@ -98,7 +98,7 @@ let User = {
 								var validPhoneNumber = /^\d{10}$/;
 								var validTRid = /^\d{11}$/;
 								if (numberInput.value.match(validPhoneNumber) && TransactionID.value.match(validTRid)) {
-									_.Print('varification compeleted successfully ...');
+									console.log('varification compeleted successfully ...');
 									numberInput.classList.remove('verificationError');
 									TransactionID.classList.remove('verificationError');
 									numberInput.classList.add('verificationSuccessfull');
@@ -114,7 +114,7 @@ let User = {
 									TransactionID.classList.remove('verificationSuccessfull');
 									numberInput.value = 'enter valid number';
 									TransactionID.value = 'enter valid Trans ID';
-									_.Print('varification error...');
+									console.log('varification error...');
 								}
 							}validate(numberInput.value.split());
 
@@ -138,7 +138,7 @@ let User = {
 						let store = ['r','3','4','5'];
 						// add ticket number to datbase
 						for(var i = 0; i <= store.length; i++){
-							_.Print(store[i]);
+							console.log(store[i]);
 							userreferance.update({
 								usertickets: [`${store[i]}`]
 							});
