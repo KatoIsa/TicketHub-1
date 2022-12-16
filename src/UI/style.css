@@ -156,6 +156,7 @@ body{
 	.flex-help{
 		flex-direction: column-reverse;
 		align-items: center;
+		overflow: auto;
 	}
 	.CoreImage{
 		width: 250px!important;
@@ -188,6 +189,7 @@ body{
 .flex-help{
 	display: flex;
 	justify-content: center;
+	overflow: auto;
 }
 .CoreImage{
 	position: relative;
