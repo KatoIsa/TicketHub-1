@@ -240,6 +240,7 @@ main{
 		ACOUNT SIGN IN/UP PORTAL:  MAIN DESING
 */
 .PortalCover{
+	background: #fff;
 	position: absolute;
 	width: 100vw;
 	height: 100vh;
