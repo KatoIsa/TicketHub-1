@@ -24,7 +24,7 @@ let User = {
 		_.Event('.submitsearch', 'click', function (){
 			let searchedCContact = _.Select('.search');
 			let userreferance = db.collection("users").doc(`${searchedCContact.value}`);
-			console.log(searchedCContact.value);
+			console.log(searchedCContact);
 
 			userreferance.get().then((doc) => {
 				if (doc.exists) {
