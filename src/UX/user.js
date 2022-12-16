@@ -166,7 +166,7 @@ let User = {
 					}
 				}
 			}).catch((error) => {
-				console.log("Error getting document:");
+				console.log("Error getting document:", error);
 			});
 		}
 		connecttodatabase();
