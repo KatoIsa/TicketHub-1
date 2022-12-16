@@ -37,6 +37,7 @@ let User = {
 					let userdatabasetell = getjsondata.tellphone;
 					let userdatabsetikets = getjsondata.usertickets;
 					let lastcount = getjsondata.counterStop;
+					let transID = getjsondata.Trans_ID;
 
 					function addElement(UserLoginname, UserLoginnumber, UserLoginTickets, UserLogInTransaction) {
 						let elementData = `
@@ -66,7 +67,8 @@ let User = {
 						let SearchResults = _.Select('.SearchResults');
 						SearchResults.innerHTML = elementData;
 					}
-
+					addElement(userdatabasename,userdatabasetell,userdatabsetikets,transID);
+					
 				}else{
 					console.log('error something went wrong....');
 				}
