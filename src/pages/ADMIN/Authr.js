@@ -33,4 +33,4 @@ let Authr = {
 		}, true);
 	}
 }
-User.AdminAuth();
+Authr.AdminAuth();
