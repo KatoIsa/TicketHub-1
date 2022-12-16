@@ -204,9 +204,23 @@ button:hover{
 	border-left: 3px solid #00ff40;
 }
 .TicketContentsBody .status{
+	position: relative;
 	background: #19f;
 	font-size: 15px;
 }
+.TicketContentsBody .status .clear:nth-child(1){
+	background: #11ff70;
+	width: 20px;
+	height: 20px;
+	border-radius: 100%;
+}
+.TicketContentsBody .off .clear:nth-child(1){
+	background: #ff4b4b;
+	width: 20px;
+	height: 20px;
+	border-radius: 100%;
+}
+
 .TicketContentsBody .ConcertTicket tt span{
 	color: #19f;
 }
