@@ -89,10 +89,16 @@ let User = {
 							ticketBody.appendChild(elementData);
 							// collect all tickets from dataBase.
 							_.Print('ticket saved ....');
+							if(getjsondata.varified == true){
+								_.Select('.TicketContentsBody .ConcertTicket').classList.add('verifiedUserTi');
+							}
 						} ticketbuilder(getjsondata.usertickets)
 						}
 					}ticketLimit();
 
+					function verified(){
+						
+					}verified();
 					// add user name.
 					_.Select('.userIdName').innerHTML = userdatabasename;
 					// buying tickets...
