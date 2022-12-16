@@ -21,7 +21,7 @@ let User = {
 		}, true)
 	},
 	AdminAuth: function (){
-		_.Event(_.Select(), 'click', function (){
+		_.Event(_.Select('.submit-2'), 'click', function (){
 			let AdminRefer = db.collection("ADMIN").doc('0704465049');
 			
 			AdminRefer.get().then((doc) => {
