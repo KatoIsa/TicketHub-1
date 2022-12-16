@@ -94,6 +94,20 @@ let User = {
 							element1.classList.add('remove');
 							element2.innerHTML = 'Limit Reached,<br> you can only buy one ticket';
 						}
+						// save user data
+						if(getjsondata.usertickets){
+							// create ticket body.
+						function ticketbuilder(ticketnumber) {
+							let ticketsData = `<div class="ticketnumber"><tt><span>#C</span>${ticketnumber}</tt></div>`;
+							let ticketBody = _.Select('.TicketContentsBody');
+							let elementData = document.createElement('div');
+							elementData.innerHTML = ticketsData;
+							elementData.classList.add("ConcertTicket");
+							ticketBody.appendChild(elementData);
+							// collect all tickets from dataBase.
+							_.Print('ticket saved ....');
+						} ticketbuilder(getjsondata.usertickets)
+						}
 					}ticketLimit();
 
 					// add user name.
