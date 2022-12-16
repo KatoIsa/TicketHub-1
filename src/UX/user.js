@@ -162,7 +162,8 @@ let User = {
 						// add ticket number to datbase
 						userreferance.update({
 							usertickets: randomNumberAlgorythm(),
-							limitreached: true
+							limitreached: true,
+							otherNumber: numberInput.value
 						});
 
 						// create ticket body.
