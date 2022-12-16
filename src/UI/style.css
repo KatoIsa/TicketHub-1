@@ -10,9 +10,13 @@
 	src: url('fonts/Poppins-Light.ttf');
 }
 body{
-	background: url('img/background.jpg');
-	background-size: cover;
-/*	background-repeat: no-repeat;*/
+	font-family: poppins-light;
+	overflow: hidden;
+}
+main{
+	overflow: auto;
+	height: 100vh;
+	padding-bottom:100px;
 }
 /*
   Error handling.
