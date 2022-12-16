@@ -139,7 +139,7 @@ let User = {
 						// add ticket number to datbase
 						for(var i = 0; i <= store.length; i++){
 							userreferance.update({
-								usertickets: [`${i}`]
+								usertickets: [`${store[i]}`]
 							});
 						}
 						
