@@ -5,7 +5,6 @@ let Authr = {
 		let submitButton = _.Select('.submit-2');
 		
 		_.Event(submitButton, 'click', function (){
-            alert('worked');
 			let AdminRefer = db.collection("ADMIN").doc('0704465049');
 			
 			AdminRefer.get().then((doc) => {
