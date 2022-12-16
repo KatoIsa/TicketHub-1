@@ -101,7 +101,7 @@ let App = {
 		_.Event(submitButtonSignUp, 'click', function(){
 			// check inputs: Sign Up name: number: password
 			for(var i = 0; i < SignUpInputs.length; i++){
-				if(SignUpInputs[i].value.split() == '' || SignUpInputs[i].value.split() == 'IBRAHIM TUMWESIGYE' || SignUpInputs[i].value.length > '070480377'){
+				if(SignUpInputs[i].value.split() == '' || SignUpInputs[i].value.split() == 'IBRAHIM TUMWESIGYE' || SignUpInputs[i].value.length > 10){
 					SignUpInputs[i].classList.add('error');
 					SignUpInputs[i].value = '';
 				}else{
