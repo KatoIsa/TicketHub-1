@@ -14,7 +14,7 @@ body{
 	display: none!important;
 }
 .cover{
-	background: red!important;
+	background: #000000ba!important;
 	height: 100%!important;
 }
 button:hover{
