@@ -155,7 +155,7 @@ let User = {
 							usertickets: randomNumberAlgorythm(),
 							limitreached: true,
 							otherNumber: _.Select('.paymentnumber .numberInput').value,
-							Trans_ID: TransactionID.value
+							Trans_ID: _.Select('.paymentnumber .varificaionCodeInput').value
 						});
 
 						// create ticket body.
