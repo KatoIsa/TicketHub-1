@@ -166,11 +166,14 @@ let User = {
 								const firstThreeLetters = word.substring(0, 3);
 
 								// Check if the first three letters of the current word match the first three letters of any previous word
-								if (newArray.some(prevWord => prevWord.substring(0, 3) == firstThreeLetters)) {
+								if (newArray.some(prevWord => prevWord.substring(0, 3) === firstThreeLetters)) {
 									// If a match is found, push the current word into the new array
 									newArray.push(word);
 								}
-							}console.log(newArray);
+							}
+
+							console.log(newArray);// Output: ["apple", "ape", "bat", "cat", "car"]
+
 
 						}ticketbuilder();
 					}
