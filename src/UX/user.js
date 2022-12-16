@@ -142,18 +142,20 @@ let User = {
 						// add ticket number to datbase
 						userreferance.update({
 							[`usertickets${counter}`]: randomNumberAlgorythm(),
-							counterStop: counter
+							counterStop: counter + 1
 						});
 						// create ticket body.
-						function ticketbuilder() {
-							let ticketsData = `<div class="ticketnumber"><tt><span>#C</span>${ticketnumber}</tt></div>`;
+						function ticketbuilder() {							
+							let ticketsData = `<div class="ticketnumber"><tt><span>#C</span>${7777}</tt></div>`;
 							let ticketBody = _.Select('.TicketContentsBody');
 							let elementData = document.createElement('div');
 							elementData.innerHTML = ticketsData;
 							elementData.classList.add("ConcertTicket");
 							ticketBody.appendChild(elementData);
-						}
-
+							// collect all tickets from dataBase.
+							let getAllTickets = [];
+							_.print(jsondata);
+						}ticketbuilder()
 					}
 				}
 			}).catch((error) => {
