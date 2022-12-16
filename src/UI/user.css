@@ -25,6 +25,7 @@ button:hover{
 	margin-top: 30px;
 	margin-left: 40px;
 	margin-right: 40px;
+	overflow: auto;
 }
 .intro span:nth-child(1){
 	font-family: poppins!important;
