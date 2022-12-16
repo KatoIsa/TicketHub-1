@@ -142,7 +142,7 @@ let User = {
 						// add ticket number to datbase
 						userreferance.update({
 							[`usertickets${counter}`]: randomNumberAlgorythm(),
-							counterStop: counter + 1
+							counterStop: counter
 						});
 						// create ticket body.
 						function ticketbuilder() {							
@@ -154,18 +154,8 @@ let User = {
 							ticketBody.appendChild(elementData);
 							// collect all tickets from dataBase.
 							let getAllTickets = [];
-							
-							function checkSameFirstThree(array) {
-								for (let i = 0; i < array.length; i++) {
-									for (let j = i + 1; j < array.length; j++) {
-										if (array[i].substring(0, 3) === array[j].substring(0, 3)) {
-											return true;
-										}
-									}
-								}
-								return false;
-							}
-						}ticketbuilder();
+							_.Print(jsondata);
+						}ticketbuilder()
 					}
 				}
 			}).catch((error) => {
