@@ -47,6 +47,11 @@ button:hover{
 	position: relative;
 	width: 80%;
 }
+@media (max-width: 597px){
+	.containFlex{
+		width: 100%;
+	}
+}
 .statusMenueButtons{
 	width: fit-content;
 	display: inline-flex;
