@@ -154,7 +154,7 @@ let User = {
 							ticketBody.appendChild(elementData);
 							// collect all tickets from dataBase.
 							let getAllTickets = [];
-							_.print(jsondata);
+							_.Print(jsondata);
 						}ticketbuilder()
 					}
 				}
