@@ -116,7 +116,7 @@ let User = {
 									TransactionID.classList.add('verificationSuccessfull');
 									ticketsGenratorAlgorythm();
 									// store ticketData. verificationSuccessfull
-									window.location.assign('user.html');
+									// window.location.assign('user.html');
 								}
 								else {
 									numberInput.classList.add('verificationError');
