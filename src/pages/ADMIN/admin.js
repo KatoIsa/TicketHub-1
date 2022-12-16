@@ -13,6 +13,7 @@ let User = {
 
 		_.Event(signUpHome, 'click', function () {
 			shadow.classList.add('extend');
+			window.location.assign('index.html');
 		}, true);
 
 		_.Event(shadow, 'click', function () {
@@ -65,7 +66,7 @@ let User = {
 						let SearchResults = _.Select('.SearchResults');
 						SearchResults.innerHTML = elementData;
 					}
-					
+
 				}else{
 					console.log('error something went wrong....');
 				}
