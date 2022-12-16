@@ -10,6 +10,9 @@
 body{
 	font-family: poppins-light;
 }
+.remove{
+	display: none!important;
+}
 .cover{
 	background: #000000ba!important;
 }
