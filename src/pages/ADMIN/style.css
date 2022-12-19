@@ -15,7 +15,7 @@ body{
 	overflow: hidden;
 }
 main{
-	overflow: auto;
+	overflow: hidden;
 	height: 100vh;
 	padding-bottom:100px;
 }
