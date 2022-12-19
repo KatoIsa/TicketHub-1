@@ -340,6 +340,7 @@ main{
 	width: 55px;
 	height: 0px;
 	display: none;
+	overflow: hidden;
 	border-radius: 100%;
 	margin-left: 50%;
 	transform: translate(-50%);
