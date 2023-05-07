@@ -3,14 +3,14 @@
 }
 @font-face{
 	font-family: "poppins";
-	src:  url("fonts/Poppins-Bold.ttf");
+	src:  url("./fonts/Poppins-Bold.ttf");
 }
 @font-face{
 	font-family: "poppins-light";
-	src: url('fonts/Poppins-Light.ttf');
+	src: url('./fonts/Poppins-Light.ttf');
 }
 body{
-	background: url('img/background.jpg');
+	background: url('./img/background.jpg');
 	font-family: poppins-light;
 	overflow: hidden;
 }
@@ -75,7 +75,7 @@ main{
 	USER ACCOUNT ICON AND MENU: STYLES.
 */
 .userAccount{
-	background-image: url(img/user.png)!important;
+	background-image: url(./img/user.png)!important;
 	background-repeat: no-repeat;
 	background-size: cover!important;
 	width: 40px;
