@@ -213,6 +213,7 @@ let App = {
 					let userdatabasepassword = getjsondata.password;
 					let userdatabasetell = getjsondata.tellphone;
 
+					alert('user exists ...')
 					_.Print('user exists...');
 				} else {
 					userAuthrSignUp();
