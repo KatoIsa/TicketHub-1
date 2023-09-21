@@ -149,9 +149,11 @@ let App = {
 			_.Event(submitButtonSignIn, 'click', function(){
 				// fill uservlaidator: fill number.
 				if(SignInInputs[0].value.slice() == data_1 && SignInInputs[1].value.slice() == data_2){
+					alert('operation was succesfull ...')
 					_.Print('passed..');
 					window.location.assign('./pages/user.html');
 				}else{
+					alert('error something went wrong ...')
 					console.log('error, user')
 				}
 			}, true);
