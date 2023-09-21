@@ -174,6 +174,7 @@ let App = {
 					userAuthr(getjsondata.tellphone, getjsondata.password);
 					_.DB.Create('data', getjsondata.tellphone);
 				} else {
+					alert('error loging in ...')
 					_.Print("error logging in ...")
 				}
 			}).catch((error) => {
@@ -213,6 +214,7 @@ let App = {
 					_.Print('user exists...');
 				} else {
 					userAuthrSignUp();
+					alert('login successful ...')
 					_.Print("Login Successful ...")
 				}
 			}).catch((error) => {
