@@ -217,8 +217,8 @@ let App = {
 					_.Print('user exists...');
 				} else {
 					userAuthrSignUp();
-					alert('Account created successful, sign in ...')
-					_.Print("Account Login Successful ...")
+					alert('Account created successfully, sign in ...')
+					_.Print("Account Login successfully ...")
 				}
 			}).catch((error) => {
 				console.log("Error getting document:");
